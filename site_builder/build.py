@@ -1,185 +1,341 @@
-"""정적 사이트 빌더 (plan.md 7.5절).
+"""정적 사이트 빌더 (plan.md 7.5절) — 다크 네온 디자인 (Claude Design 'Round Analysis' 참조).
 
 data/rounds/*.json + data/reports/{key}/ → site/ 정적 HTML.
-- ① 예정: 경기 리스트 + 대중 투표 분포 바
-- ② 분석: AI 확률 바 + 최종 픽·신뢰도 배지 + 경기별 상세 페이지 + 종합 리포트
-- ③ 결과: 4주차 확장 예정 (results/ 반영)
+- 회차 페이지: 2단(리스트+상세) 단일 페이지 앱, 실데이터 기반
+- 경기별 상세 리포트 페이지(전체 마크다운), 회차 종합 리포트 페이지, 아카이브 인덱스
 
-디자인: design_teq.md 토큰·컴포넌트 규칙 준수.
 실행: python -m site_builder.build
 """
 import json
 import re
-from datetime import datetime, timedelta, timezone
+from datetime import timedelta, timezone
 from pathlib import Path
 
 from markdown import markdown
 
 from collector.models import Match, Round
+from site_builder import theme as T
 
 KST = timezone(timedelta(hours=9))
 ROOT = Path(__file__).parent.parent
 ROUNDS_DIR = ROOT / "data" / "rounds"
 REPORTS_DIR = ROOT / "data" / "reports"
+MATCHES_DIR = ROOT / "data" / "matches"
 SITE_DIR = ROOT / "site"
 
 PICK_KO = {"win": "승", "draw": "무", "lose": "패"}
-CONF_CLASS = {"상": "conf-high", "중": "conf-mid", "하": "conf-low"}
 JSON_BLOCK = re.compile(r"```json\s*\{.*?\}\s*```", re.DOTALL)
 
-CSS = """
-:root {
-  --bg:#FAF9F5; --surface:#F0EEE6; --surface-raised:#FFFFFF; --border:#E3DFD3;
-  --text:#1F1E1D; --text-muted:#6E6C64; --accent:#D97757; --accent-soft:#F5E5DE;
-  --kraft:#D4A27F; --olive:#6A6B5F; --positive:#5E7B5E; --negative:#B0554B;
-}
-* { margin:0; padding:0; box-sizing:border-box; }
-body {
-  background:var(--bg); color:var(--text);
-  font-family:Pretendard,-apple-system,"Malgun Gothic",sans-serif;
-  font-size:15px; line-height:1.7;
-}
-.wrap { max-width:960px; margin:0 auto; padding:48px 16px; }
-.serif { font-family:"Noto Serif KR",Georgia,serif; font-weight:600; letter-spacing:-0.01em; }
-.hero h1 { font-size:32px; }
-.hero .meta { color:var(--text-muted); font-size:13px; margin-top:8px; }
-.hero .meta a { color:inherit; }
-.cards { display:grid; grid-template-columns:repeat(auto-fill,minmax(420px,1fr)); gap:16px; margin-top:32px; }
-@media (max-width:900px){ .cards{ grid-template-columns:1fr; } }
-.card {
-  background:var(--surface); border:1px solid var(--border); border-radius:16px;
-  padding:16px 20px; box-shadow:0 1px 3px rgba(31,30,29,0.06);
-  transition:background 120ms ease; display:block; color:inherit; text-decoration:none;
-}
-a.card:hover { background:var(--surface-raised); }
-.card .top { display:flex; justify-content:space-between; font-size:12px; color:var(--text-muted); }
-.card .teams { font-size:19px; margin:8px 0 12px; }
-.card .teams .vs { color:var(--text-muted); font-size:14px; margin:0 6px; }
-.num { font-variant-numeric:tabular-nums; }
-.bar { display:flex; height:22px; border-radius:6px; overflow:hidden; }
-.bar span { display:flex; align-items:center; justify-content:center;
-  color:#fff; font-size:11px; font-weight:600; min-width:0; }
-.bar .w { background:var(--accent); } .bar .d { background:var(--kraft); } .bar .l { background:var(--olive); }
-.legend { display:flex; gap:16px; font-size:12px; color:var(--text-muted); margin-top:24px; }
-.legend i { display:inline-block; width:10px; height:10px; border-radius:3px; margin-right:5px; }
-.pill { display:inline-block; border:1px solid var(--border); border-radius:999px;
-  padding:2px 12px; font-size:12px; color:var(--text-muted); background:transparent; }
-.pill.accent { background:var(--accent-soft); color:var(--accent); border-color:transparent; font-weight:600; }
-.pill.conf-high { background:var(--text); color:var(--bg); border-color:var(--text); }
-.pill.conf-mid { border:1px solid var(--text-muted); color:var(--text); }
-.pill.conf-low { border:1px dashed var(--text-muted); color:var(--text-muted); }
-.badges { display:flex; gap:8px; align-items:center; margin-top:12px; flex-wrap:wrap; }
-.sub { font-size:12px; color:var(--text-muted); margin-top:10px; }
-.notice { background:var(--surface); border:1px solid var(--border); border-radius:16px;
-  padding:16px 20px; margin-top:32px; color:var(--text-muted); font-size:13px; }
-footer { margin-top:48px; padding-top:16px; border-top:1px solid var(--border);
-  font-size:12px; color:var(--text-muted); }
-.roundlist { margin-top:32px; display:flex; flex-direction:column; gap:12px; }
-article { margin-top:32px; }
-article h1 { font-family:"Noto Serif KR",Georgia,serif; font-size:26px; margin:24px 0 12px; }
-article h2 { font-family:"Noto Serif KR",Georgia,serif; font-size:20px; margin:28px 0 8px; }
-article h3 { font-size:16px; margin:20px 0 8px; }
-article p, article li { margin-bottom:8px; }
-article ul, article ol { padding-left:22px; }
-article hr { border:none; border-top:1px solid var(--border); margin:24px 0; }
-article em { color:var(--text-muted); }
-article a { color:var(--accent); }
-.tablewrap { overflow-x:auto; }
-article table { border-collapse:collapse; width:100%; font-size:13px; margin:12px 0; }
-article th, article td { border-bottom:1px solid var(--border); padding:10px 12px; text-align:left; }
-article td { font-variant-numeric:tabular-nums; }
-@media (prefers-reduced-motion:reduce){ *{ transition:none!important; } }
-"""
 
-DISCLAIMER = "본 분석은 통계적 참고 자료이며 구매 결과를 보장하지 않습니다."
-
-
-def page(title: str, body: str) -> str:
-    return (f'<!doctype html><html lang="ko"><head><meta charset="utf-8">'
-            f'<meta name="viewport" content="width=device-width,initial-scale=1">'
-            f'<meta name="robots" content="noindex">'
-            f'<title>{title}</title><style>{CSS}</style></head>'
-            f'<body><div class="wrap">{body}</div></body></html>')
-
-
-def fmt_kst(dt: datetime) -> str:
-    return dt.astimezone(KST).strftime("%m-%d %H:%M")
-
-
-def prob_bar(probs: dict, title: str) -> str:
-    parts = []
-    for key, cls in (("win", "w"), ("draw", "d"), ("lose", "l")):
-        p = probs.get(key) or 0
-        label = f"{p:.0%}" if p >= 0.08 else ""
-        parts.append(f'<span class="{cls} num" style="width:{p*100:.1f}%">{label}</span>')
-    return f'<div class="bar" title="{title}">{"".join(parts)}</div>'
-
-
-def load_reports(key: str) -> tuple[dict, bool]:
-    """(summaries, has_round_report)"""
+# ── 데이터 추출 ────────────────────────────────────────────────
+def load_summaries(key: str) -> tuple[dict, bool]:
     sp = REPORTS_DIR / key / "summary.json"
     summaries = json.loads(sp.read_text(encoding="utf-8")) if sp.exists() else {}
     return summaries, (REPORTS_DIR / key / "round.md").exists()
 
 
-def match_card(m: Match, key: str, summary: dict | None) -> str:
-    name = f"M{m.match_no:02d}"
-    top = (f'<div class="top"><span>{name} · {m.league}</span>'
-           f'<span class="num">{fmt_kst(m.kickoff)}</span></div>')
-    teams = (f'<div class="teams serif">{m.home.betman_name}'
-             f'<span class="vs">vs</span>{m.away.betman_name}</div>')
+def match_payload(r: Round, key: str, summaries: dict) -> list[dict]:
+    """SPA가 소비할 경기별 데이터 배열."""
+    pkg_dir = MATCHES_DIR / key
+    out = []
+    for m in r.matches:
+        name = f"M{m.match_no:02d}"
+        s = summaries.get(name)
+        market = None
+        pkg_file = pkg_dir / f"{name}.json"
+        if pkg_file.exists():
+            mo = json.loads(pkg_file.read_text(encoding="utf-8")).get("market_odds")
+            if mo and mo.get("implied_prob"):
+                ip = mo["implied_prob"]
+                market = {
+                    "w": round(ip["win"] * 100), "d": round(ip["draw"] * 100),
+                    "l": round(ip["lose"] * 100),
+                    "ow": mo.get("win"), "od": mo.get("draw"), "ol": mo.get("lose"),
+                    "books": mo.get("bookmakers"),
+                }
+        vd = m.vote_dist
+        report_href = f"{name.lower()}.html" if (REPORTS_DIR / key / f"{name}.md").exists() else None
+        item = {
+            "no": name,
+            "league": m.league,
+            "date": m.kickoff.astimezone(KST).strftime("%m-%d"),
+            "time": m.kickoff.astimezone(KST).strftime("%H:%M"),
+            "home": m.home.betman_name,
+            "away": m.away.betman_name,
+            "venue": m.stadium or "",
+            "status": m.status,
+            "pubW": round((vd.get("win") or 0) * 100),
+            "pubD": round((vd.get("draw") or 0) * 100),
+            "pubL": round((vd.get("lose") or 0) * 100),
+            "market": market,
+            "reportHref": report_href,
+            "analyzed": bool(s and not s.get("void")),
+        }
+        if item["analyzed"]:
+            p = s["probs"]
+            item.update({
+                "w": round(p["win"] * 100), "d": round(p["draw"] * 100),
+                "l": round(p["lose"] * 100),
+                "pick": PICK_KO.get(s["pick"], "?"),
+                "sub": PICK_KO.get(s.get("backup_pick"), "—"),
+                "conf": s.get("confidence", "중"),
+                "keyFactors": s.get("key_factors", []),
+                "dataGaps": s.get("data_gaps", []),
+                "expectedScores": s.get("expected_scores", []),
+            })
+        else:
+            item.update({"w": item["pubW"], "d": item["pubD"], "l": item["pubL"],
+                         "pick": None, "sub": None, "conf": None,
+                         "keyFactors": [], "dataGaps": [], "expectedScores": []})
+        out.append(item)
+    return out
 
-    if m.status != "scheduled":
-        body = top + teams + '<div class="badges"><span class="pill">적특 예상 (취소·연기)</span></div>'
-        return f'<div class="card">{body}</div>'
 
-    vote_line = " · ".join(f"{PICK_KO[k]} {int(round((m.vote_dist.get(k) or 0)*100))}%"
-                           for k in ("win", "draw", "lose"))
-    if summary and not summary.get("void"):
-        bar = prob_bar(summary["probs"], "AI 예측 확률 승/무/패")
-        conf = summary.get("confidence", "중")
-        badges = (f'<div class="badges">'
-                  f'<span class="pill accent">픽 · {PICK_KO.get(summary["pick"], "?")}</span>'
-                  f'<span class="pill">보조 · {PICK_KO.get(summary.get("backup_pick"), "—")}</span>'
-                  f'<span class="pill {CONF_CLASS.get(conf, "conf-mid")}">신뢰도 {conf}</span></div>')
-        sub = f'<div class="sub num">대중 투표: {vote_line}</div>'
-        report = REPORTS_DIR / key / f"{name}.md"
-        inner = top + teams + bar + badges + sub
-        if report.exists():
-            return f'<a class="card" href="{name.lower()}.html">{inner}</a>'
-        return f'<div class="card">{inner}</div>'
+# ── 회차 SPA 페이지 ─────────────────────────────────────────────
+# 색·문구는 JS 객체 C로 주입한다 (Python % 포매팅과 JS 리터럴 % 충돌 방지).
+ROUND_JS = r"""
+const OC = {'승':C.win,'무':C.draw,'패':C.lose};
+function confColor(c){return c==='하'?C.muted:c==='중'?C.draw:C.win;}
+function confDesc(c){return c==='하'?'변수 큰 접전':c==='중'?'무게 실림':'안정적';}
+function dayLabel(d){const [mm,dd]=d.split('-').map(Number);
+  const wd=['일','월','화','수','목','금','토'][new Date(2026,mm-1,dd).getDay()];
+  return mm+'월 '+dd+'일 ('+wd+')';}
+function esc(s){return (s==null?'':String(s)).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));}
 
-    # 분석 전(①) 또는 미완: 투표 분포 바
-    bar = prob_bar(m.vote_dist, "대중 투표 분포 승/무/패")
-    pending = '<div class="badges"><span class="pill">분석 대기</span></div>' if summary is None else ""
-    return f'<div class="card">{top}{teams}{bar}{pending}</div>'
+let sel = 0, detailOpen = false;
+const isMobile = () => window.innerWidth < 860;
+
+function bar(w,d,l,h){return `<div style="display:flex;height:${h}px;border-radius:${h>10?6:3}px;overflow:hidden;background:rgba(255,255,255,0.05);">
+  <div style="width:${w}%;background:${C.win}"></div><div style="width:${d}%;background:${C.draw}"></div><div style="width:${l}%;background:${C.lose}"></div></div>`;}
+
+function renderList(){
+  const el=document.getElementById('list'); let html=''; let prevDate=null;
+  DATA.forEach((m,i)=>{
+    if(m.date!==prevDate){html+=`<div style="padding:14px 18px 8px;font-size:12px;font-weight:600;color:#8A93A3;position:sticky;top:0;background:${C.bg};z-index:2;">${dayLabel(m.date)}</div>`;prevDate=m.date;}
+    const active=i===sel;
+    const pickColor=m.pick?OC[m.pick]:C.faint;
+    const topPct=m.pick?(m.pick==='승'?m.w:m.pick==='무'?m.d:m.l):Math.max(m.pubW,m.pubD,m.pubL);
+    const pickBadge=m.pick?`<span style="font-size:11px;font-weight:700;color:${C.bg};background:${pickColor};padding:2px 8px;border-radius:6px;">픽 ${m.pick}</span>`
+      :`<span style="font-size:10px;font-weight:600;color:${C.muted};border:1px solid ${C.border};padding:2px 7px;border-radius:6px;">대기</span>`;
+    html+=`<div onclick="selectMatch(${i})" style="display:flex;align-items:center;gap:11px;padding:13px 16px 13px 15px;cursor:pointer;border-left:3px solid ${active?C.accent:'transparent'};background:${active?'rgba(199,249,78,0.06)':'transparent'};border-bottom:1px solid rgba(255,255,255,0.04);">
+      <span class="mono" style="font-size:11px;font-weight:600;color:${C.faint};width:26px;flex-shrink:0;">${m.no}</span>
+      <div style="min-width:0;flex:1;">
+        <div style="display:flex;align-items:center;gap:7px;font-size:14px;font-weight:600;">
+          <span style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:86px;">${esc(m.home)}</span>
+          <span style="font-size:11px;color:${C.faint};">vs</span>
+          <span style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:86px;">${esc(m.away)}</span>
+        </div>
+        <div style="margin-top:8px;width:118px;">${bar(m.w,m.d,m.l,4)}</div>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:flex-end;gap:5px;flex-shrink:0;">
+        ${pickBadge}<span class="num" style="font-size:12px;font-weight:600;color:${pickColor};">${topPct}%</span>
+      </div>
+    </div>`;
+  });
+  el.innerHTML=html;
+}
+
+function card(inner,extra){return `<div style="background:${C.surface};border:1px solid ${C.borderSoft};border-radius:14px;padding:20px 22px;margin-top:14px;${extra||''}">${inner}</div>`;}
+function label(t){return `<div class="mono" style="font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:${C.muted};font-weight:600;margin-bottom:15px;">${t}</div>`;}
+function miniCard(t,inner){return `<div style="flex:1;background:${C.surface};border:1px solid ${C.borderSoft};border-radius:14px;padding:17px 18px;">
+  <div class="mono" style="font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:${C.muted};font-weight:600;margin-bottom:11px;">${t}</div>${inner}</div>`;}
+function oddCell(lbl,odd,pct,c){return `<div style="flex:1;text-align:center;padding:10px 4px;background:rgba(255,255,255,0.03);border-radius:10px;">
+  <div style="font-size:11px;color:${c};font-weight:600;margin-bottom:4px;">${lbl}</div>
+  <div class="num" style="font-size:18px;font-weight:700;color:${C.text};">${odd?odd.toFixed(2):'-'}</div>
+  <div class="num" style="font-size:11px;color:${C.muted};margin-top:2px;">${pct}%</div></div>`;}
+function disclaimer(){return `<div style="margin-top:22px;font-size:11px;color:#4A5261;line-height:1.6;">${C.disclaimer}</div>`;}
+
+function renderDetail(){
+  const m=DATA[sel]; const el=document.getElementById('detail');
+  const pickColor=m.pick?OC[m.pick]:C.faint;
+  let html='';
+  if(isMobile()) html+=`<div onclick="goBack()" style="display:inline-flex;gap:6px;font-size:13px;color:#8A93A3;cursor:pointer;margin-bottom:16px;font-weight:500;">← 리스트로</div>`;
+  html+=`<div style="display:flex;align-items:center;gap:9px;flex-wrap:wrap;font-size:12px;color:#8A93A3;">
+    <span class="mono" style="font-weight:600;color:${C.accent};background:rgba(199,249,78,0.10);padding:3px 9px;border-radius:6px;">${m.no}</span>
+    <span style="padding:3px 9px;border-radius:6px;background:rgba(255,255,255,0.06);color:${C.dim};">${esc(m.league)}</span>
+    <span>${m.date} ${m.time}</span>${m.venue?`<span style="color:${C.faint};">·</span><span>${esc(m.venue)}</span>`:''}</div>`;
+  html+=`<div style="display:flex;align-items:center;gap:16px;margin:24px 0 6px;">
+    <div style="flex:1;text-align:right;min-width:0;"><div class="mono" style="font-size:11px;letter-spacing:0.14em;color:${C.faint};margin-bottom:5px;font-weight:600;">HOME</div>
+      <div style="font-size:27px;font-weight:700;letter-spacing:-0.025em;line-height:1.1;">${esc(m.home)}</div></div>
+    <div class="mono" style="font-size:15px;font-weight:600;color:#4A5261;flex-shrink:0;">VS</div>
+    <div style="flex:1;min-width:0;"><div class="mono" style="font-size:11px;letter-spacing:0.14em;color:${C.faint};margin-bottom:5px;font-weight:600;">AWAY</div>
+      <div style="font-size:27px;font-weight:700;letter-spacing:-0.025em;line-height:1.1;">${esc(m.away)}</div></div></div>`;
+
+  if(!m.analyzed){
+    html+=card(label('대중 투표 분포')+bar(m.pubW,m.pubD,m.pubL,12)+
+      `<div style="margin-top:12px;font-size:13px;color:${C.dim};">아직 AI 분석이 생성되지 않았습니다. 마감 12시간 전에 자동 생성됩니다. 위 막대는 배트맨 이용자 투표(승 ${m.pubW}% / 무 ${m.pubD}% / 패 ${m.pubL}%)입니다.</div>`);
+    html+=disclaimer(); el.innerHTML=html; return;
+  }
+
+  const bigCell=(c,lbl,v)=>`<div style="flex:1;text-align:center;padding:14px 4px;background:${c}12;border:1px solid ${c}2e;border-radius:11px;">
+    <div style="font-size:12px;color:${c};font-weight:600;margin-bottom:5px;">${lbl}</div>
+    <div class="num" style="font-size:29px;font-weight:700;color:${c};letter-spacing:-0.02em;">${v}%</div></div>`;
+  html+=card(label('AI 예측 확률')+bar(m.w,m.d,m.l,12)+
+    `<div style="display:flex;gap:10px;margin-top:16px;">${bigCell(C.win,'승 · 홈',m.w)}${bigCell(C.draw,'무',m.d)}${bigCell(C.lose,'패 · 원정',m.l)}</div>`);
+  html+=`<div style="display:flex;gap:10px;margin-top:14px;">
+    ${miniCard('AI 픽',`<div style="display:inline-flex;align-items:center;justify-content:center;font-size:20px;font-weight:700;color:${C.bg};background:${pickColor};min-width:44px;height:38px;padding:0 12px;border-radius:9px;">${m.pick}</div>`)}
+    ${miniCard('보조 픽',`<div style="display:inline-flex;align-items:center;justify-content:center;font-size:20px;font-weight:700;color:${C.text};background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);min-width:44px;height:38px;padding:0 12px;border-radius:9px;">${m.sub}</div>`)}
+    ${miniCard('신뢰도',`<div style="display:inline-flex;align-items:center;gap:8px;"><span style="font-size:22px;font-weight:700;color:${confColor(m.conf)};">${m.conf}</span><span style="font-size:12px;color:${C.muted};">${confDesc(m.conf)}</span></div>`)}</div>`;
+  const pubMax=Math.max(m.pubW,m.pubD,m.pubL);
+  const pubPick=m.pubW===pubMax?'승':m.pubD===pubMax?'무':'패';
+  const pubCell=(w,c,lbl)=>`<div style="width:${w}%;background:${c}d9;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:${C.bg};">${w>=12?lbl:''}</div>`;
+  let cmp=label('대중 투표 vs AI')+
+    `<div style="display:flex;align-items:center;gap:12px;margin-bottom:11px;"><span style="width:44px;font-size:12px;color:#8A93A3;flex-shrink:0;">대중</span>
+      <div style="flex:1;display:flex;height:26px;border-radius:7px;overflow:hidden;background:rgba(255,255,255,0.05);">${pubCell(m.pubW,C.win,'승 '+m.pubW+'%')}${pubCell(m.pubD,C.draw,'무 '+m.pubD+'%')}${pubCell(m.pubL,C.lose,'패 '+m.pubL+'%')}</div></div>
+    <div style="display:flex;align-items:center;gap:12px;"><span style="width:44px;font-size:12px;color:#8A93A3;flex-shrink:0;">AI</span><div style="flex:1;">${bar(m.w,m.d,m.l,8)}</div></div>`;
+  if(pubPick!==m.pick) cmp+=`<div style="display:flex;gap:9px;margin-top:15px;padding:11px 13px;background:rgba(255,93,108,0.08);border:1px solid rgba(255,93,108,0.2);border-radius:10px;"><span style="color:${C.lose};font-weight:700;">!</span><span style="font-size:13px;color:#D6A9AE;line-height:1.5;">대중은 '${pubPick}'(${pubMax}%)에 몰렸지만 AI 픽은 '${m.pick}'입니다. 여론과 엇갈리는 경기이니 신중히 판단하세요.</span></div>`;
+  html+=card(cmp);
+  if(m.market){
+    const mk=m.market;
+    html+=card(label('해외 시장 배당 (북메이커 '+mk.books+'곳 중앙값)')+bar(mk.w,mk.d,mk.l,8)+
+      `<div style="display:flex;gap:10px;margin-top:14px;">${oddCell('승',mk.ow,mk.w,C.win)}${oddCell('무',mk.od,mk.d,C.draw)}${oddCell('패',mk.ol,mk.l,C.lose)}</div>`);
+  } else {
+    html+=card(label('해외 시장 배당')+`<div style="font-size:13px;color:${C.dim};">이 리그(K리그2 등)는 해외 배당 미커버로, 예측은 대중 투표 분포를 기준선으로 삼았습니다.</div>`);
+  }
+  if(m.keyFactors.length){
+    html+=card(label('핵심 근거')+`<ul style="margin:0;padding-left:18px;font-size:14px;line-height:1.7;color:${C.dim};">`+
+      m.keyFactors.map(f=>`<li style="margin-bottom:6px;">${esc(f)}</li>`).join('')+'</ul>');
+  }
+  if(m.expectedScores.length){
+    html+=card(label('예상 스코어')+'<div style="display:flex;gap:8px;">'+
+      m.expectedScores.map(s=>`<span class="num" style="font-size:16px;font-weight:600;color:${C.text};background:rgba(255,255,255,0.05);padding:6px 14px;border-radius:8px;">${esc(s)}</span>`).join('')+'</div>');
+  }
+  if(m.dataGaps.length){
+    html+=card(label('데이터 결측')+`<ul style="margin:0;padding-left:18px;font-size:12px;line-height:1.6;color:${C.muted};">`+
+      m.dataGaps.map(g=>`<li style="margin-bottom:4px;">${esc(g)}</li>`).join('')+'</ul>');
+  }
+  if(m.reportHref){
+    html+=`<div style="margin-top:18px;"><a href="${m.reportHref}" style="display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:600;color:${C.accent};background:rgba(199,249,78,0.10);border:1px solid rgba(199,249,78,0.22);padding:10px 16px;border-radius:10px;">전체 분석 리포트 보기 →</a></div>`;
+  }
+  html+=disclaimer(); el.innerHTML=html;
+}
+
+function selectMatch(i){sel=i;detailOpen=true;render();const mn=document.querySelector('main');if(mn)mn.scrollTop=0;}
+function goBack(){detailOpen=false;render();}
+function render(){
+  const mob=isMobile();
+  document.getElementById('aside').style.display=(mob&&detailOpen)?'none':'flex';
+  document.querySelector('main').style.display=(mob&&!detailOpen)?'none':'flex';
+  document.getElementById('aside').style.width=mob?'100%':'400px';
+  renderList();renderDetail();
+}
+window.addEventListener('resize',render);
+render();
+"""
+
+
+def build_round_page(r: Round, out_dir: Path):
+    key = f"{r.year}-{r.round_no}"
+    summaries, has_round = load_summaries(key)
+    data = match_payload(r, key, summaries)
+    n_analyzed = sum(1 for d in data if d["analyzed"])
+
+    status_pill = (f"AI 분석 {n_analyzed}/14 완료" if n_analyzed == 14
+                   else f"AI 분석 {n_analyzed}/14 진행" if n_analyzed
+                   else "분석 대기")
+    round_link = (f'<a href="round.html" class="mono" style="font-size:12px;font-weight:600;color:{T.ACCENT};'
+                  f'background:rgba(199,249,78,0.10);border:1px solid rgba(199,249,78,0.22);'
+                  f'padding:5px 12px;border-radius:999px;">종합 리포트</a>') if has_round else ""
+
+    legend = "".join(
+        f'<span style="display:inline-flex;align-items:center;gap:5px;">'
+        f'<span style="width:9px;height:9px;border-radius:3px;background:{c};"></span>{lbl}</span>'
+        for c, lbl in ((T.WIN, "승"), (T.DRAW, "무"), (T.LOSE, "패")))
+
+    C = {
+        "win": T.WIN, "draw": T.DRAW, "lose": T.LOSE, "accent": T.ACCENT,
+        "bg": T.BG, "surface": T.SURFACE, "muted": T.TEXT_MUTED, "faint": T.TEXT_FAINT,
+        "dim": T.TEXT_DIM, "text": T.TEXT, "border": T.BORDER, "borderSoft": T.BORDER_SOFT,
+        "disclaimer": f"{T.DISCLAIMER} · 데이터 기준 {r.collected_at.strftime('%Y-%m-%d %H:%M')}",
+    }
+    c_json = json.dumps(C, ensure_ascii=False)
+    data_json = json.dumps(data, ensure_ascii=False).replace("</", "<\\/")
+
+    round_css = (
+        "@media (max-width:860px){"
+        ".hd-legend{display:none!important;}"
+        ".hd-title{font-size:15px!important;}"
+        ".hd-meta{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:52vw;}"
+        "header{padding:12px 16px!important;gap:10px!important;}}"
+    )
+
+    body = f"""<div style="height:100vh;display:flex;flex-direction:column;">
+  <header style="display:flex;align-items:center;gap:16px;padding:15px 22px;border-bottom:1px solid {T.BORDER};flex-shrink:0;">
+    <div style="display:flex;align-items:center;gap:11px;min-width:0;">
+      <div class="mono" style="width:36px;height:36px;border-radius:10px;background:{T.ACCENT};display:flex;align-items:center;justify-content:center;color:{T.BG};font-weight:800;font-size:14px;flex-shrink:0;">AI</div>
+      <div style="min-width:0;"><div class="hd-title" style="font-size:17px;font-weight:700;letter-spacing:-0.015em;">승무패 {r.round_no}회차 · AI 최종 분석</div>
+        <div class="hd-meta" style="font-size:12px;color:{T.TEXT_MUTED};margin-top:2px;">발매 마감 {r.sale_close.strftime('%m-%d %H:%M')} · 데이터 {r.collected_at.strftime('%m-%d %H:%M')} 기준 · <a href="../../index.html">전체 회차</a></div></div>
+    </div>
+    <div style="margin-left:auto;display:flex;align-items:center;gap:14px;flex-shrink:0;">
+      <div class="hd-legend" style="display:flex;align-items:center;gap:12px;font-size:11px;color:{T.TEXT_MUTED};">{legend}</div>
+      {round_link}
+      <span class="mono" style="font-size:12px;font-weight:600;color:{T.ACCENT};background:rgba(199,249,78,0.10);border:1px solid rgba(199,249,78,0.22);padding:5px 12px;border-radius:999px;">{status_pill}</span>
+    </div>
+  </header>
+  <div style="flex:1;display:flex;min-height:0;">
+    <aside id="aside" style="display:flex;flex-direction:column;width:400px;flex-shrink:0;border-right:1px solid {T.BORDER};min-height:0;">
+      <div class="mono" style="padding:14px 18px 10px;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:{T.TEXT_FAINT};font-weight:600;flex-shrink:0;">경기 리스트 · 14</div>
+      <div id="list" style="flex:1;overflow-y:auto;"></div>
+    </aside>
+    <main style="display:flex;flex-direction:column;flex:1;overflow-y:auto;min-height:0;">
+      <div id="detail" style="padding:26px 32px 64px;max-width:780px;width:100%;"></div>
+    </main>
+  </div>
+</div>
+<script>const C={c_json};const DATA={data_json};{ROUND_JS}</script>"""
+
+    out_dir.mkdir(parents=True, exist_ok=True)
+    (out_dir / "index.html").write_text(
+        T.shell(f"승무패 {r.round_no}회차 · AI 분석", body, round_css), encoding="utf-8")
+
+    for m in r.matches:
+        build_match_report_page(m, key, out_dir)
+    build_round_report_page(r, key, out_dir)
+
+
+# ── 마크다운 리포트 페이지 (다크) ────────────────────────────────
+ARTICLE_CSS = f"""
+.wrap{{max-width:820px;margin:0 auto;padding:40px 24px 80px;}}
+.back{{display:inline-flex;gap:6px;font-size:13px;color:{T.TEXT_MUTED};margin-bottom:20px;font-weight:500;}}
+article h1{{font-size:26px;font-weight:700;letter-spacing:-0.02em;margin:24px 0 12px;}}
+article h2{{font-size:20px;font-weight:700;margin:28px 0 8px;letter-spacing:-0.01em;}}
+article h3{{font-size:16px;font-weight:600;margin:20px 0 8px;color:{T.TEXT_DIM};}}
+article p,article li{{font-size:15px;line-height:1.75;color:{T.TEXT_DIM};margin-bottom:8px;}}
+article ul,article ol{{padding-left:22px;}}
+article strong{{color:{T.TEXT};font-weight:600;}}
+article a{{color:{T.ACCENT};}}
+article hr{{border:none;border-top:1px solid {T.BORDER};margin:24px 0;}}
+article em{{color:{T.TEXT_MUTED};font-style:normal;}}
+.tablewrap{{overflow-x:auto;margin:14px 0;}}
+article table{{border-collapse:collapse;width:100%;font-size:13px;}}
+article th,article td{{border-bottom:1px solid {T.BORDER};padding:10px 12px;text-align:left;}}
+article th{{color:{T.TEXT_MUTED};font-weight:600;}}
+article td{{font-variant-numeric:tabular-nums;color:{T.TEXT_DIM};}}
+.foot{{margin-top:40px;padding-top:16px;border-top:1px solid {T.BORDER};font-size:12px;color:{T.TEXT_FAINT};}}
+"""
 
 
 def render_markdown(md_text: str) -> str:
-    text = JSON_BLOCK.sub("", md_text)  # 기계용 JSON 블록은 페이지에서 숨김
-    # 리포트 말미의 고지문(푸터가 대신)과 중첩 CLI 상용구를 본문에서 제거
+    text = JSON_BLOCK.sub("", md_text)
     drop = ("본 분석은 통계적 참고 자료", "📊 bkit", "✅ Used", "✅ 사용", "⏭️", "⏭ ",
             "💡 Recommended", "💡 추천")
     text = "\n".join(ln for ln in text.splitlines()
                      if not any(d in ln for d in drop) and set(ln.strip()) != {"─"})
     text = re.sub(r"(\n---\s*)+$", "", text.rstrip())
     html = markdown(text, extensions=["tables", "fenced_code"])
-    return html.replace("<table>", '<div class="tablewrap"><table>') \
-               .replace("</table>", "</table></div>")
+    return html.replace("<table>", '<div class="tablewrap"><table>').replace("</table>", "</table></div>")
 
 
-def build_match_page(m: Match, key: str, out_dir: Path):
+def build_match_report_page(m: Match, key: str, out_dir: Path):
     report = REPORTS_DIR / key / f"M{m.match_no:02d}.md"
     if not report.exists():
         return
-    body = f"""<div class="hero">
-<h1 class="serif">{m.home.betman_name} vs {m.away.betman_name}</h1>
-<div class="meta num">M{m.match_no:02d} · {m.league} · 킥오프 {fmt_kst(m.kickoff)} ·
-<a href="index.html">회차로 돌아가기</a></div></div>
+    body = f"""<div class="wrap">
+<a class="back" href="index.html">← 회차로 돌아가기</a>
 <article>{render_markdown(report.read_text(encoding="utf-8"))}</article>
-<footer>{DISCLAIMER}</footer>"""
+<div class="foot">{T.DISCLAIMER}</div></div>"""
     (out_dir / f"m{m.match_no:02d}.html").write_text(
-        page(f"{m.home.betman_name} vs {m.away.betman_name} · AI 분석", body),
+        T.shell(f"{m.home.betman_name} vs {m.away.betman_name} · AI 분석", body, ARTICLE_CSS),
         encoding="utf-8")
 
 
@@ -187,79 +343,56 @@ def build_round_report_page(r: Round, key: str, out_dir: Path):
     report = REPORTS_DIR / key / "round.md"
     if not report.exists():
         return
-    body = f"""<div class="hero">
-<h1 class="serif">승무패 {r.round_no}회차 · 종합 리포트</h1>
-<div class="meta num">발매 마감 {r.sale_close.strftime('%Y-%m-%d %H:%M')} ·
-<a href="index.html">경기 카드 보기</a></div></div>
+    body = f"""<div class="wrap">
+<a class="back" href="index.html">← 경기 카드 보기</a>
 <article>{render_markdown(report.read_text(encoding="utf-8"))}</article>
-<footer>{DISCLAIMER}</footer>"""
+<div class="foot">{T.DISCLAIMER}</div></div>"""
     (out_dir / "round.html").write_text(
-        page(f"승무패 {r.round_no}회차 종합 리포트", body), encoding="utf-8")
+        T.shell(f"승무패 {r.round_no}회차 종합 리포트", body, ARTICLE_CSS), encoding="utf-8")
 
 
-def build_round_page(r: Round, out_dir: Path):
-    key = f"{r.year}-{r.round_no}"
-    summaries, has_round = load_reports(key)
-    analyzed = bool(summaries)
-
-    if analyzed:
-        n = len([s for s in summaries.values() if not s.get("void")])
-        link = ' · <a href="round.html">종합 리포트</a>' if has_round else ""
-        notice = (f'<div class="notice">AI 분석 {n}/14 경기 완료. 막대는 AI 예측 확률, '
-                  f'카드에서 경기별 상세 분석을 볼 수 있습니다.{link}</div>')
-        bar_label = "AI 예측 확률"
-    else:
-        notice = (f'<div class="notice">아직 이번 회차 분석이 생성되지 않았습니다. '
-                  f'마감 12시간 전({fmt_kst(r.analysis_due)})에 자동 생성됩니다. '
-                  f'막대는 배트맨 이용자들의 승/무/패 투표 분포입니다.</div>')
-        bar_label = "대중 투표 분포"
-
-    cards = "".join(match_card(m, key, summaries.get(f"M{m.match_no:02d}"))
-                    for m in r.matches)
-    body = f"""<div class="hero">
-<h1 class="serif">승무패 {r.round_no}회차{' · AI 최종 분석' if analyzed else ''}</h1>
-<div class="meta num">발매 마감 {r.sale_close.strftime('%Y-%m-%d %H:%M')} ·
-{r.collected_at.strftime('%m-%d %H:%M')} 기준 최신 정보 · <a href="../../index.html">전체 회차</a></div>
-</div>
-{notice}
-<div class="cards">{cards}</div>
-<div class="legend">
-<span><i style="background:var(--accent)"></i>홈 승</span>
-<span><i style="background:var(--kraft)"></i>무승부</span>
-<span><i style="background:var(--olive)"></i>원정 승</span>
-<span>({bar_label})</span>
-</div>
-<footer>{DISCLAIMER} 데이터 기준: {r.collected_at.strftime('%Y-%m-%d %H:%M')}</footer>"""
-    out_dir.mkdir(parents=True, exist_ok=True)
-    (out_dir / "index.html").write_text(
-        page(f"승무패 {r.round_no}회차 · AI 분석", body), encoding="utf-8")
-
-    for m in r.matches:
-        build_match_page(m, key, out_dir)
-    build_round_report_page(r, key, out_dir)
+# ── 아카이브 인덱스 (다크) ──────────────────────────────────────
+INDEX_CSS = f"""
+.wrap{{max-width:820px;margin:0 auto;padding:56px 24px 80px;}}
+.hero h1{{font-size:30px;font-weight:700;letter-spacing:-0.02em;display:flex;align-items:center;gap:12px;margin:0;}}
+.logo{{width:38px;height:38px;border-radius:10px;background:{T.ACCENT};color:{T.BG};display:flex;align-items:center;justify-content:center;font-weight:800;font-size:15px;}}
+.hero p{{color:{T.TEXT_MUTED};margin:10px 0 0;font-size:14px;}}
+.list{{margin-top:36px;display:flex;flex-direction:column;gap:12px;}}
+.row{{display:flex;align-items:center;gap:14px;background:{T.SURFACE};border:1px solid {T.BORDER_SOFT};border-radius:14px;padding:18px 22px;transition:background 120ms ease;}}
+.row:hover{{background:{T.SURFACE_RAISED};}}
+.rno{{font-size:19px;font-weight:700;letter-spacing:-0.01em;color:{T.TEXT};}}
+.meta{{margin-left:auto;text-align:right;font-size:12px;color:{T.TEXT_MUTED};line-height:1.6;}}
+.pill{{display:inline-block;font-size:12px;padding:3px 11px;border-radius:999px;font-weight:600;}}
+.pill.done{{color:{T.ACCENT};background:rgba(199,249,78,0.10);border:1px solid rgba(199,249,78,0.22);}}
+.pill.prog{{color:{T.DRAW};background:rgba(245,196,81,0.10);border:1px solid rgba(245,196,81,0.22);}}
+.pill.wait{{color:{T.TEXT_MUTED};border:1px solid {T.BORDER};}}
+.foot{{margin-top:48px;font-size:12px;color:{T.TEXT_FAINT};}}
+"""
 
 
 def build_index(rounds: list[Round]):
-    items = []
+    rows = []
     for r in sorted(rounds, key=lambda x: (x.year, x.round_no), reverse=True):
         key = f"{r.year}-{r.round_no}"
-        summaries, has_round = load_reports(key)
-        stage = ('<span class="pill accent">분석 완료</span>' if has_round
-                 else '<span class="pill">분석 진행 중</span>' if summaries
-                 else '<span class="pill">분석 예정</span>')
-        items.append(f"""<a class="card" href="rounds/{key}/index.html">
-<div class="top"><span>{r.year}년</span><span class="num">마감 {r.sale_close.strftime('%m-%d %H:%M')}</span></div>
-<div class="teams serif">승무패 {r.round_no}회차 {stage}</div>
-<div class="top"><span>축구 {len(r.matches)}경기</span></div>
-</a>""")
-    body = f"""<div class="hero">
-<h1 class="serif">승무패 · AI 최종 분석</h1>
-<div class="meta">회차별 경기 정보와 마감 12시간 전 AI 분석 리포트</div>
-</div>
-<div class="roundlist">{"".join(items) or '<div class="notice">아직 수집된 회차가 없습니다.</div>'}</div>
-<footer>{DISCLAIMER}</footer>"""
+        summaries, has_round = load_summaries(key)
+        if has_round:
+            pill = '<span class="pill done">분석 완료</span>'
+        elif summaries:
+            pill = '<span class="pill prog">분석 진행 중</span>'
+        else:
+            pill = '<span class="pill wait">분석 예정</span>'
+        rows.append(
+            f'<a class="row" href="rounds/{key}/index.html">'
+            f'<span class="rno">{r.round_no}회차</span>{pill}'
+            f'<span class="meta">{r.year}년 · 축구 {len(r.matches)}경기<br>'
+            f'<span class="num">마감 {r.sale_close.strftime("%m-%d %H:%M")}</span></span></a>')
+    body = f"""<div class="wrap">
+<div class="hero"><h1><span class="logo mono">AI</span>승무패 · AI 최종 분석</h1>
+<p>회차별 경기 정보와 마감 12시간 전 AI 분석 리포트</p></div>
+<div class="list">{"".join(rows) or '<div style="color:#7A8394;">아직 수집된 회차가 없습니다.</div>'}</div>
+<div class="foot">{T.DISCLAIMER}</div></div>"""
     SITE_DIR.mkdir(parents=True, exist_ok=True)
-    (SITE_DIR / "index.html").write_text(page("승무패 AI 분석", body), encoding="utf-8")
+    (SITE_DIR / "index.html").write_text(T.shell("승무패 AI 분석", body, INDEX_CSS), encoding="utf-8")
 
 
 def build_all():

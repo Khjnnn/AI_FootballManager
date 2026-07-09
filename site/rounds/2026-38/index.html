@@ -1,76 +1,167 @@
-<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>승무패 38회차 · AI 분석</title><style>
-:root {
-  --bg:#FAF9F5; --surface:#F0EEE6; --surface-raised:#FFFFFF; --border:#E3DFD3;
-  --text:#1F1E1D; --text-muted:#6E6C64; --accent:#D97757; --accent-soft:#F5E5DE;
-  --kraft:#D4A27F; --olive:#6A6B5F; --positive:#5E7B5E; --negative:#B0554B;
-}
-* { margin:0; padding:0; box-sizing:border-box; }
-body {
-  background:var(--bg); color:var(--text);
-  font-family:Pretendard,-apple-system,"Malgun Gothic",sans-serif;
-  font-size:15px; line-height:1.7;
-}
-.wrap { max-width:960px; margin:0 auto; padding:48px 16px; }
-.serif { font-family:"Noto Serif KR",Georgia,serif; font-weight:600; letter-spacing:-0.01em; }
-.hero h1 { font-size:32px; }
-.hero .meta { color:var(--text-muted); font-size:13px; margin-top:8px; }
-.hero .meta a { color:inherit; }
-.cards { display:grid; grid-template-columns:repeat(auto-fill,minmax(420px,1fr)); gap:16px; margin-top:32px; }
-@media (max-width:900px){ .cards{ grid-template-columns:1fr; } }
-.card {
-  background:var(--surface); border:1px solid var(--border); border-radius:16px;
-  padding:16px 20px; box-shadow:0 1px 3px rgba(31,30,29,0.06);
-  transition:background 120ms ease; display:block; color:inherit; text-decoration:none;
-}
-a.card:hover { background:var(--surface-raised); }
-.card .top { display:flex; justify-content:space-between; font-size:12px; color:var(--text-muted); }
-.card .teams { font-size:19px; margin:8px 0 12px; }
-.card .teams .vs { color:var(--text-muted); font-size:14px; margin:0 6px; }
-.num { font-variant-numeric:tabular-nums; }
-.bar { display:flex; height:22px; border-radius:6px; overflow:hidden; }
-.bar span { display:flex; align-items:center; justify-content:center;
-  color:#fff; font-size:11px; font-weight:600; min-width:0; }
-.bar .w { background:var(--accent); } .bar .d { background:var(--kraft); } .bar .l { background:var(--olive); }
-.legend { display:flex; gap:16px; font-size:12px; color:var(--text-muted); margin-top:24px; }
-.legend i { display:inline-block; width:10px; height:10px; border-radius:3px; margin-right:5px; }
-.pill { display:inline-block; border:1px solid var(--border); border-radius:999px;
-  padding:2px 12px; font-size:12px; color:var(--text-muted); background:transparent; }
-.pill.accent { background:var(--accent-soft); color:var(--accent); border-color:transparent; font-weight:600; }
-.pill.conf-high { background:var(--text); color:var(--bg); border-color:var(--text); }
-.pill.conf-mid { border:1px solid var(--text-muted); color:var(--text); }
-.pill.conf-low { border:1px dashed var(--text-muted); color:var(--text-muted); }
-.badges { display:flex; gap:8px; align-items:center; margin-top:12px; flex-wrap:wrap; }
-.sub { font-size:12px; color:var(--text-muted); margin-top:10px; }
-.notice { background:var(--surface); border:1px solid var(--border); border-radius:16px;
-  padding:16px 20px; margin-top:32px; color:var(--text-muted); font-size:13px; }
-footer { margin-top:48px; padding-top:16px; border-top:1px solid var(--border);
-  font-size:12px; color:var(--text-muted); }
-.roundlist { margin-top:32px; display:flex; flex-direction:column; gap:12px; }
-article { margin-top:32px; }
-article h1 { font-family:"Noto Serif KR",Georgia,serif; font-size:26px; margin:24px 0 12px; }
-article h2 { font-family:"Noto Serif KR",Georgia,serif; font-size:20px; margin:28px 0 8px; }
-article h3 { font-size:16px; margin:20px 0 8px; }
-article p, article li { margin-bottom:8px; }
-article ul, article ol { padding-left:22px; }
-article hr { border:none; border-top:1px solid var(--border); margin:24px 0; }
-article em { color:var(--text-muted); }
-article a { color:var(--accent); }
-.tablewrap { overflow-x:auto; }
-article table { border-collapse:collapse; width:100%; font-size:13px; margin:12px 0; }
-article th, article td { border-bottom:1px solid var(--border); padding:10px 12px; text-align:left; }
-article td { font-variant-numeric:tabular-nums; }
-@media (prefers-reduced-motion:reduce){ *{ transition:none!important; } }
-</style></head><body><div class="wrap"><div class="hero">
-<h1 class="serif">승무패 38회차 · AI 최종 분석</h1>
-<div class="meta num">발매 마감 2026-07-11 19:30 ·
-07-09 14:06 기준 최신 정보 · <a href="../../index.html">전체 회차</a></div>
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>승무패 38회차 · AI 분석</title><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet"><style>
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{background:#0A0D12;color:#E8ECF2;font-family:'Pretendard',system-ui,-apple-system,sans-serif;
+  -webkit-font-smoothing:antialiased;}
+::selection{background:#C7F94E;color:#0A0D12;}
+a{color:#C7F94E;text-decoration:none;}
+a:hover{color:#dcff86;}
+.mono{font-family:'Space Grotesk',sans-serif;}
+.num{font-family:'Space Grotesk',sans-serif;font-variant-numeric:tabular-nums;}
+::-webkit-scrollbar{width:9px;height:9px;}
+::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.11);border-radius:9px;}
+::-webkit-scrollbar-thumb:hover{background:rgba(255,255,255,0.2);}
+::-webkit-scrollbar-track{background:transparent;}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;}}
+@media (max-width:860px){.hd-legend{display:none!important;}.hd-title{font-size:15px!important;}.hd-meta{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:52vw;}header{padding:12px 16px!important;gap:10px!important;}}</style></head><body><div style="height:100vh;display:flex;flex-direction:column;">
+  <header style="display:flex;align-items:center;gap:16px;padding:15px 22px;border-bottom:1px solid rgba(255,255,255,0.07);flex-shrink:0;">
+    <div style="display:flex;align-items:center;gap:11px;min-width:0;">
+      <div class="mono" style="width:36px;height:36px;border-radius:10px;background:#C7F94E;display:flex;align-items:center;justify-content:center;color:#0A0D12;font-weight:800;font-size:14px;flex-shrink:0;">AI</div>
+      <div style="min-width:0;"><div class="hd-title" style="font-size:17px;font-weight:700;letter-spacing:-0.015em;">승무패 38회차 · AI 최종 분석</div>
+        <div class="hd-meta" style="font-size:12px;color:#7A8394;margin-top:2px;">발매 마감 07-11 19:30 · 데이터 07-09 14:06 기준 · <a href="../../index.html">전체 회차</a></div></div>
+    </div>
+    <div style="margin-left:auto;display:flex;align-items:center;gap:14px;flex-shrink:0;">
+      <div class="hd-legend" style="display:flex;align-items:center;gap:12px;font-size:11px;color:#7A8394;"><span style="display:inline-flex;align-items:center;gap:5px;"><span style="width:9px;height:9px;border-radius:3px;background:#2EE6A6;"></span>승</span><span style="display:inline-flex;align-items:center;gap:5px;"><span style="width:9px;height:9px;border-radius:3px;background:#F5C451;"></span>무</span><span style="display:inline-flex;align-items:center;gap:5px;"><span style="width:9px;height:9px;border-radius:3px;background:#FF5D6C;"></span>패</span></div>
+      <a href="round.html" class="mono" style="font-size:12px;font-weight:600;color:#C7F94E;background:rgba(199,249,78,0.10);border:1px solid rgba(199,249,78,0.22);padding:5px 12px;border-radius:999px;">종합 리포트</a>
+      <span class="mono" style="font-size:12px;font-weight:600;color:#C7F94E;background:rgba(199,249,78,0.10);border:1px solid rgba(199,249,78,0.22);padding:5px 12px;border-radius:999px;">AI 분석 14/14 완료</span>
+    </div>
+  </header>
+  <div style="flex:1;display:flex;min-height:0;">
+    <aside id="aside" style="display:flex;flex-direction:column;width:400px;flex-shrink:0;border-right:1px solid rgba(255,255,255,0.07);min-height:0;">
+      <div class="mono" style="padding:14px 18px 10px;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#5D6675;font-weight:600;flex-shrink:0;">경기 리스트 · 14</div>
+      <div id="list" style="flex:1;overflow-y:auto;"></div>
+    </aside>
+    <main style="display:flex;flex-direction:column;flex:1;overflow-y:auto;min-height:0;">
+      <div id="detail" style="padding:26px 32px 64px;max-width:780px;width:100%;"></div>
+    </main>
+  </div>
 </div>
-<div class="notice">AI 분석 14/14 경기 완료. 막대는 AI 예측 확률, 카드에서 경기별 상세 분석을 볼 수 있습니다. · <a href="round.html">종합 리포트</a></div>
-<div class="cards"><a class="card" href="m01.html"><div class="top"><span>M01 · K리그1</span><span class="num">07-11 19:30</span></div><div class="teams serif">울산HDFC<span class="vs">vs</span>전북현대</div><div class="bar" title="AI 예측 확률 승/무/패"><span class="w num" style="width:37.0%">37%</span><span class="d num" style="width:29.0%">29%</span><span class="l num" style="width:34.0%">34%</span></div><div class="badges"><span class="pill accent">픽 · 승</span><span class="pill">보조 · 무</span><span class="pill conf-low">신뢰도 하</span></div><div class="sub num">대중 투표: 승 29% · 무 37% · 패 33%</div></a><a class="card" href="m02.html"><div class="top"><span>M02 · K리그1</span><span class="num">07-11 19:30</span></div><div class="teams serif">김천상무<span class="vs">vs</span>부천FC</div><div class="bar" title="AI 예측 확률 승/무/패"><span class="w num" style="width:40.0%">40%</span><span class="d num" style="width:33.0%">33%</span><span class="l num" style="width:27.0%">27%</span></div><div class="badges"><span class="pill accent">픽 · 승</span><span class="pill">보조 · 무</span><span class="pill conf-low">신뢰도 하</span></div><div class="sub num">대중 투표: 승 44% · 무 37% · 패 20%</div></a><a class="card" href="m03.html"><div class="top"><span>M03 · K리그1</span><span class="num">07-11 19:30</span></div><div class="teams serif">광주FC<span class="vs">vs</span>포항스틸</div><div class="bar" title="AI 예측 확률 승/무/패"><span class="w num" style="width:16.0%">16%</span><span class="d num" style="width:27.0%">27%</span><span class="l num" style="width:57.0%">57%</span></div><div class="badges"><span class="pill accent">픽 · 패</span><span class="pill">보조 · 무</span><span class="pill conf-mid">신뢰도 중</span></div><div class="sub num">대중 투표: 승 10% · 무 19% · 패 71%</div></a><a class="card" href="m04.html"><div class="top"><span>M04 · K리그2</span><span class="num">07-11 19:30</span></div><div class="teams serif">안산그리<span class="vs">vs</span>수원삼성</div><div class="bar" title="AI 예측 확률 승/무/패"><span class="w num" style="width:11.0%">11%</span><span class="d num" style="width:22.0%">22%</span><span class="l num" style="width:67.0%">67%</span></div><div class="badges"><span class="pill accent">픽 · 패</span><span class="pill">보조 · 무</span><span class="pill conf-mid">신뢰도 중</span></div><div class="sub num">대중 투표: 승 5% · 무 10% · 패 85%</div></a><a class="card" href="m05.html"><div class="top"><span>M05 · K리그2</span><span class="num">07-11 19:30</span></div><div class="teams serif">대구FC<span class="vs">vs</span>성남FC</div><div class="bar" title="AI 예측 확률 승/무/패"><span class="w num" style="width:56.0%">56%</span><span class="d num" style="width:26.0%">26%</span><span class="l num" style="width:18.0%">18%</span></div><div class="badges"><span class="pill accent">픽 · 승</span><span class="pill">보조 · 무</span><span class="pill conf-mid">신뢰도 중</span></div><div class="sub num">대중 투표: 승 76% · 무 18% · 패 6%</div></a><a class="card" href="m06.html"><div class="top"><span>M06 · K리그2</span><span class="num">07-11 19:30</span></div><div class="teams serif">화성FC<span class="vs">vs</span>파주프런</div><div class="bar" title="AI 예측 확률 승/무/패"><span class="w num" style="width:58.0%">58%</span><span class="d num" style="width:26.0%">26%</span><span class="l num" style="width:16.0%">16%</span></div><div class="badges"><span class="pill accent">픽 · 승</span><span class="pill">보조 · 무</span><span class="pill conf-mid">신뢰도 중</span></div><div class="sub num">대중 투표: 승 78% · 무 16% · 패 6%</div></a><a class="card" href="m07.html"><div class="top"><span>M07 · K리그2</span><span class="num">07-11 19:30</span></div><div class="teams serif">용인FC<span class="vs">vs</span>충북청주</div><div class="bar" title="AI 예측 확률 승/무/패"><span class="w num" style="width:36.0%">36%</span><span class="d num" style="width:43.0%">43%</span><span class="l num" style="width:21.0%">21%</span></div><div class="badges"><span class="pill accent">픽 · 무</span><span class="pill">보조 · 승</span><span class="pill conf-mid">신뢰도 중</span></div><div class="sub num">대중 투표: 승 32% · 무 50% · 패 18%</div></a><a class="card" href="m08.html"><div class="top"><span>M08 · 노르웨이 엘리테세리엔</span><span class="num">07-11 21:00</span></div><div class="teams serif">프레드릭<span class="vs">vs</span>릴레스트</div><div class="bar" title="AI 예측 확률 승/무/패"><span class="w num" style="width:34.0%">34%</span><span class="d num" style="width:30.0%">30%</span><span class="l num" style="width:36.0%">36%</span></div><div class="badges"><span class="pill accent">픽 · 패</span><span class="pill">보조 · 무</span><span class="pill conf-low">신뢰도 하</span></div><div class="sub num">대중 투표: 승 34% · 무 28% · 패 38%</div></a><a class="card" href="m09.html"><div class="top"><span>M09 · 노르웨이 엘리테세리엔</span><span class="num">07-12 01:00</span></div><div class="teams serif">트롬쇠IL<span class="vs">vs</span>볼레렝아</div><div class="bar" title="AI 예측 확률 승/무/패"><span class="w num" style="width:57.0%">57%</span><span class="d num" style="width:24.0%">24%</span><span class="l num" style="width:19.0%">19%</span></div><div class="badges"><span class="pill accent">픽 · 승</span><span class="pill">보조 · 무</span><span class="pill conf-mid">신뢰도 중</span></div><div class="sub num">대중 투표: 승 78% · 무 14% · 패 8%</div></a><a class="card" href="m10.html"><div class="top"><span>M10 · K리그1</span><span class="num">07-12 19:30</span></div><div class="teams serif">제주SKFC<span class="vs">vs</span>대전하나</div><div class="bar" title="AI 예측 확률 승/무/패"><span class="w num" style="width:37.0%">37%</span><span class="d num" style="width:31.0%">31%</span><span class="l num" style="width:32.0%">32%</span></div><div class="badges"><span class="pill accent">픽 · 승</span><span class="pill">보조 · 무</span><span class="pill conf-low">신뢰도 하</span></div><div class="sub num">대중 투표: 승 36% · 무 39% · 패 26%</div></a><a class="card" href="m11.html"><div class="top"><span>M11 · K리그1</span><span class="num">07-12 19:30</span></div><div class="teams serif">인천유나<span class="vs">vs</span>FC안양</div><div class="bar" title="AI 예측 확률 승/무/패"><span class="w num" style="width:47.0%">47%</span><span class="d num" style="width:30.0%">30%</span><span class="l num" style="width:23.0%">23%</span></div><div class="badges"><span class="pill accent">픽 · 승</span><span class="pill">보조 · 무</span><span class="pill conf-mid">신뢰도 중</span></div><div class="sub num">대중 투표: 승 49% · 무 34% · 패 17%</div></a><a class="card" href="m12.html"><div class="top"><span>M12 · K리그1</span><span class="num">07-12 19:30</span></div><div class="teams serif">FC서울<span class="vs">vs</span>강원FC</div><div class="bar" title="AI 예측 확률 승/무/패"><span class="w num" style="width:42.0%">42%</span><span class="d num" style="width:30.0%">30%</span><span class="l num" style="width:28.0%">28%</span></div><div class="badges"><span class="pill accent">픽 · 승</span><span class="pill">보조 · 무</span><span class="pill conf-mid">신뢰도 중</span></div><div class="sub num">대중 투표: 승 52% · 무 28% · 패 19%</div></a><a class="card" href="m13.html"><div class="top"><span>M13 · K리그2</span><span class="num">07-12 19:30</span></div><div class="teams serif">충남아산<span class="vs">vs</span>경남FC</div><div class="bar" title="AI 예측 확률 승/무/패"><span class="w num" style="width:53.0%">53%</span><span class="d num" style="width:29.0%">29%</span><span class="l num" style="width:18.0%">18%</span></div><div class="badges"><span class="pill accent">픽 · 승</span><span class="pill">보조 · 무</span><span class="pill conf-low">신뢰도 하</span></div><div class="sub num">대중 투표: 승 59% · 무 29% · 패 12%</div></a><a class="card" href="m14.html"><div class="top"><span>M14 · K리그2</span><span class="num">07-12 19:30</span></div><div class="teams serif">부산아이<span class="vs">vs</span>김포FC</div><div class="bar" title="AI 예측 확률 승/무/패"><span class="w num" style="width:60.0%">60%</span><span class="d num" style="width:27.0%">27%</span><span class="l num" style="width:13.0%">13%</span></div><div class="badges"><span class="pill accent">픽 · 승</span><span class="pill">보조 · 무</span><span class="pill conf-mid">신뢰도 중</span></div><div class="sub num">대중 투표: 승 69% · 무 22% · 패 9%</div></a></div>
-<div class="legend">
-<span><i style="background:var(--accent)"></i>홈 승</span>
-<span><i style="background:var(--kraft)"></i>무승부</span>
-<span><i style="background:var(--olive)"></i>원정 승</span>
-<span>(AI 예측 확률)</span>
-</div>
-<footer>본 분석은 통계적 참고 자료이며 구매 결과를 보장하지 않습니다. 데이터 기준: 2026-07-09 14:06</footer></div></body></html>
+<script>const C={"win": "#2EE6A6", "draw": "#F5C451", "lose": "#FF5D6C", "accent": "#C7F94E", "bg": "#0A0D12", "surface": "#12161F", "muted": "#7A8394", "faint": "#5D6675", "dim": "#B4BCC8", "text": "#E8ECF2", "border": "rgba(255,255,255,0.07)", "borderSoft": "rgba(255,255,255,0.06)", "disclaimer": "본 분석은 통계적 참고 자료이며 구매 결과를 보장하지 않습니다. · 데이터 기준 2026-07-09 14:06"};const DATA=[{"no": "M01", "league": "K리그1", "date": "07-11", "time": "19:30", "home": "울산HDFC", "away": "전북현대", "venue": "울산문수", "status": "scheduled", "pubW": 29, "pubD": 37, "pubL": 33, "market": {"w": 36, "d": 28, "l": 36, "ow": 2.55, "od": 3.2, "ol": 2.52, "books": 17}, "reportHref": "m01.html", "analyzed": true, "w": 37, "d": 29, "l": 34, "pick": "승", "sub": "무", "conf": "하", "keyFactors": ["시장은 승-패 반반의 초접전(내재확률 35.6% vs 36.0%)", "울산 홈 2연승·문수 개최 vs 전북 강원전 홈 패배로 6경기 무패 단절", "대중 투표가 무승부(37.5%)에 쏠려 울산 승을 시장 대비 저평가", "울산 김영권 햄스트링 결장 유력, 전북 박지수 부상 복귀"], "dataGaps": ["울산 에릭·강상우 부상 정보의 최신성 미확인", "전북 김태현·츄마시 결장 여부 미확인", "울산 5/17 패배 경기 상세(상대·스코어) 미확인"], "expectedScores": ["1-1", "2-1"]}, {"no": "M02", "league": "K리그1", "date": "07-11", "time": "19:30", "home": "김천상무", "away": "부천FC", "venue": "김천종합", "status": "scheduled", "pubW": 44, "pubD": 37, "pubL": 20, "market": {"w": 46, "d": 28, "l": 25, "ow": 1.95, "od": 3.2, "ol": 3.55, "books": 17}, "reportHref": "m02.html", "analyzed": true, "w": 40, "d": 33, "l": 27, "pick": "승", "sub": "무", "conf": "하", "keyFactors": ["김천 주전 수비수 변준수 경고누적 출전정지", "김천의 극단적 무승부 성향(시즌 초 9경기 무승·다수 1-1)", "김천 강등 확정(연고 협약 만료)으로 순위 동기 약화", "부천의 원정 강세(전북 원정 승 등) 대비 홈 무승", "대중 투표가 무승부에 과도 쏠림(36.8% vs 시장 28.2%)"], "dataGaps": ["양 팀 상대 전적", "양 팀 최신 부상자 명단", "김천 정확한 현재 순위·승점", "군팀 전역·입대에 따른 스쿼드 변동", "컵대회 등 주중 일정 여부"], "expectedScores": ["1-1", "1-0"]}, {"no": "M03", "league": "K리그1", "date": "07-11", "time": "19:30", "home": "광주FC", "away": "포항스틸", "venue": "광주월드", "status": "scheduled", "pubW": 10, "pubD": 19, "pubL": 71, "market": {"w": 16, "d": 25, "l": 59, "ow": 5.8, "od": 3.6, "ol": 1.54, "books": 17}, "reportHref": "m03.html", "analyzed": true, "w": 16, "d": 27, "l": 57, "pick": "패", "sub": "무", "conf": "중", "keyFactors": ["순위·승점 격차 압도적 (포항 5위 25점 vs 광주 최하위 8점, 득실 +1 vs -30)", "광주 극심한 득점력 부족 (16경기 8득점)", "올 시즌 상대전적 포항 1-0 승 (9R)", "광주 감독 교체 후 반등 조짐 (직전 울산전 1-1) → 무승부 리스크", "대중 71% vs 시장 59%로 '패' 쏠림 과도, 무승부 상대 가치"], "dataGaps": ["양 팀 최신 결장자(부상·징계) 명단 미확인", "광주 최근 5경기 세부 결과 일부 미확인", "포항 시즌 원정 성적 세부 미확인", "역대(과거 시즌) 상대 전적 미확인"], "expectedScores": ["0-1", "1-1"]}, {"no": "M04", "league": "K리그2", "date": "07-11", "time": "19:30", "home": "안산그리", "away": "수원삼성", "venue": "안산와스", "status": "scheduled", "pubW": 5, "pubD": 10, "pubL": 85, "market": null, "reportHref": "m04.html", "analyzed": true, "w": 11, "d": 22, "l": 67, "pick": "패", "sub": "무", "conf": "중", "keyFactors": ["수원삼성 2위(승점 32) vs 안산 15위(승점 11)의 극단적 순위 격차", "안산 4월 이후 리그 무승·장기 연패, 리그 최다급 25실점 수비 붕괴", "역대 전적 수원 5승 1무 우위 (단 2025년 안산 원정에서는 1-1 무)", "수원 승격 경쟁 동기부여 확실, 양 팀 휴식일 대등"], "dataGaps": ["market_odds 부재(해외 배당 미커버) — 투표 분포만으로 기준선 설정", "경기 당일 양 팀 결장자 명단 미확인 (수원 일류첸코·강성진 출전 여부 불확실)", "안산 최근 5경기 개별 스코어 완전 확인 불가 (뉴스 단편으로 재구성)"], "expectedScores": ["0-2", "1-2"]}, {"no": "M05", "league": "K리그2", "date": "07-11", "time": "19:30", "home": "대구FC", "away": "성남FC", "venue": "대구iM뱅", "status": "scheduled", "pubW": 76, "pubD": 18, "pubL": 6, "market": null, "reportHref": "m05.html", "analyzed": true, "w": 56, "d": 26, "l": 18, "pick": "승", "sub": "무", "conf": "중", "keyFactors": ["대구 최성용 부임 후 무패 상승세·직전 5-1 대승", "성남 결정력 부진(수적 우위에도 16R 0-1 패)", "홈 이점 및 순위·승점 격차", "대중 투표 76% 홈 쏠림은 과대평가 판단"], "dataGaps": ["market_odds 없음(해외 배당 미커버)", "2026시즌 상대 전적 미확인", "양 팀 성남전 기준 결장자 명단 미확인(대구 장성원 장기부상만 확인)", "성남 정확한 현재 순위(8~10위 상충)"], "expectedScores": ["2-0", "2-1"]}, {"no": "M06", "league": "K리그2", "date": "07-11", "time": "19:30", "home": "화성FC", "away": "파주프런", "venue": "화성종합", "status": "scheduled", "pubW": 78, "pubD": 16, "pubL": 6, "market": null, "reportHref": "m06.html", "analyzed": true, "w": 58, "d": 26, "l": 16, "pick": "승", "sub": "무", "conf": "중", "keyFactors": ["화성 8경기 무패(6승2무)·4위 vs 파주 최근 5경기 무승(2무3패)·12위권", "화성 홈 3연승 등 홈 상승세, 파주는 신생팀 원정", "월드컵 휴식기 직후 재개 경기라 양 팀 폼 연속성 불확실", "해외 배당 부재로 대중 투표(홈승 78%)의 과열 여부 시장 검증 불가"], "dataGaps": ["market_odds 부재(해외 배당 미커버)", "양 팀 부상·출전정지 결장자 정보 미확인", "파주 16R(7/4 용인전) 결과 미확인", "상대 전적 없음(올 시즌 첫 맞대결)"], "expectedScores": ["2-0", "2-1"]}, {"no": "M07", "league": "K리그2", "date": "07-11", "time": "19:30", "home": "용인FC", "away": "충북청주", "venue": "용인미르", "status": "scheduled", "pubW": 32, "pubD": 50, "pubL": 18, "market": null, "reportHref": "m07.html", "analyzed": true, "w": 36, "d": 43, "l": 21, "pick": "무", "sub": "승", "conf": "중", "keyFactors": ["충북청주 15경기 10무의 극단적 무승부 성향 + 용인 7무", "용인 최근 무패 흐름(1승4무+)과 홈 이점, 12위 vs 14위", "충북청주 직전 라운드 대구전 홈 1-5 대패, GK 노동건 부상 이탈", "해외 배당 부재로 투표 분포(무 50%)를 기준선으로 사용하되 무 쏠림은 다소 과도로 판단"], "dataGaps": ["용인 7/4 파주전 정확한 스코어", "양 팀 7/11 기준 최신 결장자 명단", "홈/원정 분리 성적", "해외 시장 배당(market_odds null)"], "expectedScores": ["1-1", "1-0"]}, {"no": "M08", "league": "노르웨이 엘리테세리엔", "date": "07-11", "time": "21:00", "home": "프레드릭", "away": "릴레스트", "venue": "프레스타", "status": "scheduled", "pubW": 34, "pubD": 28, "pubL": 38, "market": {"w": 33, "d": 28, "l": 39, "ow": 2.78, "od": 3.3, "ol": 2.4, "books": 19}, "reportHref": "m08.html", "analyzed": true, "w": 34, "d": 30, "l": 36, "pick": "패", "sub": "무", "conf": "하", "keyFactors": ["릴레스트룀 4위 vs 프레드릭스타드 중하위권이지만 최근 폼은 릴레스트룀이 하락세(최근 5경기 1승 안팎)", "프레드릭스타드 홈 PPG 2.00의 극단적 홈 강세 + H2H 최근 7경기 3승3무1패 우위", "릴레스트룀 결장: 가르나스(퇴장 정지)·키톨라노(부상), 레네 올센 출전 불투명 / 프레드릭스타드 셰인 경고누적 정지", "대중 투표와 시장 내재확률이 거의 일치해 패리뮤추얼 왜곡 가치 없음"], "dataGaps": ["프레드릭스타드 정확한 현재 순위·승점(소스 간 10위/14위 충돌)", "프레드릭스타드 최근 5경기 폼(소스 간 충돌)", "부상자(레네 올센, 훔멜볼-누네스, 오우수)의 경기 당일 실제 출전 여부"], "expectedScores": ["1-1", "1-2"]}, {"no": "M09", "league": "노르웨이 엘리테세리엔", "date": "07-12", "time": "01:00", "home": "트롬쇠IL", "away": "볼레렝아", "venue": "롬사아레", "status": "scheduled", "pubW": 78, "pubD": 14, "pubL": 8, "market": {"w": 53, "d": 25, "l": 22, "ow": 1.74, "od": 3.66, "ol": 4.3, "books": 20}, "reportHref": "m09.html", "analyzed": true, "w": 57, "d": 24, "l": 19, "pick": "승", "sub": "무", "conf": "중", "keyFactors": ["트롬쇠 리그 2~3위·최근 7경기 무패·홈 이점", "볼레렝아 9~11위, 득점<실점의 부진한 화력", "시장(53%)은 홈승을 대중 쏠림(77.6%)보다 훨씬 보수적으로 평가", "볼레렝아 원정 성적 '평균'(1승1무2패)"], "dataGaps": ["양 팀 결장자(부상·징계) 명단 미확인", "소스 간 순위·경기수 수치 소폭 불일치(11경기 23점 vs 13경기 25점)"], "expectedScores": ["2-1", "2-0"]}, {"no": "M10", "league": "K리그1", "date": "07-12", "time": "19:30", "home": "제주SKFC", "away": "대전하나", "venue": "제주월드", "status": "scheduled", "pubW": 36, "pubD": 39, "pubL": 26, "market": {"w": 35, "d": 28, "l": 37, "ow": 2.61, "od": 3.2, "ol": 2.45, "books": 16}, "reportHref": "m10.html", "analyzed": true, "w": 37, "d": 31, "l": 32, "pick": "승", "sub": "무", "conf": "하", "keyFactors": ["시즌 1차전 제주 원정 1-0 승 (맞대결 우위) + 이번엔 제주 홈", "대전 원정 수비 불안(0-5, 1-4 등 대량 실점 이력)", "양 팀 저득점·중하위권으로 무승부 성향 존재", "시장은 원정(대전) 근소 우위, 대중은 무승부 쏠림으로 방향 상충"], "dataGaps": ["2026-07 시점 확정 결장자(부상·징계) 미확인", "일정 피로도·컵대회 병행·로테이션 가능성 미확인", "최신 5경기 폼과 정확한 현재 순위·승점(시즌 초중반 데이터와 혼재, 신뢰도 낮음)"], "expectedScores": ["1-1", "1-0"]}, {"no": "M11", "league": "K리그1", "date": "07-12", "time": "19:30", "home": "인천유나", "away": "FC안양", "venue": "인천전용", "status": "scheduled", "pubW": 49, "pubD": 34, "pubL": 17, "market": {"w": 46, "d": 28, "l": 25, "ow": 1.94, "od": 3.2, "ol": 3.55, "books": 17}, "reportHref": "m11.html", "analyzed": true, "w": 47, "d": 30, "l": 23, "pick": "승", "sub": "무", "conf": "중", "keyFactors": ["인천 홈경기 + 리그 6위(승점21)로 안양(8~9위, 승점16) 대비 순위·전력 우위", "1차전(3/22) 안양 홈에서 인천이 0-1 원정승 — 맞대결 우위", "안양 부상자 누적·낮은 승수(원정승 가능성 제한)", "안양의 강한 무승부 성향으로 무 시나리오 유지", "인천의 결정력 기복(직전 서울전 0-1 패)으로 과신 경계"], "dataGaps": ["양 팀 최근 5경기 세부 결과 일부 미확인", "안양 개별 결장자 명단 신뢰도 낮음(타팀 정보 혼재 가능성)", "안양 원정 세부 성적 미확인", "인천 결장자 명단 미확인"], "expectedScores": ["1-0", "2-1"]}, {"no": "M12", "league": "K리그1", "date": "07-12", "time": "19:30", "home": "FC서울", "away": "강원FC", "venue": "서울월드", "status": "scheduled", "pubW": 52, "pubD": 28, "pubL": 19, "market": {"w": 38, "d": 31, "l": 30, "ow": 2.37, "od": 2.91, "ol": 2.98, "books": 16}, "reportHref": "m12.html", "analyzed": true, "w": 42, "d": 30, "l": 28, "pick": "승", "sub": "무", "conf": "중", "keyFactors": ["FC서울 리그 선두·홈 강세, 최근 상대전적 우위(4/25 2-1 승)", "강원FC 3연승·6경기 무패의 절정 폼으로 2위 급상승", "강원의 '강릉 요새' 홈 이점은 이번 원정 경기에 미적용", "대중 투표 서울 과신(52%)이 시장(38%)보다 과대, 시장은 삼분 접전 평가"], "dataGaps": ["양 팀 부상·출전정지 결장자 명단 미확정", "월드컵 복귀 선수(이기혁·야잔) 선발 여부 및 체력 상태 미확인", "최근 5경기 세부 결과 순서는 근사치"], "expectedScores": ["2-1", "1-1"]}, {"no": "M13", "league": "K리그2", "date": "07-12", "time": "19:30", "home": "충남아산", "away": "경남FC", "venue": "이순종합", "status": "scheduled", "pubW": 59, "pubD": 29, "pubL": 12, "market": null, "reportHref": "m13.html", "analyzed": true, "w": 53, "d": 29, "l": 18, "pick": "승", "sub": "무", "conf": "하", "keyFactors": ["충남아산 홈 이점", "경남 원정+3일 간격 연전(7/15,7/19)에 따른 로테이션 가능성", "대중 투표 홈승 59% 쏠림(해외 시장 교차검증 부재)"], "dataGaps": ["양 팀 최근 5경기 폼", "현재 리그 순위·승점", "결장자(부상·징계) 정보", "구체적 역대 상대전적", "경남 실제 로테이션 여부", "market_odds 미커버(해외 시장 기준선 없음)"], "expectedScores": ["1-1", "2-1"]}, {"no": "M14", "league": "K리그2", "date": "07-12", "time": "19:30", "home": "부산아이", "away": "김포FC", "venue": "구덕운동", "status": "scheduled", "pubW": 69, "pubD": 22, "pubL": 9, "market": null, "reportHref": "m14.html", "analyzed": true, "w": 60, "d": 27, "l": 13, "pick": "승", "sub": "무", "conf": "중", "keyFactors": ["부산 리그 선두(무패, 15R 승점 32)+홈 이점으로 방향성은 부산 승 우세", "김포의 무승부 성향 축구와 부산의 최근 접전 마무리 경향으로 무승부 리스크 상존", "해외 배당 미커버(market_odds=null)라 투표 분포만으로 판단, 대중 승 쏠림(69%)은 보수적으로 하향"], "dataGaps": ["양 팀 결장자(부상·징계) 정보 전무", "7/5 직전 경기 결과 및 7월 최신 순위·승점 미확인", "부산-김포 상대전적 구체 수치 미확인", "해외 북메이커 배당(market_odds) 부재", "정확한 라운드 회차 소스 간 불일치"], "expectedScores": ["2-1", "1-1"]}];
+const OC = {'승':C.win,'무':C.draw,'패':C.lose};
+function confColor(c){return c==='하'?C.muted:c==='중'?C.draw:C.win;}
+function confDesc(c){return c==='하'?'변수 큰 접전':c==='중'?'무게 실림':'안정적';}
+function dayLabel(d){const [mm,dd]=d.split('-').map(Number);
+  const wd=['일','월','화','수','목','금','토'][new Date(2026,mm-1,dd).getDay()];
+  return mm+'월 '+dd+'일 ('+wd+')';}
+function esc(s){return (s==null?'':String(s)).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));}
+
+let sel = 0, detailOpen = false;
+const isMobile = () => window.innerWidth < 860;
+
+function bar(w,d,l,h){return `<div style="display:flex;height:${h}px;border-radius:${h>10?6:3}px;overflow:hidden;background:rgba(255,255,255,0.05);">
+  <div style="width:${w}%;background:${C.win}"></div><div style="width:${d}%;background:${C.draw}"></div><div style="width:${l}%;background:${C.lose}"></div></div>`;}
+
+function renderList(){
+  const el=document.getElementById('list'); let html=''; let prevDate=null;
+  DATA.forEach((m,i)=>{
+    if(m.date!==prevDate){html+=`<div style="padding:14px 18px 8px;font-size:12px;font-weight:600;color:#8A93A3;position:sticky;top:0;background:${C.bg};z-index:2;">${dayLabel(m.date)}</div>`;prevDate=m.date;}
+    const active=i===sel;
+    const pickColor=m.pick?OC[m.pick]:C.faint;
+    const topPct=m.pick?(m.pick==='승'?m.w:m.pick==='무'?m.d:m.l):Math.max(m.pubW,m.pubD,m.pubL);
+    const pickBadge=m.pick?`<span style="font-size:11px;font-weight:700;color:${C.bg};background:${pickColor};padding:2px 8px;border-radius:6px;">픽 ${m.pick}</span>`
+      :`<span style="font-size:10px;font-weight:600;color:${C.muted};border:1px solid ${C.border};padding:2px 7px;border-radius:6px;">대기</span>`;
+    html+=`<div onclick="selectMatch(${i})" style="display:flex;align-items:center;gap:11px;padding:13px 16px 13px 15px;cursor:pointer;border-left:3px solid ${active?C.accent:'transparent'};background:${active?'rgba(199,249,78,0.06)':'transparent'};border-bottom:1px solid rgba(255,255,255,0.04);">
+      <span class="mono" style="font-size:11px;font-weight:600;color:${C.faint};width:26px;flex-shrink:0;">${m.no}</span>
+      <div style="min-width:0;flex:1;">
+        <div style="display:flex;align-items:center;gap:7px;font-size:14px;font-weight:600;">
+          <span style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:86px;">${esc(m.home)}</span>
+          <span style="font-size:11px;color:${C.faint};">vs</span>
+          <span style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:86px;">${esc(m.away)}</span>
+        </div>
+        <div style="margin-top:8px;width:118px;">${bar(m.w,m.d,m.l,4)}</div>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:flex-end;gap:5px;flex-shrink:0;">
+        ${pickBadge}<span class="num" style="font-size:12px;font-weight:600;color:${pickColor};">${topPct}%</span>
+      </div>
+    </div>`;
+  });
+  el.innerHTML=html;
+}
+
+function card(inner,extra){return `<div style="background:${C.surface};border:1px solid ${C.borderSoft};border-radius:14px;padding:20px 22px;margin-top:14px;${extra||''}">${inner}</div>`;}
+function label(t){return `<div class="mono" style="font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:${C.muted};font-weight:600;margin-bottom:15px;">${t}</div>`;}
+function miniCard(t,inner){return `<div style="flex:1;background:${C.surface};border:1px solid ${C.borderSoft};border-radius:14px;padding:17px 18px;">
+  <div class="mono" style="font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:${C.muted};font-weight:600;margin-bottom:11px;">${t}</div>${inner}</div>`;}
+function oddCell(lbl,odd,pct,c){return `<div style="flex:1;text-align:center;padding:10px 4px;background:rgba(255,255,255,0.03);border-radius:10px;">
+  <div style="font-size:11px;color:${c};font-weight:600;margin-bottom:4px;">${lbl}</div>
+  <div class="num" style="font-size:18px;font-weight:700;color:${C.text};">${odd?odd.toFixed(2):'-'}</div>
+  <div class="num" style="font-size:11px;color:${C.muted};margin-top:2px;">${pct}%</div></div>`;}
+function disclaimer(){return `<div style="margin-top:22px;font-size:11px;color:#4A5261;line-height:1.6;">${C.disclaimer}</div>`;}
+
+function renderDetail(){
+  const m=DATA[sel]; const el=document.getElementById('detail');
+  const pickColor=m.pick?OC[m.pick]:C.faint;
+  let html='';
+  if(isMobile()) html+=`<div onclick="goBack()" style="display:inline-flex;gap:6px;font-size:13px;color:#8A93A3;cursor:pointer;margin-bottom:16px;font-weight:500;">← 리스트로</div>`;
+  html+=`<div style="display:flex;align-items:center;gap:9px;flex-wrap:wrap;font-size:12px;color:#8A93A3;">
+    <span class="mono" style="font-weight:600;color:${C.accent};background:rgba(199,249,78,0.10);padding:3px 9px;border-radius:6px;">${m.no}</span>
+    <span style="padding:3px 9px;border-radius:6px;background:rgba(255,255,255,0.06);color:${C.dim};">${esc(m.league)}</span>
+    <span>${m.date} ${m.time}</span>${m.venue?`<span style="color:${C.faint};">·</span><span>${esc(m.venue)}</span>`:''}</div>`;
+  html+=`<div style="display:flex;align-items:center;gap:16px;margin:24px 0 6px;">
+    <div style="flex:1;text-align:right;min-width:0;"><div class="mono" style="font-size:11px;letter-spacing:0.14em;color:${C.faint};margin-bottom:5px;font-weight:600;">HOME</div>
+      <div style="font-size:27px;font-weight:700;letter-spacing:-0.025em;line-height:1.1;">${esc(m.home)}</div></div>
+    <div class="mono" style="font-size:15px;font-weight:600;color:#4A5261;flex-shrink:0;">VS</div>
+    <div style="flex:1;min-width:0;"><div class="mono" style="font-size:11px;letter-spacing:0.14em;color:${C.faint};margin-bottom:5px;font-weight:600;">AWAY</div>
+      <div style="font-size:27px;font-weight:700;letter-spacing:-0.025em;line-height:1.1;">${esc(m.away)}</div></div></div>`;
+
+  if(!m.analyzed){
+    html+=card(label('대중 투표 분포')+bar(m.pubW,m.pubD,m.pubL,12)+
+      `<div style="margin-top:12px;font-size:13px;color:${C.dim};">아직 AI 분석이 생성되지 않았습니다. 마감 12시간 전에 자동 생성됩니다. 위 막대는 배트맨 이용자 투표(승 ${m.pubW}% / 무 ${m.pubD}% / 패 ${m.pubL}%)입니다.</div>`);
+    html+=disclaimer(); el.innerHTML=html; return;
+  }
+
+  const bigCell=(c,lbl,v)=>`<div style="flex:1;text-align:center;padding:14px 4px;background:${c}12;border:1px solid ${c}2e;border-radius:11px;">
+    <div style="font-size:12px;color:${c};font-weight:600;margin-bottom:5px;">${lbl}</div>
+    <div class="num" style="font-size:29px;font-weight:700;color:${c};letter-spacing:-0.02em;">${v}%</div></div>`;
+  html+=card(label('AI 예측 확률')+bar(m.w,m.d,m.l,12)+
+    `<div style="display:flex;gap:10px;margin-top:16px;">${bigCell(C.win,'승 · 홈',m.w)}${bigCell(C.draw,'무',m.d)}${bigCell(C.lose,'패 · 원정',m.l)}</div>`);
+  html+=`<div style="display:flex;gap:10px;margin-top:14px;">
+    ${miniCard('AI 픽',`<div style="display:inline-flex;align-items:center;justify-content:center;font-size:20px;font-weight:700;color:${C.bg};background:${pickColor};min-width:44px;height:38px;padding:0 12px;border-radius:9px;">${m.pick}</div>`)}
+    ${miniCard('보조 픽',`<div style="display:inline-flex;align-items:center;justify-content:center;font-size:20px;font-weight:700;color:${C.text};background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);min-width:44px;height:38px;padding:0 12px;border-radius:9px;">${m.sub}</div>`)}
+    ${miniCard('신뢰도',`<div style="display:inline-flex;align-items:center;gap:8px;"><span style="font-size:22px;font-weight:700;color:${confColor(m.conf)};">${m.conf}</span><span style="font-size:12px;color:${C.muted};">${confDesc(m.conf)}</span></div>`)}</div>`;
+  const pubMax=Math.max(m.pubW,m.pubD,m.pubL);
+  const pubPick=m.pubW===pubMax?'승':m.pubD===pubMax?'무':'패';
+  const pubCell=(w,c,lbl)=>`<div style="width:${w}%;background:${c}d9;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:${C.bg};">${w>=12?lbl:''}</div>`;
+  let cmp=label('대중 투표 vs AI')+
+    `<div style="display:flex;align-items:center;gap:12px;margin-bottom:11px;"><span style="width:44px;font-size:12px;color:#8A93A3;flex-shrink:0;">대중</span>
+      <div style="flex:1;display:flex;height:26px;border-radius:7px;overflow:hidden;background:rgba(255,255,255,0.05);">${pubCell(m.pubW,C.win,'승 '+m.pubW+'%')}${pubCell(m.pubD,C.draw,'무 '+m.pubD+'%')}${pubCell(m.pubL,C.lose,'패 '+m.pubL+'%')}</div></div>
+    <div style="display:flex;align-items:center;gap:12px;"><span style="width:44px;font-size:12px;color:#8A93A3;flex-shrink:0;">AI</span><div style="flex:1;">${bar(m.w,m.d,m.l,8)}</div></div>`;
+  if(pubPick!==m.pick) cmp+=`<div style="display:flex;gap:9px;margin-top:15px;padding:11px 13px;background:rgba(255,93,108,0.08);border:1px solid rgba(255,93,108,0.2);border-radius:10px;"><span style="color:${C.lose};font-weight:700;">!</span><span style="font-size:13px;color:#D6A9AE;line-height:1.5;">대중은 '${pubPick}'(${pubMax}%)에 몰렸지만 AI 픽은 '${m.pick}'입니다. 여론과 엇갈리는 경기이니 신중히 판단하세요.</span></div>`;
+  html+=card(cmp);
+  if(m.market){
+    const mk=m.market;
+    html+=card(label('해외 시장 배당 (북메이커 '+mk.books+'곳 중앙값)')+bar(mk.w,mk.d,mk.l,8)+
+      `<div style="display:flex;gap:10px;margin-top:14px;">${oddCell('승',mk.ow,mk.w,C.win)}${oddCell('무',mk.od,mk.d,C.draw)}${oddCell('패',mk.ol,mk.l,C.lose)}</div>`);
+  } else {
+    html+=card(label('해외 시장 배당')+`<div style="font-size:13px;color:${C.dim};">이 리그(K리그2 등)는 해외 배당 미커버로, 예측은 대중 투표 분포를 기준선으로 삼았습니다.</div>`);
+  }
+  if(m.keyFactors.length){
+    html+=card(label('핵심 근거')+`<ul style="margin:0;padding-left:18px;font-size:14px;line-height:1.7;color:${C.dim};">`+
+      m.keyFactors.map(f=>`<li style="margin-bottom:6px;">${esc(f)}</li>`).join('')+'</ul>');
+  }
+  if(m.expectedScores.length){
+    html+=card(label('예상 스코어')+'<div style="display:flex;gap:8px;">'+
+      m.expectedScores.map(s=>`<span class="num" style="font-size:16px;font-weight:600;color:${C.text};background:rgba(255,255,255,0.05);padding:6px 14px;border-radius:8px;">${esc(s)}</span>`).join('')+'</div>');
+  }
+  if(m.dataGaps.length){
+    html+=card(label('데이터 결측')+`<ul style="margin:0;padding-left:18px;font-size:12px;line-height:1.6;color:${C.muted};">`+
+      m.dataGaps.map(g=>`<li style="margin-bottom:4px;">${esc(g)}</li>`).join('')+'</ul>');
+  }
+  if(m.reportHref){
+    html+=`<div style="margin-top:18px;"><a href="${m.reportHref}" style="display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:600;color:${C.accent};background:rgba(199,249,78,0.10);border:1px solid rgba(199,249,78,0.22);padding:10px 16px;border-radius:10px;">전체 분석 리포트 보기 →</a></div>`;
+  }
+  html+=disclaimer(); el.innerHTML=html;
+}
+
+function selectMatch(i){sel=i;detailOpen=true;render();const mn=document.querySelector('main');if(mn)mn.scrollTop=0;}
+function goBack(){detailOpen=false;render();}
+function render(){
+  const mob=isMobile();
+  document.getElementById('aside').style.display=(mob&&detailOpen)?'none':'flex';
+  document.querySelector('main').style.display=(mob&&!detailOpen)?'none':'flex';
+  document.getElementById('aside').style.width=mob?'100%':'400px';
+  renderList();renderDetail();
+}
+window.addEventListener('resize',render);
+render();
+</script></body></html>
