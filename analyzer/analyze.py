@@ -27,6 +27,12 @@ CLAUDE_TIMEOUT_SEC = 900
 DISCLAIMER = "\n\n---\n*본 분석은 통계적 참고 자료이며 구매 결과를 보장하지 않습니다.*\n"
 
 JSON_BLOCK = re.compile(r"```json\s*(\{.*?\})\s*```", re.DOTALL)
+# 로컬 Claude CLI에 설치된 훅/플러그인이 붙이는 상용구(bkit 푸터 등) 제거
+BOILERPLATE = re.compile(r"─{10,}\s*\n📊[^\n]*\n.*?─{10,}\s*", re.DOTALL)
+
+
+def clean_report(report: str) -> str:
+    return BOILERPLATE.sub("", report).strip()
 
 
 def call_claude(prompt: str, allow_web: bool = True) -> str:
@@ -81,7 +87,7 @@ def analyze_match(pkg: dict, out_dir: Path) -> dict | None:
             prompt + "\n\n중요: 반드시 응답 맨 끝에 지정된 ```json 코드블록을 출력하라.")
         summary = extract_summary(report)
 
-    (out_dir / f"{name}.md").write_text(report + DISCLAIMER, encoding="utf-8")
+    (out_dir / f"{name}.md").write_text(clean_report(report) + DISCLAIMER, encoding="utf-8")
     if summary is None:
         log.error("%s 구조화 요약 실패 — 종합 리포트에서 제외됨", name)
     return summary
@@ -130,7 +136,7 @@ def analyze_round(key: str, only_match: int | None = None,
     log.info("회차 종합 리포트 생성")
     round_report = call_claude(
         build_round_prompt(key, list(summaries.values()), meta), allow_web=False)
-    (out_dir / "round.md").write_text(round_report + DISCLAIMER, encoding="utf-8")
+    (out_dir / "round.md").write_text(clean_report(round_report) + DISCLAIMER, encoding="utf-8")
 
 
 def main():
