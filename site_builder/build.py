@@ -157,9 +157,11 @@ def match_card(m: Match, key: str, summary: dict | None) -> str:
 
 def render_markdown(md_text: str) -> str:
     text = JSON_BLOCK.sub("", md_text)  # 기계용 JSON 블록은 페이지에서 숨김
-    # 리포트 파일 말미의 고지문은 페이지 푸터가 대신하므로 본문에서 제거 (중복 방지)
+    # 리포트 말미의 고지문(푸터가 대신)과 중첩 CLI 상용구를 본문에서 제거
+    drop = ("본 분석은 통계적 참고 자료", "📊 bkit", "✅ Used", "✅ 사용", "⏭️", "⏭ ",
+            "💡 Recommended", "💡 추천")
     text = "\n".join(ln for ln in text.splitlines()
-                     if "본 분석은 통계적 참고 자료" not in ln)
+                     if not any(d in ln for d in drop) and set(ln.strip()) != {"─"})
     text = re.sub(r"(\n---\s*)+$", "", text.rstrip())
     html = markdown(text, extensions=["tables", "fenced_code"])
     return html.replace("<table>", '<div class="tablewrap"><table>') \

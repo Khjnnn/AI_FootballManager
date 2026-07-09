@@ -1,0 +1,304 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>승무패 38회차 종합 리포트</title><style>
+:root {
+  --bg:#FAF9F5; --surface:#F0EEE6; --surface-raised:#FFFFFF; --border:#E3DFD3;
+  --text:#1F1E1D; --text-muted:#6E6C64; --accent:#D97757; --accent-soft:#F5E5DE;
+  --kraft:#D4A27F; --olive:#6A6B5F; --positive:#5E7B5E; --negative:#B0554B;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  background:var(--bg); color:var(--text);
+  font-family:Pretendard,-apple-system,"Malgun Gothic",sans-serif;
+  font-size:15px; line-height:1.7;
+}
+.wrap { max-width:960px; margin:0 auto; padding:48px 16px; }
+.serif { font-family:"Noto Serif KR",Georgia,serif; font-weight:600; letter-spacing:-0.01em; }
+.hero h1 { font-size:32px; }
+.hero .meta { color:var(--text-muted); font-size:13px; margin-top:8px; }
+.hero .meta a { color:inherit; }
+.cards { display:grid; grid-template-columns:repeat(auto-fill,minmax(420px,1fr)); gap:16px; margin-top:32px; }
+@media (max-width:900px){ .cards{ grid-template-columns:1fr; } }
+.card {
+  background:var(--surface); border:1px solid var(--border); border-radius:16px;
+  padding:16px 20px; box-shadow:0 1px 3px rgba(31,30,29,0.06);
+  transition:background 120ms ease; display:block; color:inherit; text-decoration:none;
+}
+a.card:hover { background:var(--surface-raised); }
+.card .top { display:flex; justify-content:space-between; font-size:12px; color:var(--text-muted); }
+.card .teams { font-size:19px; margin:8px 0 12px; }
+.card .teams .vs { color:var(--text-muted); font-size:14px; margin:0 6px; }
+.num { font-variant-numeric:tabular-nums; }
+.bar { display:flex; height:22px; border-radius:6px; overflow:hidden; }
+.bar span { display:flex; align-items:center; justify-content:center;
+  color:#fff; font-size:11px; font-weight:600; min-width:0; }
+.bar .w { background:var(--accent); } .bar .d { background:var(--kraft); } .bar .l { background:var(--olive); }
+.legend { display:flex; gap:16px; font-size:12px; color:var(--text-muted); margin-top:24px; }
+.legend i { display:inline-block; width:10px; height:10px; border-radius:3px; margin-right:5px; }
+.pill { display:inline-block; border:1px solid var(--border); border-radius:999px;
+  padding:2px 12px; font-size:12px; color:var(--text-muted); background:transparent; }
+.pill.accent { background:var(--accent-soft); color:var(--accent); border-color:transparent; font-weight:600; }
+.pill.conf-high { background:var(--text); color:var(--bg); border-color:var(--text); }
+.pill.conf-mid { border:1px solid var(--text-muted); color:var(--text); }
+.pill.conf-low { border:1px dashed var(--text-muted); color:var(--text-muted); }
+.badges { display:flex; gap:8px; align-items:center; margin-top:12px; flex-wrap:wrap; }
+.sub { font-size:12px; color:var(--text-muted); margin-top:10px; }
+.notice { background:var(--surface); border:1px solid var(--border); border-radius:16px;
+  padding:16px 20px; margin-top:32px; color:var(--text-muted); font-size:13px; }
+footer { margin-top:48px; padding-top:16px; border-top:1px solid var(--border);
+  font-size:12px; color:var(--text-muted); }
+.roundlist { margin-top:32px; display:flex; flex-direction:column; gap:12px; }
+article { margin-top:32px; }
+article h1 { font-family:"Noto Serif KR",Georgia,serif; font-size:26px; margin:24px 0 12px; }
+article h2 { font-family:"Noto Serif KR",Georgia,serif; font-size:20px; margin:28px 0 8px; }
+article h3 { font-size:16px; margin:20px 0 8px; }
+article p, article li { margin-bottom:8px; }
+article ul, article ol { padding-left:22px; }
+article hr { border:none; border-top:1px solid var(--border); margin:24px 0; }
+article em { color:var(--text-muted); }
+article a { color:var(--accent); }
+.tablewrap { overflow-x:auto; }
+article table { border-collapse:collapse; width:100%; font-size:13px; margin:12px 0; }
+article th, article td { border-bottom:1px solid var(--border); padding:10px 12px; text-align:left; }
+article td { font-variant-numeric:tabular-nums; }
+@media (prefers-reduced-motion:reduce){ *{ transition:none!important; } }
+</style></head><body><div class="wrap"><div class="hero">
+<h1 class="serif">승무패 38회차 · 종합 리포트</h1>
+<div class="meta num">발매 마감 2026-07-11 19:30 ·
+<a href="index.html">경기 카드 보기</a></div></div>
+<article><p>주어진 JSON 값을 그대로 사용해 2026-38 회차 종합 리포트를 작성했습니다. (모든 경기 status가 <code>scheduled</code>이므로 적특 예상 경기는 없습니다.)</p>
+<hr />
+<h1>⚽ 2026-38 회차 종합 분석 리포트</h1>
+<h2>1. 회차 요약</h2>
+<div class="tablewrap"><table>
+<thead>
+<tr>
+<th style="text-align: center;">경기</th>
+<th style="text-align: left;">대진 (홈 vs 원정)</th>
+<th style="text-align: center;">리그</th>
+<th style="text-align: center;">최종 픽</th>
+<th style="text-align: center;">승/무/패 확률</th>
+<th style="text-align: center;">신뢰도</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">M01</td>
+<td style="text-align: left;">울산HDFC vs 전북현대</td>
+<td style="text-align: center;">K리그1</td>
+<td style="text-align: center;"><strong>승</strong> (백업 무)</td>
+<td style="text-align: center;">0.37 / 0.29 / 0.34</td>
+<td style="text-align: center;">하</td>
+</tr>
+<tr>
+<td style="text-align: center;">M02</td>
+<td style="text-align: left;">김천상무 vs 부천FC</td>
+<td style="text-align: center;">K리그1</td>
+<td style="text-align: center;"><strong>승</strong> (백업 무)</td>
+<td style="text-align: center;">0.40 / 0.33 / 0.27</td>
+<td style="text-align: center;">하</td>
+</tr>
+<tr>
+<td style="text-align: center;">M03</td>
+<td style="text-align: left;">광주FC vs 포항스틸</td>
+<td style="text-align: center;">K리그1</td>
+<td style="text-align: center;"><strong>패</strong> (백업 무)</td>
+<td style="text-align: center;">0.16 / 0.27 / 0.57</td>
+<td style="text-align: center;">중</td>
+</tr>
+<tr>
+<td style="text-align: center;">M04</td>
+<td style="text-align: left;">안산그리 vs 수원삼성</td>
+<td style="text-align: center;">K리그2</td>
+<td style="text-align: center;"><strong>패</strong> (백업 무)</td>
+<td style="text-align: center;">0.11 / 0.22 / 0.67</td>
+<td style="text-align: center;">중</td>
+</tr>
+<tr>
+<td style="text-align: center;">M05</td>
+<td style="text-align: left;">대구FC vs 성남FC</td>
+<td style="text-align: center;">K리그2</td>
+<td style="text-align: center;"><strong>승</strong> (백업 무)</td>
+<td style="text-align: center;">0.56 / 0.26 / 0.18</td>
+<td style="text-align: center;">중</td>
+</tr>
+<tr>
+<td style="text-align: center;">M06</td>
+<td style="text-align: left;">화성FC vs 파주프런</td>
+<td style="text-align: center;">K리그2</td>
+<td style="text-align: center;"><strong>승</strong> (백업 무)</td>
+<td style="text-align: center;">0.58 / 0.26 / 0.16</td>
+<td style="text-align: center;">중</td>
+</tr>
+<tr>
+<td style="text-align: center;">M07</td>
+<td style="text-align: left;">용인FC vs 충북청주</td>
+<td style="text-align: center;">K리그2</td>
+<td style="text-align: center;"><strong>무</strong> (백업 승)</td>
+<td style="text-align: center;">0.36 / 0.43 / 0.21</td>
+<td style="text-align: center;">중</td>
+</tr>
+<tr>
+<td style="text-align: center;">M08</td>
+<td style="text-align: left;">프레드릭 vs 릴레스트</td>
+<td style="text-align: center;">노르웨이</td>
+<td style="text-align: center;"><strong>패</strong> (백업 무)</td>
+<td style="text-align: center;">0.34 / 0.30 / 0.36</td>
+<td style="text-align: center;">하</td>
+</tr>
+<tr>
+<td style="text-align: center;">M09</td>
+<td style="text-align: left;">트롬쇠IL vs 볼레렝아</td>
+<td style="text-align: center;">노르웨이</td>
+<td style="text-align: center;"><strong>승</strong> (백업 무)</td>
+<td style="text-align: center;">0.57 / 0.24 / 0.19</td>
+<td style="text-align: center;">중</td>
+</tr>
+<tr>
+<td style="text-align: center;">M10</td>
+<td style="text-align: left;">제주SKFC vs 대전하나</td>
+<td style="text-align: center;">K리그1</td>
+<td style="text-align: center;"><strong>승</strong> (백업 무)</td>
+<td style="text-align: center;">0.37 / 0.31 / 0.32</td>
+<td style="text-align: center;">하</td>
+</tr>
+<tr>
+<td style="text-align: center;">M11</td>
+<td style="text-align: left;">인천유나 vs FC안양</td>
+<td style="text-align: center;">K리그1</td>
+<td style="text-align: center;"><strong>승</strong> (백업 무)</td>
+<td style="text-align: center;">0.47 / 0.30 / 0.23</td>
+<td style="text-align: center;">중</td>
+</tr>
+<tr>
+<td style="text-align: center;">M12</td>
+<td style="text-align: left;">FC서울 vs 강원FC</td>
+<td style="text-align: center;">K리그1</td>
+<td style="text-align: center;"><strong>승</strong> (백업 무)</td>
+<td style="text-align: center;">0.42 / 0.30 / 0.28</td>
+<td style="text-align: center;">중</td>
+</tr>
+<tr>
+<td style="text-align: center;">M13</td>
+<td style="text-align: left;">충남아산 vs 경남FC</td>
+<td style="text-align: center;">K리그2</td>
+<td style="text-align: center;"><strong>승</strong> (백업 무)</td>
+<td style="text-align: center;">0.53 / 0.29 / 0.18</td>
+<td style="text-align: center;">하</td>
+</tr>
+<tr>
+<td style="text-align: center;">M14</td>
+<td style="text-align: left;">부산아이 vs 김포FC</td>
+<td style="text-align: center;">K리그2</td>
+<td style="text-align: center;"><strong>승</strong> (백업 무)</td>
+<td style="text-align: center;">0.60 / 0.27 / 0.13</td>
+<td style="text-align: center;">중</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote>
+<p>참고: 이번 회차 신뢰도는 <strong>'중'이 최고 등급</strong>이며 '상'은 없습니다. 픽 분포는 승 9 / 무 1 / 패 4.</p>
+</blockquote>
+<hr />
+<h2>2. 신뢰도 상위 3경기</h2>
+<p>전 경기 신뢰도가 '중' 이하이므로, '중' 등급 중 <strong>픽 확률의 우위 폭이 가장 큰 3경기</strong>를 선정했습니다.</p>
+<h3>🥇 M04 안산그리 vs 수원삼성 → <strong>패</strong> (0.67)</h3>
+<ul>
+<li>수원삼성 2위(승점 32) vs 안산 15위(승점 11)의 극단적 순위 격차.</li>
+<li>안산 4월 이후 리그 무승·장기 연패, 리그 최다급 25실점의 수비 붕괴.</li>
+<li>역대 전적 수원 5승 1무 우위, 수원의 승격 경쟁 동기부여 확실.</li>
+</ul>
+<h3>🥈 M14 부산아이 vs 김포FC → <strong>승</strong> (0.60)</h3>
+<ul>
+<li>부산 리그 선두(무패, 15R 승점 32) + 홈 이점으로 방향성 명확.</li>
+<li>다만 김포의 무승부 성향과 부산의 최근 접전 마무리 경향으로 무승부 리스크 상존 → 예상 스코어 2-1, 1-1.</li>
+</ul>
+<h3>🥉 M06 화성FC vs 파주프런 → <strong>승</strong> (0.58)</h3>
+<ul>
+<li>화성 8경기 무패(6승2무)·4위, 홈 3연승의 상승세.</li>
+<li>파주는 최근 5경기 무승(2무3패)의 신생팀 원정.</li>
+<li>단, 월드컵 휴식기 직후 재개 경기라 폼 연속성은 불확실.</li>
+</ul>
+<p><em>(그 다음 그룹: M09 트롬쇠 승 0.57, M03 광주전 패 0.57, M05 대구 승 0.56)</em></p>
+<hr />
+<h2>3. 이변 후보</h2>
+<p>시장/투표가 기대하는 방향과 실제 결과가 어긋날 수 있는 경기입니다.</p>
+<ul>
+<li>
+<p><strong>M12 FC서울 vs 강원FC</strong> — 픽은 서울 승(0.42)이나 <strong>강원이 3연승·6경기 무패의 절정 폼</strong>으로 2위 급상승. 대중 투표는 서울 52%로 과신하나 시장은 삼분 접전(38/31/30)으로 평가. 강원의 원정 업셋 또는 무승부 가능성이 실질적으로 열려 있음.</p>
+</li>
+<li>
+<p><strong>M09 트롬쇠IL vs 볼레렝아</strong> — 픽은 트롬쇠 승(0.57)이지만, <strong>시장(53%)이 대중(77.6%)보다 훨씬 보수적</strong>. 볼레렝아 원정 성적이 '평균'(1승1무2패)이라 대중의 과열만큼 안전하지 않은 경기. 무·원정 이탈 리스크 존재.</p>
+</li>
+<li>
+<p><strong>M08 프레드릭 vs 릴레스트</strong> — 픽은 원정(릴레스트룀) 패(0.36)이나, <strong>프레드릭스타드 홈 PPG 2.00의 극단적 홈 강세 + H2H 최근 7경기 3승3무1패 우위</strong>. 릴레스트룀 주요 결장(가르나스·키톨라노)까지 겹쳐 홈 업셋 가능성 높음. 승/무/패가 0.34/0.30/0.36로 사실상 삼분.</p>
+</li>
+<li>
+<p><strong>M01 울산HDFC vs 전북현대</strong> — 승 0.37 / 패 0.34의 초접전. 픽 신뢰도 '하'로, 어느 방향이든 뒤집힐 수 있는 대표적 불안정 경기.</p>
+</li>
+</ul>
+<hr />
+<h2>4. 투표–시장 괴리 상위</h2>
+<blockquote>
+<p>⚠️ 해외 배당 미커버(<code>market_implied = null</code>) 경기는 <strong>제외</strong>했습니다: M04, M05, M06, M07, M13, M14 (총 6경기). 이 경기들은 투표 분포만으로 기준선을 설정했습니다.</p>
+</blockquote>
+<p>배당 커버 경기 중 대중 투표와 시장 내재확률의 격차가 큰 순:</p>
+<div class="tablewrap"><table>
+<thead>
+<tr>
+<th style="text-align: center;">순위</th>
+<th style="text-align: left;">경기</th>
+<th style="text-align: center;">항목</th>
+<th style="text-align: center;">대중 투표</th>
+<th style="text-align: center;">시장 확률</th>
+<th style="text-align: center;">괴리</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;"><strong>M09</strong> 트롬쇠 vs 볼레렝아</td>
+<td style="text-align: center;">승</td>
+<td style="text-align: center;">77.6%</td>
+<td style="text-align: center;">53.2%</td>
+<td style="text-align: center;"><strong>+24.4%p</strong> (대중 과열)</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td style="text-align: left;"><strong>M12</strong> FC서울 vs 강원</td>
+<td style="text-align: center;">승</td>
+<td style="text-align: center;">52.1%</td>
+<td style="text-align: center;">38.4%</td>
+<td style="text-align: center;"><strong>+13.7%p</strong> (서울 과신)</td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td style="text-align: left;"><strong>M03</strong> 광주 vs 포항</td>
+<td style="text-align: center;">패</td>
+<td style="text-align: center;">71.4%</td>
+<td style="text-align: center;">59.1%</td>
+<td style="text-align: center;"><strong>+12.4%p</strong> (원정승 쏠림 과도)</td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td style="text-align: left;"><strong>M10</strong> 제주 vs 대전</td>
+<td style="text-align: center;">패</td>
+<td style="text-align: center;">25.8%</td>
+<td style="text-align: center;">37.0%</td>
+<td style="text-align: center;"><strong>−11.2%p</strong> (대중이 대전 저평가)</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li><strong>M08은 투표와 시장이 거의 일치</strong>(승 34.3%/33.3% 등)해 패리뮤추얼 왜곡에 따른 가치가 없음.</li>
+<li>공통 패턴: 대중은 <strong>강팀 쪽으로 과하게 쏠리는 경향</strong>(M09·M12·M03)이 뚜렷하며, 시장은 이를 일관되게 완화. M10은 반대로 대중이 무승부/홈에 쏠려 원정 대전의 실제 가치를 저평가.</li>
+</ul>
+<hr />
+<h2>5. 종합 코멘트</h2>
+<p><strong>난이도: 상 (어려운 회차)</strong></p>
+<ul>
+<li><strong>신뢰도 상단이 얇습니다.</strong> '상' 등급이 없고 최고가 '중'이며, '하'가 4경기(M01·M02·M10·M13). 안정적으로 밀 수 있는 경기가 M04·M14·M06 정도로 제한적입니다.</li>
+<li><strong>데이터 공백이 광범위합니다.</strong> K리그2 전 경기(M04~07, M13, M14)와 일부 K리그1은 해외 배당이 없어 대중 투표만으로 기준선을 잡았고, 결장자·최신 순위·상대전적 미확인이 반복적으로 지적됩니다. 특히 <strong>M13(충남아산)은 근거 대부분이 미확인</strong>이라 신뢰도 '하'가 부여됐습니다.</li>
+<li><strong>무승부 변수가 회차 전반의 핵심 리스크</strong>입니다. 김천(M02)·충북청주/용인(M07)·안양(M11)·김포(M14) 등 무승부 성향 팀이 다수 포진해, 승 픽 다수(9경기)의 실질 위험은 '무'로 새는 것입니다. 전 경기 백업 픽이 '무'인 이유이기도 합니다.</li>
+<li><strong>월드컵 휴식기 직후 재개</strong>(M06·M12 등)로 폼 연속성이 끊긴 점, 로테이션·복귀 선수 체력(M12 이기혁·야잔, M13 경남 연전) 변수도 감안이 필요합니다.</li>
+</ul>
+<p><strong>운영 제언:</strong> 상위 신뢰(M04·M14·M06)를 축으로 삼되, 괴리 상위(M09·M12·M03)와 초접전(M01·M08)은 무승부를 적극 조합하는 보수적 접근을 권장합니다. K리그2 미커버 경기는 배당 검증이 불가능하므로 비중을 낮추는 것이 안전합니다.</p></article>
+<footer>본 분석은 통계적 참고 자료이며 구매 결과를 보장하지 않습니다.</footer></div></body></html>

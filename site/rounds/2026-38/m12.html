@@ -1,0 +1,107 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>FC서울 vs 강원FC · AI 분석</title><style>
+:root {
+  --bg:#FAF9F5; --surface:#F0EEE6; --surface-raised:#FFFFFF; --border:#E3DFD3;
+  --text:#1F1E1D; --text-muted:#6E6C64; --accent:#D97757; --accent-soft:#F5E5DE;
+  --kraft:#D4A27F; --olive:#6A6B5F; --positive:#5E7B5E; --negative:#B0554B;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  background:var(--bg); color:var(--text);
+  font-family:Pretendard,-apple-system,"Malgun Gothic",sans-serif;
+  font-size:15px; line-height:1.7;
+}
+.wrap { max-width:960px; margin:0 auto; padding:48px 16px; }
+.serif { font-family:"Noto Serif KR",Georgia,serif; font-weight:600; letter-spacing:-0.01em; }
+.hero h1 { font-size:32px; }
+.hero .meta { color:var(--text-muted); font-size:13px; margin-top:8px; }
+.hero .meta a { color:inherit; }
+.cards { display:grid; grid-template-columns:repeat(auto-fill,minmax(420px,1fr)); gap:16px; margin-top:32px; }
+@media (max-width:900px){ .cards{ grid-template-columns:1fr; } }
+.card {
+  background:var(--surface); border:1px solid var(--border); border-radius:16px;
+  padding:16px 20px; box-shadow:0 1px 3px rgba(31,30,29,0.06);
+  transition:background 120ms ease; display:block; color:inherit; text-decoration:none;
+}
+a.card:hover { background:var(--surface-raised); }
+.card .top { display:flex; justify-content:space-between; font-size:12px; color:var(--text-muted); }
+.card .teams { font-size:19px; margin:8px 0 12px; }
+.card .teams .vs { color:var(--text-muted); font-size:14px; margin:0 6px; }
+.num { font-variant-numeric:tabular-nums; }
+.bar { display:flex; height:22px; border-radius:6px; overflow:hidden; }
+.bar span { display:flex; align-items:center; justify-content:center;
+  color:#fff; font-size:11px; font-weight:600; min-width:0; }
+.bar .w { background:var(--accent); } .bar .d { background:var(--kraft); } .bar .l { background:var(--olive); }
+.legend { display:flex; gap:16px; font-size:12px; color:var(--text-muted); margin-top:24px; }
+.legend i { display:inline-block; width:10px; height:10px; border-radius:3px; margin-right:5px; }
+.pill { display:inline-block; border:1px solid var(--border); border-radius:999px;
+  padding:2px 12px; font-size:12px; color:var(--text-muted); background:transparent; }
+.pill.accent { background:var(--accent-soft); color:var(--accent); border-color:transparent; font-weight:600; }
+.pill.conf-high { background:var(--text); color:var(--bg); border-color:var(--text); }
+.pill.conf-mid { border:1px solid var(--text-muted); color:var(--text); }
+.pill.conf-low { border:1px dashed var(--text-muted); color:var(--text-muted); }
+.badges { display:flex; gap:8px; align-items:center; margin-top:12px; flex-wrap:wrap; }
+.sub { font-size:12px; color:var(--text-muted); margin-top:10px; }
+.notice { background:var(--surface); border:1px solid var(--border); border-radius:16px;
+  padding:16px 20px; margin-top:32px; color:var(--text-muted); font-size:13px; }
+footer { margin-top:48px; padding-top:16px; border-top:1px solid var(--border);
+  font-size:12px; color:var(--text-muted); }
+.roundlist { margin-top:32px; display:flex; flex-direction:column; gap:12px; }
+article { margin-top:32px; }
+article h1 { font-family:"Noto Serif KR",Georgia,serif; font-size:26px; margin:24px 0 12px; }
+article h2 { font-family:"Noto Serif KR",Georgia,serif; font-size:20px; margin:28px 0 8px; }
+article h3 { font-size:16px; margin:20px 0 8px; }
+article p, article li { margin-bottom:8px; }
+article ul, article ol { padding-left:22px; }
+article hr { border:none; border-top:1px solid var(--border); margin:24px 0; }
+article em { color:var(--text-muted); }
+article a { color:var(--accent); }
+.tablewrap { overflow-x:auto; }
+article table { border-collapse:collapse; width:100%; font-size:13px; margin:12px 0; }
+article th, article td { border-bottom:1px solid var(--border); padding:10px 12px; text-align:left; }
+article td { font-variant-numeric:tabular-nums; }
+@media (prefers-reduced-motion:reduce){ *{ transition:none!important; } }
+</style></head><body><div class="wrap"><div class="hero">
+<h1 class="serif">FC서울 vs 강원FC</h1>
+<div class="meta num">M12 · K리그1 · 킥오프 07-12 19:30 ·
+<a href="index.html">회차로 돌아가기</a></div></div>
+<article><p>조사를 마쳤습니다. 두 팀 모두 상위권에서 좋은 폼을 유지 중인 빅매치입니다. 분석 결과를 정리합니다.</p>
+<hr />
+<h1>FC서울 vs 강원FC 분석 (K리그1, 2026-07-12, 서울월드컵)</h1>
+<h2>1. 경기 개요</h2>
+<p>월드컵 휴식기가 끝나고 후반기가 막 재개된 시점의 <strong>선두 vs 2위 상위권 맞대결</strong>이다.
+- <strong>FC서울</strong>: 리그 1위(선두). 2위권에 6점가량 앞선 단독 선두로, 우승 페이스를 이어가려는 동기가 뚜렷하다. 홈(서울월드컵)에서 강세.
+- <strong>강원FC</strong>: 최근 급상승. 7월 4일 전주 원정에서 전북을 2-1로 꺾으며 <strong>3연승·6경기 무패</strong>로 4위에서 2위까지 뛰어올랐다(7승 6무 3패, 승점 27). 상승세를 타고 선두 추격에 나서는 동기가 강하다.</p>
+<p>두 팀 모두 컨디션이 좋은 상태로 붙는 고품질 매치업이다.</p>
+<h2>2. 전력 비교</h2>
+<ul>
+<li><strong>최근 폼</strong>: 서울은 최근 5경기 승-무-패-승-승 수준의 좋은 흐름, 홈에서 특히 강하다. 강원은 승-승-무-무-승에 더해 7월 재개 후 전북 원정 승리까지 얹으며 <strong>6경기 무패</strong>의 절정 폼. 폼만 보면 오히려 강원이 더 뜨겁다.</li>
+<li><strong>홈/원정</strong>: 서울은 홈 이점이 크다. 강원의 유명한 '강릉 요새'(홈 다경기 무패)는 <strong>이번엔 원정 경기라 적용되지 않는다</strong>는 점이 서울에 유리하다. 다만 강원은 원정에서도 약 50% 승률로 견실하다.</li>
+<li><strong>상대전적</strong>: 역대 39경기 서울 15승·강원 11승·13무로 서울 우위. 가장 최근 맞대결(2026-04-25, 강릉)에서도 서울이 <strong>2-1 승리</strong>. 심리·전적 모두 서울 쪽에 소폭 기운다.</li>
+</ul>
+<h2>3. 변수</h2>
+<ul>
+<li><strong>월드컵 복귀 선수 피로도</strong>: 강원 이기혁(북중미 월드컵 3경기 풀소화), 서울 야잔(요르단) 등 대표팀 차출 후 복귀 선수들의 체력·컨디션이 변수. 정확한 선발 여부는 미확인(결측).</li>
+<li><strong>일정 피로도</strong>: 서울(7/5 홈 인천전)·강원(7/4 전북 원정) 모두 약 7~8일 휴식으로 피로 부담은 크지 않음. 강원은 원정 연속이라는 점만 약간 부담.</li>
+<li><strong>결장자(부상·징계)</strong>: 구체적 부상·출전정지 명단은 검색으로 확정하지 못함 → <strong>결측</strong>. 상승세의 강원이 주축 결장 없이 나올 경우 난도가 높아진다.</li>
+</ul>
+<h2>4. 시장·대중 해석</h2>
+<ul>
+<li><strong>해외 시장(market_odds)</strong>: 승 38.4% / 무 31.2% / 패 30.5% — 서울을 소폭 우세로 보되 <strong>거의 삼분(three-way)에 가까운 접전</strong>으로 평가. 강원의 상승세와 대등한 전력을 시장이 이미 반영하고 있다.</li>
+<li><strong>대중 투표(vote_dist)</strong>: 승 52.1% / 무 28.4% / 패 19.5% — 대중은 '선두 서울 홈'이라는 간판에 크게 쏠려 있다. 시장 대비 서울 승을 <strong>약 14%p 과대평가</strong>, 강원 승은 <strong>약 11%p 과소평가</strong>.</li>
+<li><strong>해석</strong>: 시장은 강원의 폼을 존중해 훨씬 접전으로 보는데, 대중은 순위·홈만 보고 서울에 과신하는 전형적 쏠림. 나는 시장 쪽 균형에 무게를 두되, 홈·전적·선두 동기를 근거로 서울을 근소 우위로 조정한다.</li>
+</ul>
+<h2>5. 예측</h2>
+<p>시장 내재확률을 기준선으로, ①서울 홈+선두+최근 상대전적 우위(승 상향) vs ②강원 6경기 무패의 절정 폼(무·패 지지)을 함께 반영해 소폭만 조정한다.</p>
+<ul>
+<li><strong>승(서울) 42% / 무 30% / 패 28%</strong></li>
+<li>예상 스코어: <strong>2-1</strong>, <strong>1-1</strong></li>
+<li><strong>최종 픽: 승(FC서울)</strong> — 홈, 선두, 최근 맞대결 승리</li>
+<li><strong>보조 픽: 무(draw)</strong> — 강원의 상승세와 접전 성격을 감안한 헤지</li>
+</ul>
+<h2>6. 신뢰도: <strong>중</strong></h2>
+<ul>
+<li>근거: 두 팀 모두 상위권·호조라 실제 접전 가능성이 높고, 시장도 삼분에 가깝게 본다. 서울 우위 요인은 분명하나 강원의 무패 폼이 이를 상쇄한다.</li>
+<li>결측: <strong>양 팀 구체적 부상·징계 결장자 명단 미확정</strong>, 월드컵 복귀 선수 선발/체력 미확인, 최근 5경기 세부 순서는 근사치. 이 결측들 때문에 상 등급은 부여하지 않음.</li>
+</ul>
+<p><strong>출처</strong>: <a href="https://sports.news.nate.com/view/20260425n09367">네이트 스포츠(4/25 종합)</a>, <a href="https://www.mt.co.kr/sports/2026/07/04/2026070416210430202">머니투데이(강원 전북 원정 2-1승·2위 도약)</a>, <a href="https://www.issueon.co.kr/news/articleView.html?idxno=13560">이슈온(월드컵 휴식기 후 재개)</a>, <a href="https://v.daum.net/v/20260702110020473">다음(K리그1 4일 재개, 서울 선두)</a>, <a href="https://footystats.org/kr/south-korea/gangwon-fc-vs-fc-seoul-h2h-stats">FootyStats 상대전적</a></p></article>
+<footer>본 분석은 통계적 참고 자료이며 구매 결과를 보장하지 않습니다.</footer></div></body></html>
