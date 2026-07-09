@@ -3,4 +3,5 @@ pydantic>=2.12
 apscheduler>=3.10,<4
 playwright>=1.57
 pyyaml>=6.0
+markdown>=3.10
 pytest>=9.0

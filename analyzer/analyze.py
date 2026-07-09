@@ -14,6 +14,7 @@ import re
 import shutil
 import subprocess
 import sys
+import time
 from pathlib import Path
 
 from analyzer.prompts import build_match_prompt, build_round_prompt
@@ -27,12 +28,30 @@ CLAUDE_TIMEOUT_SEC = 900
 DISCLAIMER = "\n\n---\n*본 분석은 통계적 참고 자료이며 구매 결과를 보장하지 않습니다.*\n"
 
 JSON_BLOCK = re.compile(r"```json\s*(\{.*?\})\s*```", re.DOTALL)
-# 로컬 Claude CLI에 설치된 훅/플러그인이 붙이는 상용구(bkit 푸터 등) 제거
-BOILERPLATE = re.compile(r"─{10,}\s*\n📊[^\n]*\n.*?─{10,}\s*", re.DOTALL)
 
 
 def clean_report(report: str) -> str:
-    return BOILERPLATE.sub("", report).strip()
+    """로컬 Claude CLI에 설치된 훅/플러그인이 붙이는 상용구(bkit 푸터 등) 제거."""
+    out, skip = [], False
+    for ln in report.splitlines():
+        s = ln.strip()
+        is_rule = bool(s) and set(s) <= {"─"}
+        is_meta = s[:1] in ("✅", "⏭", "💡") or s.startswith("⏭️")
+        if "📊" in s or is_meta:  # 사용 현황 상용구는 위치 무관 제거
+            if not skip and out and out[-1].strip() and set(out[-1].strip()) <= {"─"}:
+                out.pop()  # 블록 시작 구분선 제거
+            skip = True
+            continue
+        if skip:
+            if not s or is_rule:
+                continue
+            skip = False
+        out.append(ln)
+    return "\n".join(out).strip()
+
+
+CLAUDE_RETRIES = 3
+RETRY_BACKOFF_SEC = 120  # 모델 일시 불가·사용량 제한 등 일시 장애 대비
 
 
 def call_claude(prompt: str, allow_web: bool = True) -> str:
@@ -47,11 +66,19 @@ def call_claude(prompt: str, allow_web: bool = True) -> str:
     env = {k: v for k, v in os.environ.items()
            if k not in ("ANTHROPIC_API_KEY", "ANTHROPIC_AUTH_TOKEN", "CLAUDECODE",
                         "CLAUDE_CODE_ENTRYPOINT", "CLAUDE_CODE_SSE_PORT")}
-    res = subprocess.run(cmd, input=prompt, capture_output=True, text=True,
-                         encoding="utf-8", timeout=CLAUDE_TIMEOUT_SEC, env=env)
-    if res.returncode != 0:
-        raise RuntimeError(f"claude 실행 실패({res.returncode}): {res.stderr[:500]}")
-    return res.stdout
+    last_err = ""
+    for attempt in range(1, CLAUDE_RETRIES + 1):
+        res = subprocess.run(cmd, input=prompt, capture_output=True, text=True,
+                             encoding="utf-8", timeout=CLAUDE_TIMEOUT_SEC, env=env)
+        if res.returncode == 0:
+            return res.stdout
+        last_err = (res.stderr or res.stdout or "")[:500]
+        log.warning("claude 실행 실패(%d, 시도 %d/%d): %s — %ds 후 재시도",
+                    res.returncode, attempt, CLAUDE_RETRIES, last_err,
+                    RETRY_BACKOFF_SEC * attempt)
+        if attempt < CLAUDE_RETRIES:
+            time.sleep(RETRY_BACKOFF_SEC * attempt)
+    raise RuntimeError(f"claude 실행 실패(재시도 {CLAUDE_RETRIES}회 소진): {last_err}")
 
 
 def extract_summary(report: str) -> dict | None:
@@ -116,7 +143,11 @@ def analyze_round(key: str, only_match: int | None = None,
             continue
         log.info("%s 분석 시작: %s vs %s", name,
                  pkg["home"]["betman_name"], pkg["away"]["betman_name"])
-        s = analyze_match(pkg, out_dir)
+        try:
+            s = analyze_match(pkg, out_dir)
+        except Exception as e:  # 한 경기 실패가 회차 전체를 막지 않게 (재실행 시 이어감)
+            log.error("%s 분석 실패 — 다음 경기로 진행: %s", name, e)
+            continue
         if s:
             summaries[name] = s
             summary_path.write_text(
