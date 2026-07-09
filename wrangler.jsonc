@@ -1,6 +1,6 @@
 // Cloudflare Workers(정적 assets) 배포 설정 — site/ 를 정적 사이트로 서빙 (plan.md 7.5절)
 {
-  "name": "ai-football-manager",
+  "name": "aifootballmanager",
   "compatibility_date": "2026-07-09",
   "assets": {
     "directory": "./site",
