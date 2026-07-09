@@ -1,0 +1,126 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>화성FC vs 파주프런 · AI 분석</title><style>
+:root {
+  --bg:#FAF9F5; --surface:#F0EEE6; --surface-raised:#FFFFFF; --border:#E3DFD3;
+  --text:#1F1E1D; --text-muted:#6E6C64; --accent:#D97757; --accent-soft:#F5E5DE;
+  --kraft:#D4A27F; --olive:#6A6B5F; --positive:#5E7B5E; --negative:#B0554B;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  background:var(--bg); color:var(--text);
+  font-family:Pretendard,-apple-system,"Malgun Gothic",sans-serif;
+  font-size:15px; line-height:1.7;
+}
+.wrap { max-width:960px; margin:0 auto; padding:48px 16px; }
+.serif { font-family:"Noto Serif KR",Georgia,serif; font-weight:600; letter-spacing:-0.01em; }
+.hero h1 { font-size:32px; }
+.hero .meta { color:var(--text-muted); font-size:13px; margin-top:8px; }
+.hero .meta a { color:inherit; }
+.cards { display:grid; grid-template-columns:repeat(auto-fill,minmax(420px,1fr)); gap:16px; margin-top:32px; }
+@media (max-width:900px){ .cards{ grid-template-columns:1fr; } }
+.card {
+  background:var(--surface); border:1px solid var(--border); border-radius:16px;
+  padding:16px 20px; box-shadow:0 1px 3px rgba(31,30,29,0.06);
+  transition:background 120ms ease; display:block; color:inherit; text-decoration:none;
+}
+a.card:hover { background:var(--surface-raised); }
+.card .top { display:flex; justify-content:space-between; font-size:12px; color:var(--text-muted); }
+.card .teams { font-size:19px; margin:8px 0 12px; }
+.card .teams .vs { color:var(--text-muted); font-size:14px; margin:0 6px; }
+.num { font-variant-numeric:tabular-nums; }
+.bar { display:flex; height:22px; border-radius:6px; overflow:hidden; }
+.bar span { display:flex; align-items:center; justify-content:center;
+  color:#fff; font-size:11px; font-weight:600; min-width:0; }
+.bar .w { background:var(--accent); } .bar .d { background:var(--kraft); } .bar .l { background:var(--olive); }
+.legend { display:flex; gap:16px; font-size:12px; color:var(--text-muted); margin-top:24px; }
+.legend i { display:inline-block; width:10px; height:10px; border-radius:3px; margin-right:5px; }
+.pill { display:inline-block; border:1px solid var(--border); border-radius:999px;
+  padding:2px 12px; font-size:12px; color:var(--text-muted); background:transparent; }
+.pill.accent { background:var(--accent-soft); color:var(--accent); border-color:transparent; font-weight:600; }
+.pill.conf-high { background:var(--text); color:var(--bg); border-color:var(--text); }
+.pill.conf-mid { border:1px solid var(--text-muted); color:var(--text); }
+.pill.conf-low { border:1px dashed var(--text-muted); color:var(--text-muted); }
+.badges { display:flex; gap:8px; align-items:center; margin-top:12px; flex-wrap:wrap; }
+.sub { font-size:12px; color:var(--text-muted); margin-top:10px; }
+.notice { background:var(--surface); border:1px solid var(--border); border-radius:16px;
+  padding:16px 20px; margin-top:32px; color:var(--text-muted); font-size:13px; }
+footer { margin-top:48px; padding-top:16px; border-top:1px solid var(--border);
+  font-size:12px; color:var(--text-muted); }
+.roundlist { margin-top:32px; display:flex; flex-direction:column; gap:12px; }
+article { margin-top:32px; }
+article h1 { font-family:"Noto Serif KR",Georgia,serif; font-size:26px; margin:24px 0 12px; }
+article h2 { font-family:"Noto Serif KR",Georgia,serif; font-size:20px; margin:28px 0 8px; }
+article h3 { font-size:16px; margin:20px 0 8px; }
+article p, article li { margin-bottom:8px; }
+article ul, article ol { padding-left:22px; }
+article hr { border:none; border-top:1px solid var(--border); margin:24px 0; }
+article em { color:var(--text-muted); }
+article a { color:var(--accent); }
+.tablewrap { overflow-x:auto; }
+article table { border-collapse:collapse; width:100%; font-size:13px; margin:12px 0; }
+article th, article td { border-bottom:1px solid var(--border); padding:10px 12px; text-align:left; }
+article td { font-variant-numeric:tabular-nums; }
+@media (prefers-reduced-motion:reduce){ *{ transition:none!important; } }
+</style></head><body><div class="wrap"><div class="hero">
+<h1 class="serif">화성FC vs 파주프런</h1>
+<div class="meta num">M06 · K리그2 · 킥오프 07-11 19:30 ·
+<a href="index.html">회차로 돌아가기</a></div></div>
+<article><p>조사를 마쳤습니다. 부상·결장자와 6월 이후 일부 경기 결과는 공개 소스에서 확인되지 않아 결측으로 처리하고 분석을 작성합니다.</p>
+<hr />
+<h1>2026-38회차 6경기: 화성FC vs 파주 프런티어 FC 분석</h1>
+<h2>1. 경기 개요</h2>
+<p>7월 11일(토) 19:30 화성종합경기타운에서 열리는 K리그2 17라운드, <strong>월드컵 휴식기 직후 재개 국면</strong>의 홈경기다. 올해 K리그2는 파주 프런티어 등 3개 신생팀이 합류해 17개 팀 체제로 운영 중이며, 이 경기는 두 팀의 <strong>올 시즌 첫 맞대결</strong>(1로빈 17R)이다.</p>
+<ul>
+<li><strong>화성FC</strong>: 14라운드 종료 기준 승점 25(7승 4무 3패)로 <strong>4위</strong>. 상위 스플릿/PO권 경쟁 중이라 동기 강함.</li>
+<li><strong>파주 프런티어</strong>: 시즌 초반 '선수비 후역습' 조직력으로 7위까지 올랐던 신생팀이나, 이후 하락해 <strong>12위권</strong>. 최근 5경기 무승(2무 3패).</li>
+</ul>
+<h2>2. 전력 비교</h2>
+<ul>
+<li><strong>최근 폼</strong>: 화성은 휴식기 직전까지 <strong>8경기 무패(6승 2무)</strong>. 12R에서 선두 부산을 3-2로 잡았고, 14R 경남전 2-0 승리로 홈 3연승을 기록했다. 득점 선두 페트로프가 13R MVP를 받는 등 공격진 폼이 좋다. 파주는 최근 5경기 2무 3패로 무승 침체.</li>
+<li><strong>홈/원정</strong>: 화성은 홈에서 연승 흐름이고 이번 경기도 홈. 파주는 신생팀 원정으로 부담이 크다.</li>
+<li><strong>상대 전적</strong>: 파주가 올해 리그에 처음 참가해 <strong>공식 상대 전적 없음</strong> — 참고 지표가 부재하다.</li>
+</ul>
+<h2>3. 변수</h2>
+<ul>
+<li><strong>월드컵 휴식기 효과</strong>: 약 한 달간의 중단 후 재개되는 경기라 화성의 8경기 무패 모멘텀이 그대로 이어질지는 불확실하다. 반대로 파주에게는 부진 흐름을 끊고 재정비할 시간이었다는 점이 잠재 변수.</li>
+<li><strong>결장자</strong>: 양 팀 모두 이번 경기 기준 부상·징계 결장자 정보를 공개 소스에서 확인하지 못함(<strong>결측</strong>).</li>
+<li><strong>일정 피로도</strong>: 양 팀 모두 휴식기를 보냈고 컵대회 병행 부담도 확인되지 않아 피로도·로테이션 이슈는 낮다.</li>
+<li>파주의 16R(7/4 용인전) 결과는 확인 불가(<strong>결측</strong>) — 재개 후 첫 경기 감각 차이를 검증하지 못했다.</li>
+</ul>
+<h2>4. 시장·대중 해석</h2>
+<p><code>market_odds</code>가 null이라 해외 시장 기준선이 없고, <strong>투표 분포만으로 해석해야 하는 한계</strong>가 있다. 대중은 홈승 78.0% / 무 16.2% / 패 5.8%로 화성 쪽에 강하게 쏠려 있다(총 4.2만 표). 순위·폼 격차를 고려하면 방향 자체는 타당하나, 78%는 K리그2 수준의 경기 변동성, 휴식기로 인한 폼 리셋 가능성, 파주의 수비 조직력(초반 돌풍의 근거)을 감안하면 <strong>다소 과열된 수치</strong>로 본다. 시장 검증 수단이 없어 이 판단의 확신도는 제한적이다.</p>
+<h2>5. 예측</h2>
+<p>기준선(투표 분포)에서 홈승을 하향, 무·패를 상향 조정:</p>
+<div class="tablewrap"><table>
+<thead>
+<tr>
+<th>결과</th>
+<th>확률</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>화성 승</td>
+<td><strong>58%</strong></td>
+</tr>
+<tr>
+<td>무승부</td>
+<td>26%</td>
+</tr>
+<tr>
+<td>파주 승</td>
+<td>16%</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li><strong>예상 스코어</strong>: 2-0, 2-1</li>
+<li><strong>최종 픽</strong>: 승 (화성) / <strong>보조 픽</strong>: 무</li>
+</ul>
+<h2>6. 신뢰도: 중</h2>
+<p>홈팀의 폼·순위 우위와 상대의 무승 부진이 일관되게 한 방향을 가리켜 픽 자체의 근거는 견고하다. 다만 (1) 해외 배당 부재로 시장 검증 불가, (2) 양 팀 결장자 정보 결측, (3) 파주의 휴식기 직후 경기(16R) 결과 미확인, (4) 상대 전적 전무, (5) 휴식기로 인한 폼 연속성 불확실이라는 결측·불확실 요인이 겹쳐 '상'은 줄 수 없다.</p>
+<p><strong>Sources</strong>: <a href="https://dailyn.net/news/article.html?no=113295">데일리엔뉴스 — 화성, 선두 부산 제압·6경기 무패</a>, <a href="https://v.daum.net/v/20260531191505114">다음 — 화성FC 8경기 무패행진</a>, <a href="https://www.ghottimenews.com/news/article.html?no=406750">경기핫타임뉴스 — 14R 경남전 2-0 승</a>, <a href="https://v.daum.net/v/20260407074225275">다음 — 파주 초반 7위 돌풍</a>, <a href="https://www.issueon.co.kr/news/articleView.html?idxno=13560">이슈온 — 월드컵 휴식기 후 K리그 재개</a>, <a href="https://www.kifuture.com/news/article.html?no=173901">경인미래신문 — 화성 11일 파주전 홈경기</a>, <a href="https://namu.wiki/w/%ED%95%98%EB%82%98%EC%9D%80%ED%96%89%20K%EB%A6%AC%EA%B7%B82%202026">나무위키 — 하나은행 K리그2 2026</a></p>
+<p>✅ Used: WebSearch/WebFetch 기반 조사, Read-free 분석 응답
+⏭️ Not Used: /pdca 스킬·gap-detector 등 (경기 분석 태스크로 PDCA 문서 작업 아님)
+💡 Recommended: 회차 전체 분석 완료 후 <code>/pdca analyze poc</code>로 리포트 갭 점검
+─────────────────────────────────────────────────</p></article>
+<footer>본 분석은 통계적 참고 자료이며 구매 결과를 보장하지 않습니다.</footer></div></body></html>

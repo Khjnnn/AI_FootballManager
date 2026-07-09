@@ -1,0 +1,106 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>프레드릭 vs 릴레스트 · AI 분석</title><style>
+:root {
+  --bg:#FAF9F5; --surface:#F0EEE6; --surface-raised:#FFFFFF; --border:#E3DFD3;
+  --text:#1F1E1D; --text-muted:#6E6C64; --accent:#D97757; --accent-soft:#F5E5DE;
+  --kraft:#D4A27F; --olive:#6A6B5F; --positive:#5E7B5E; --negative:#B0554B;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  background:var(--bg); color:var(--text);
+  font-family:Pretendard,-apple-system,"Malgun Gothic",sans-serif;
+  font-size:15px; line-height:1.7;
+}
+.wrap { max-width:960px; margin:0 auto; padding:48px 16px; }
+.serif { font-family:"Noto Serif KR",Georgia,serif; font-weight:600; letter-spacing:-0.01em; }
+.hero h1 { font-size:32px; }
+.hero .meta { color:var(--text-muted); font-size:13px; margin-top:8px; }
+.hero .meta a { color:inherit; }
+.cards { display:grid; grid-template-columns:repeat(auto-fill,minmax(420px,1fr)); gap:16px; margin-top:32px; }
+@media (max-width:900px){ .cards{ grid-template-columns:1fr; } }
+.card {
+  background:var(--surface); border:1px solid var(--border); border-radius:16px;
+  padding:16px 20px; box-shadow:0 1px 3px rgba(31,30,29,0.06);
+  transition:background 120ms ease; display:block; color:inherit; text-decoration:none;
+}
+a.card:hover { background:var(--surface-raised); }
+.card .top { display:flex; justify-content:space-between; font-size:12px; color:var(--text-muted); }
+.card .teams { font-size:19px; margin:8px 0 12px; }
+.card .teams .vs { color:var(--text-muted); font-size:14px; margin:0 6px; }
+.num { font-variant-numeric:tabular-nums; }
+.bar { display:flex; height:22px; border-radius:6px; overflow:hidden; }
+.bar span { display:flex; align-items:center; justify-content:center;
+  color:#fff; font-size:11px; font-weight:600; min-width:0; }
+.bar .w { background:var(--accent); } .bar .d { background:var(--kraft); } .bar .l { background:var(--olive); }
+.legend { display:flex; gap:16px; font-size:12px; color:var(--text-muted); margin-top:24px; }
+.legend i { display:inline-block; width:10px; height:10px; border-radius:3px; margin-right:5px; }
+.pill { display:inline-block; border:1px solid var(--border); border-radius:999px;
+  padding:2px 12px; font-size:12px; color:var(--text-muted); background:transparent; }
+.pill.accent { background:var(--accent-soft); color:var(--accent); border-color:transparent; font-weight:600; }
+.pill.conf-high { background:var(--text); color:var(--bg); border-color:var(--text); }
+.pill.conf-mid { border:1px solid var(--text-muted); color:var(--text); }
+.pill.conf-low { border:1px dashed var(--text-muted); color:var(--text-muted); }
+.badges { display:flex; gap:8px; align-items:center; margin-top:12px; flex-wrap:wrap; }
+.sub { font-size:12px; color:var(--text-muted); margin-top:10px; }
+.notice { background:var(--surface); border:1px solid var(--border); border-radius:16px;
+  padding:16px 20px; margin-top:32px; color:var(--text-muted); font-size:13px; }
+footer { margin-top:48px; padding-top:16px; border-top:1px solid var(--border);
+  font-size:12px; color:var(--text-muted); }
+.roundlist { margin-top:32px; display:flex; flex-direction:column; gap:12px; }
+article { margin-top:32px; }
+article h1 { font-family:"Noto Serif KR",Georgia,serif; font-size:26px; margin:24px 0 12px; }
+article h2 { font-family:"Noto Serif KR",Georgia,serif; font-size:20px; margin:28px 0 8px; }
+article h3 { font-size:16px; margin:20px 0 8px; }
+article p, article li { margin-bottom:8px; }
+article ul, article ol { padding-left:22px; }
+article hr { border:none; border-top:1px solid var(--border); margin:24px 0; }
+article em { color:var(--text-muted); }
+article a { color:var(--accent); }
+.tablewrap { overflow-x:auto; }
+article table { border-collapse:collapse; width:100%; font-size:13px; margin:12px 0; }
+article th, article td { border-bottom:1px solid var(--border); padding:10px 12px; text-align:left; }
+article td { font-variant-numeric:tabular-nums; }
+@media (prefers-reduced-motion:reduce){ *{ transition:none!important; } }
+</style></head><body><div class="wrap"><div class="hero">
+<h1 class="serif">프레드릭 vs 릴레스트</h1>
+<div class="meta num">M08 · 노르웨이 엘리테세리엔 · 킥오프 07-11 21:00 ·
+<a href="index.html">회차로 돌아가기</a></div></div>
+<article><p>조사가 완료되었습니다. 분석 결과를 정리합니다.</p>
+<hr />
+<h1>2026-38회차 8경기: 프레드릭스타드 vs 릴레스트룀 분석</h1>
+<h2>1. 경기 개요</h2>
+<p>노르웨이 엘리테세리엔, 7월 11일 프레드릭스타드 홈(프레스타 스타디온) 경기입니다. <strong>릴레스트룀은 2025년 1부 승격팀임에도 현재 4위(약 19점)</strong>로 예상을 뛰어넘는 시즌을 보내고 있으며, 상위권 유지·유럽대항전 경쟁이라는 뚜렷한 동기가 있습니다. 반면 <strong>프레드릭스타드는 10~11위권(약 10점)</strong>으로 중하위권에 머물러 있어 홈에서 반등이 절실한 상황입니다. 다만 검색 소스 간 순위·승점 스냅샷이 다소 엇갈려(10위/1.27 PPG vs 14위/7점) 정확한 현재 승점은 결측에 가깝습니다.</p>
+<h2>2. 전력 비교</h2>
+<ul>
+<li><strong>최근 폼</strong>: 릴레스트룀은 4위라는 순위와 달리 최근 흐름이 나쁩니다. 5월 후반부터 크리스티안순 패(1-2), 함캄 원정 패(0-2) 등 <strong>최근 5경기 폼이 L-W-L-L-L 계열</strong>로 집계되며, 6월 미트윌란과의 친선전도 0-1로 패했습니다. 프레드릭스타드는 최근 리그 경기에서 0-0, 1-1 등 무승부가 잦고 승리가 드문 흐름입니다(소스에 따라 "최근 5경기 무승" vs "W-D-W-L-L"로 충돌 — 결측 처리).</li>
+<li><strong>홈/원정</strong>: 프레드릭스타드의 가장 큰 무기는 홈입니다. <strong>홈 PPG 2.00 vs 원정 0.67</strong>로 극단적인 홈 편중형 팀입니다. 릴레스트룀은 홈 1.80/원정 1.67로 원정에서도 안정적이며, 경기당 실점 1.00으로 수비가 견고합니다.</li>
+<li><strong>상대 전적</strong>: 최근 7번의 맞대결에서 프레드릭스타드가 3승 3무 1패로 우위(득실 12-8)입니다. 단, <strong>가장 최근 맞대결은 릴레스트룀이 4-3으로 승리</strong>한 난타전이었습니다.</li>
+</ul>
+<h2>3. 변수</h2>
+<ul>
+<li><strong>릴레스트룀 결장자</strong>: 수비수 <strong>에스펜 가르나스가 다이렉트 퇴장으로 이번 경기 출전정지</strong>(7/18 복귀)이며, 미드필더 에리크 키톨라노(하퇴부)도 이 경기 출전이 어렵습니다. 주전 공격수 <strong>토마스 레네 올센도 부상으로 출전 불투명</strong> — 공수 양면의 핵심 이탈이 겹쳤습니다.</li>
+<li><strong>프레드릭스타드 결장자</strong>: 미드필더 <strong>로코 셰인이 경고 누적 정지</strong>, 훔멜볼-누네스(공격수)·오우수(수비수)는 복귀 예정일이 경기일 전후라 출전 불투명, 크빌레는 장기 부상입니다.</li>
+<li><strong>일정 피로도</strong>: 양 팀 모두 6월 하순~7월 초 일정이 상대적으로 여유로워 피로도 변수는 크지 않습니다. 다만 릴레스트룀은 이 경기 후 KFUM(7/18), 바이킹(7/22), 보되/글림트(7/31)로 이어지는 강행군을 앞두고 있어, 하위권 원정인 이 경기에서 100% 전력을 아낄 유인은 낮지만 체력 안배 가능성은 배제할 수 없습니다.</li>
+</ul>
+<h2>4. 시장·대중 해석</h2>
+<p>해외 시장(북메이커 19곳 중앙값)은 원정 릴레스트룀을 약우세로 봅니다: 홈승 33.3% / 무 28.1% / 원정승 38.6%. 대중 투표(34.3/28.0/37.7)는 시장과 <strong>거의 완벽하게 일치</strong>하며 괴리가 1%p 안팎에 불과합니다. 즉 대중 쏠림에 의한 배당 왜곡(패리뮤추얼 가치)이 사실상 없는 경기로, 시장 컨센서스는 "순위 차이는 릴레스트룀 우위, 그러나 프레드릭스타드의 홈 강세와 상대 전적 때문에 박빙"입니다.</p>
+<h2>5. 예측</h2>
+<p>시장 내재확률을 기준선으로, 확인된 요인을 반영합니다: 릴레스트룀의 최근 폼 하락 + 수비(가르나스 정지)·공격(레네 올센 부상 의문) 핵심 이탈은 원정승 확률을 소폭 깎을 근거이고, 프레드릭스타드의 홈 PPG 2.00과 H2H 우위는 홈/무 쪽을 소폭 올릴 근거입니다. 다만 프레드릭스타드도 셰인 정지 등 이탈이 있어 큰 폭의 조정은 과신입니다.</p>
+<ul>
+<li><strong>승(홈) 34% / 무 30% / 패(원정) 36%</strong></li>
+<li>예상 스코어: <strong>1-1</strong>, 1-2</li>
+<li><strong>최종 픽: 패(릴레스트룀 승)</strong> — 근소하게 확률이 가장 높음</li>
+<li><strong>보조 픽: 무</strong> — 홈 강세·양 팀 결장 상황을 고려하면 무승부 가치가 시장 평가(28%)보다 높다고 판단</li>
+</ul>
+<p>승무패 조합식 관점에서는 사실상 3방향 박빙이므로, 복수 선택이 가능하다면 <strong>패+무 커버</strong>를 권합니다.</p>
+<h2>6. 신뢰도: 하</h2>
+<ul>
+<li>세 결과 모두 28~36% 범위의 전형적인 박빙 경기입니다.</li>
+<li>데이터 결측·충돌: ① 프레드릭스타드의 정확한 현재 순위·승점(소스 간 10위/14위 충돌), ② 프레드릭스타드 최근 5경기 폼(무승 vs W-D-W-L-L 충돌), ③ 레네 올센·훔멜볼-누네스 등 부상자의 실제 출전 여부는 경기 당일 라인업 확인 필요.</li>
+<li>승격팀 릴레스트룀의 4위가 실력인지 초반 과성과인지 표본이 아직 작습니다.</li>
+</ul>
+<p><strong>Sources:</strong> <a href="https://footystats.org/norway/lillestrom-sk-vs-fredrikstad-fk-h2h-stats">FootyStats H2H</a>, <a href="https://www.sportsgambler.com/injuries/football/norway-eliteserien/">Sportsgambler 부상/징계</a>, <a href="https://en.wikipedia.org/wiki/2026_Eliteserien">2026 Eliteserien - Wikipedia</a>, <a href="https://tribuna.com/en/league/eliteserien/table/2026/">Tribuna 순위표</a>, <a href="https://www.sofascore.com/football/team/lillestrom-sk/664">Sofascore Lillestrøm</a>, <a href="https://www.sofascore.com/football/team/fredrikstad-fk/687">Sofascore Fredrikstad</a></p>
+<p>✅ Used: WebSearch/WebFetch 기반 조사 (분석 태스크)
+⏭️ Not Used: /pdca, Task System (경기 분석 요청으로 PDCA 문서 작업과 무관)
+💡 Recommended: 회차 전체 분석 완료 후 /pdca analyze poc
+─────────────────────────────────────────────────</p></article>
+<footer>본 분석은 통계적 참고 자료이며 구매 결과를 보장하지 않습니다.</footer></div></body></html>
