@@ -1,0 +1,37 @@
+{
+  "round": "2026-38",
+  "match_no": 6,
+  "league": "K리그2",
+  "kickoff": "2026-07-11T19:30:00+09:00",
+  "home": {
+    "betman_name": "화성FC",
+    "id": "K39",
+    "canonical": null
+  },
+  "away": {
+    "betman_name": "파주프런",
+    "id": "K40",
+    "canonical": null
+  },
+  "stadium": "화성종합",
+  "status": "scheduled",
+  "vote_dist": {
+    "win": 0.7804,
+    "draw": 0.1619,
+    "lose": 0.0577,
+    "counts": {
+      "win": 33288,
+      "draw": 6908,
+      "lose": 2461
+    },
+    "collected_at": "2026-07-09T14:06:00+09:00"
+  },
+  "market_odds": null,
+  "research_needed": [
+    "최근 폼(최근 5경기)",
+    "상대 전적",
+    "리그 순위·승점",
+    "결장자(부상·징계)",
+    "일정 피로도·로테이션 가능성"
+  ]
+}

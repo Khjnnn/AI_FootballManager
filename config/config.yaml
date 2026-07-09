@@ -1,0 +1,12 @@
+# 동작 파라미터 (plan.md 8.2절) — 시크릿은 .env에만 둔다
+detect:
+  time: "09:00"          # 매일 회차 감지 시각 (KST)
+collect:
+  request_delay_sec: 3   # 배트맨 요청 간 지연 (4.4절)
+  analysis_lead_hours: 12
+git:
+  auto_push: false       # true로 바꾸면 수집 후 data/·site/ 자동 커밋·푸시
+site:
+  output_dir: site
+local:
+  poll_interval_min: 10  # 로컬 PC의 git fetch 폴링 주기 (3절)

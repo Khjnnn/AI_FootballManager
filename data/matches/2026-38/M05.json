@@ -1,0 +1,37 @@
+{
+  "round": "2026-38",
+  "match_no": 5,
+  "league": "K리그2",
+  "kickoff": "2026-07-11T19:30:00+09:00",
+  "home": {
+    "betman_name": "대구FC",
+    "id": "K17",
+    "canonical": null
+  },
+  "away": {
+    "betman_name": "성남FC",
+    "id": "K08",
+    "canonical": null
+  },
+  "stadium": "대구iM뱅",
+  "status": "scheduled",
+  "vote_dist": {
+    "win": 0.758,
+    "draw": 0.1776,
+    "lose": 0.0645,
+    "counts": {
+      "win": 32332,
+      "draw": 7575,
+      "lose": 2750
+    },
+    "collected_at": "2026-07-09T14:06:00+09:00"
+  },
+  "market_odds": null,
+  "research_needed": [
+    "최근 폼(최근 5경기)",
+    "상대 전적",
+    "리그 순위·승점",
+    "결장자(부상·징계)",
+    "일정 피로도·로테이션 가능성"
+  ]
+}

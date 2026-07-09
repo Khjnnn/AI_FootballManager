@@ -1,0 +1,365 @@
+{
+  "version": "2.0",
+  "lastUpdated": "2026-07-09T06:51:22.889Z",
+  "activeFeatures": [
+    "poc",
+    "collector",
+    "tests",
+    "scheduler",
+    "scratchpad",
+    "scripts",
+    "analyzer"
+  ],
+  "primaryFeature": "poc",
+  "features": {
+    "poc": {
+      "phase": "do",
+      "phaseNumber": 3,
+      "matchRate": null,
+      "iterationCount": 0,
+      "requirements": [],
+      "documents": {},
+      "timestamps": {
+        "started": "2026-07-09T05:13:08.865Z",
+        "lastUpdated": "2026-07-09T06:44:01.806Z"
+      },
+      "lastFile": "C:\\dev\\ai_football_manager\\poc\\fetch_odds.py"
+    },
+    "collector": {
+      "phase": "do",
+      "phaseNumber": 3,
+      "matchRate": null,
+      "iterationCount": 0,
+      "requirements": [],
+      "documents": {},
+      "timestamps": {
+        "started": "2026-07-09T05:23:01.421Z",
+        "lastUpdated": "2026-07-09T06:47:38.220Z"
+      },
+      "lastFile": "C:\\dev\\ai_football_manager\\collector\\enrich.py"
+    },
+    "tests": {
+      "phase": "do",
+      "phaseNumber": 3,
+      "matchRate": null,
+      "iterationCount": 0,
+      "requirements": [],
+      "documents": {},
+      "timestamps": {
+        "started": "2026-07-09T05:24:16.176Z",
+        "lastUpdated": "2026-07-09T06:51:22.889Z"
+      },
+      "lastFile": "C:\\dev\\ai_football_manager\\tests\\test_analyzer.py"
+    },
+    "scheduler": {
+      "phase": "do",
+      "phaseNumber": 3,
+      "matchRate": null,
+      "iterationCount": 0,
+      "requirements": [],
+      "documents": {},
+      "timestamps": {
+        "started": "2026-07-09T05:24:48.337Z",
+        "lastUpdated": "2026-07-09T06:46:04.095Z"
+      },
+      "lastFile": "C:\\dev\\ai_football_manager\\scheduler\\jobs.py"
+    },
+    "scratchpad": {
+      "phase": "do",
+      "phaseNumber": 3,
+      "matchRate": null,
+      "iterationCount": 0,
+      "requirements": [],
+      "documents": {},
+      "timestamps": {
+        "started": "2026-07-09T05:26:42.699Z",
+        "lastUpdated": "2026-07-09T05:26:42.699Z"
+      },
+      "lastFile": "C:\\Users\\Pro\\AppData\\Local\\Temp\\claude\\C--dev-ai-football-manager\\345340db-0fef-4494-9986-5f6b7377c1ee\\scratchpad\\shot.py"
+    },
+    "scripts": {
+      "phase": "do",
+      "phaseNumber": 3,
+      "matchRate": null,
+      "iterationCount": 0,
+      "requirements": [],
+      "documents": {},
+      "timestamps": {
+        "started": "2026-07-09T05:27:31.565Z",
+        "lastUpdated": "2026-07-09T06:51:13.074Z"
+      },
+      "lastFile": "C:\\dev\\ai_football_manager\\scripts\\local_poll.ps1"
+    },
+    "analyzer": {
+      "phase": "do",
+      "phaseNumber": 3,
+      "matchRate": null,
+      "iterationCount": 0,
+      "requirements": [],
+      "documents": {},
+      "timestamps": {
+        "started": "2026-07-09T06:47:43.839Z",
+        "lastUpdated": "2026-07-09T06:49:45.673Z"
+      },
+      "lastFile": "C:\\dev\\ai_football_manager\\analyzer\\analyze.py"
+    }
+  },
+  "pipeline": {
+    "currentPhase": 1,
+    "level": "Dynamic",
+    "phaseHistory": []
+  },
+  "session": {
+    "startedAt": "2026-07-09T00:41:45.843Z",
+    "onboardingCompleted": false,
+    "lastActivity": "2026-07-09T06:51:22.889Z"
+  },
+  "history": [
+    {
+      "timestamp": "2026-07-09T05:13:08.865Z",
+      "feature": "poc",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-09T05:15:01.747Z",
+      "feature": "poc",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-09T05:15:37.375Z",
+      "feature": "poc",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-09T05:15:59.126Z",
+      "feature": "poc",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-09T05:21:46.161Z",
+      "feature": "poc",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-09T05:23:01.421Z",
+      "feature": "collector",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-09T05:23:08.679Z",
+      "feature": "collector",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-09T05:23:24.599Z",
+      "feature": "collector",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-09T05:23:38.700Z",
+      "feature": "collector",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-09T05:24:16.176Z",
+      "feature": "tests",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-09T05:24:48.337Z",
+      "feature": "scheduler",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-09T05:25:07.822Z",
+      "feature": "scheduler",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-09T05:25:14.252Z",
+      "feature": "scheduler",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-09T05:25:21.284Z",
+      "feature": "scheduler",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-09T05:26:42.699Z",
+      "feature": "scratchpad",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-09T05:27:31.565Z",
+      "feature": "scripts",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-09T05:47:17.682Z",
+      "feature": "collector",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-09T05:47:19.195Z",
+      "feature": "collector",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-09T05:47:28.578Z",
+      "feature": "scheduler",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-09T05:47:35.023Z",
+      "feature": "scheduler",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-09T05:47:49.553Z",
+      "feature": "scheduler",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-09T05:47:57.025Z",
+      "feature": "scheduler",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-09T05:47:59.510Z",
+      "feature": "scheduler",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-09T05:48:09.830Z",
+      "feature": "scheduler",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-09T05:48:12.830Z",
+      "feature": "tests",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-09T05:48:31.276Z",
+      "feature": "tests",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-09T06:41:49.766Z",
+      "feature": "poc",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-09T06:42:39.394Z",
+      "feature": "poc",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-09T06:44:01.806Z",
+      "feature": "poc",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-09T06:45:25.599Z",
+      "feature": "collector",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-09T06:45:45.566Z",
+      "feature": "collector",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-09T06:46:04.095Z",
+      "feature": "scheduler",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-09T06:46:25.270Z",
+      "feature": "tests",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-09T06:47:38.220Z",
+      "feature": "collector",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-09T06:47:43.839Z",
+      "feature": "analyzer",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-09T06:48:00.728Z",
+      "feature": "analyzer",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-09T06:48:34.176Z",
+      "feature": "analyzer",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-09T06:49:39.544Z",
+      "feature": "analyzer",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-09T06:49:45.673Z",
+      "feature": "analyzer",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-09T06:51:13.074Z",
+      "feature": "scripts",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-09T06:51:22.889Z",
+      "feature": "tests",
+      "phase": "do",
+      "action": "updated"
+    }
+  ]
+}

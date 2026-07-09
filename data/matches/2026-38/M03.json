@@ -1,0 +1,49 @@
+{
+  "round": "2026-38",
+  "match_no": 3,
+  "league": "K리그1",
+  "kickoff": "2026-07-11T19:30:00+09:00",
+  "home": {
+    "betman_name": "광주FC",
+    "id": "K22",
+    "canonical": null
+  },
+  "away": {
+    "betman_name": "포항스틸",
+    "id": "K03",
+    "canonical": null
+  },
+  "stadium": "광주월드",
+  "status": "scheduled",
+  "vote_dist": {
+    "win": 0.1005,
+    "draw": 0.1853,
+    "lose": 0.7142,
+    "counts": {
+      "win": 4287,
+      "draw": 7905,
+      "lose": 30465
+    },
+    "collected_at": "2026-07-09T14:06:00+09:00"
+  },
+  "market_odds": {
+    "win": 5.8,
+    "draw": 3.6,
+    "lose": 1.54,
+    "implied_prob": {
+      "win": 0.1568,
+      "draw": 0.2526,
+      "lose": 0.5906
+    },
+    "bookmakers": 17,
+    "source": "the-odds-api(eu median)",
+    "collected_at": "2026-07-09T15:47:14.720315+09:00"
+  },
+  "research_needed": [
+    "최근 폼(최근 5경기)",
+    "상대 전적",
+    "리그 순위·승점",
+    "결장자(부상·징계)",
+    "일정 피로도·로테이션 가능성"
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "round": "2026-38",
+  "match_no": 2,
+  "league": "K리그1",
+  "kickoff": "2026-07-11T19:30:00+09:00",
+  "home": {
+    "betman_name": "김천상무",
+    "id": "K35",
+    "canonical": null
+  },
+  "away": {
+    "betman_name": "부천FC",
+    "id": "K26",
+    "canonical": null
+  },
+  "stadium": "김천종합",
+  "status": "scheduled",
+  "vote_dist": {
+    "win": 0.4355,
+    "draw": 0.3682,
+    "lose": 0.1963,
+    "counts": {
+      "win": 18576,
+      "draw": 15708,
+      "lose": 8373
+    },
+    "collected_at": "2026-07-09T14:06:00+09:00"
+  },
+  "market_odds": {
+    "win": 1.95,
+    "draw": 3.2,
+    "lose": 3.55,
+    "implied_prob": {
+      "win": 0.4632,
+      "draw": 0.2823,
+      "lose": 0.2545
+    },
+    "bookmakers": 17,
+    "source": "the-odds-api(eu median)",
+    "collected_at": "2026-07-09T15:47:14.720299+09:00"
+  },
+  "research_needed": [
+    "최근 폼(최근 5경기)",
+    "상대 전적",
+    "리그 순위·승점",
+    "결장자(부상·징계)",
+    "일정 피로도·로테이션 가능성"
+  ]
+}

@@ -1,0 +1,113 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>승무패 38회차 · AI 분석</title><style>
+:root {
+  --bg:#FAF9F5; --surface:#F0EEE6; --surface-raised:#FFFFFF; --border:#E3DFD3;
+  --text:#1F1E1D; --text-muted:#6E6C64; --accent:#D97757; --accent-soft:#F5E5DE;
+  --kraft:#D4A27F; --olive:#6A6B5F; --positive:#5E7B5E; --negative:#B0554B;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  background:var(--bg); color:var(--text);
+  font-family:Pretendard,-apple-system,"Malgun Gothic",sans-serif;
+  font-size:15px; line-height:1.7;
+}
+.wrap { max-width:960px; margin:0 auto; padding:48px 16px; }
+.serif { font-family:"Noto Serif KR",Georgia,serif; font-weight:600; letter-spacing:-0.01em; }
+.hero h1 { font-size:32px; }
+.hero .meta { color:var(--text-muted); font-size:13px; margin-top:8px; }
+.cards { display:grid; grid-template-columns:repeat(auto-fill,minmax(420px,1fr)); gap:16px; margin-top:32px; }
+@media (max-width:900px){ .cards{ grid-template-columns:1fr; } }
+.card {
+  background:var(--surface); border:1px solid var(--border); border-radius:16px;
+  padding:16px 20px; box-shadow:0 1px 3px rgba(31,30,29,0.06);
+  transition:background 120ms ease; display:block; color:inherit; text-decoration:none;
+}
+.card:hover { background:var(--surface-raised); }
+.card .top { display:flex; justify-content:space-between; font-size:12px; color:var(--text-muted); }
+.card .teams { font-size:19px; margin:8px 0 12px; }
+.card .teams .vs { color:var(--text-muted); font-size:14px; margin:0 6px; }
+.num { font-variant-numeric:tabular-nums; }
+.bar { display:flex; height:22px; border-radius:6px; overflow:hidden; }
+.bar span { display:flex; align-items:center; justify-content:center;
+  color:#fff; font-size:11px; font-weight:600; min-width:0; }
+.bar .w { background:var(--accent); } .bar .d { background:var(--kraft); } .bar .l { background:var(--olive); }
+.legend { display:flex; gap:16px; font-size:12px; color:var(--text-muted); margin-top:24px; }
+.legend i { display:inline-block; width:10px; height:10px; border-radius:3px; margin-right:5px; }
+.pill { display:inline-block; border:1px solid var(--border); border-radius:999px;
+  padding:2px 12px; font-size:12px; color:var(--text-muted); }
+.pill.accent { background:var(--accent-soft); color:var(--accent); border-color:transparent; }
+.notice { background:var(--surface); border:1px solid var(--border); border-radius:16px;
+  padding:16px 20px; margin-top:32px; color:var(--text-muted); font-size:13px; }
+footer { margin-top:48px; padding-top:16px; border-top:1px solid var(--border);
+  font-size:12px; color:var(--text-muted); }
+.roundlist { margin-top:32px; display:flex; flex-direction:column; gap:12px; }
+@media (prefers-reduced-motion:reduce){ *{ transition:none!important; } }
+</style></head><body><div class="wrap"><div class="hero">
+<h1 class="serif">승무패 38회차</h1>
+<div class="meta num">발매 마감 2026-07-11 19:30 ·
+07-09 14:06 기준 최신 정보 · <a href="../../index.html" style="color:inherit">전체 회차</a></div>
+</div>
+<div class="notice">아직 이번 회차 분석이 생성되지 않았습니다. 마감 12시간 전(07-11 07:30)에 자동 생성됩니다.
+막대는 배트맨 이용자들의 승/무/패 투표 분포입니다.</div>
+<div class="cards"><div class="card">
+<div class="top"><span>M01 · K리그1</span><span class="num">07-11 19:30</span></div>
+<div class="teams serif">울산HDFC<span class="vs">vs</span>전북현대</div>
+<div class="bar" title="대중 투표 분포 승/무/패"><span class="w num" style="width:29.2%">29%</span><span class="d num" style="width:37.5%">37%</span><span class="l num" style="width:33.3%">33%</span></div>
+</div><div class="card">
+<div class="top"><span>M02 · K리그1</span><span class="num">07-11 19:30</span></div>
+<div class="teams serif">김천상무<span class="vs">vs</span>부천FC</div>
+<div class="bar" title="대중 투표 분포 승/무/패"><span class="w num" style="width:43.5%">44%</span><span class="d num" style="width:36.8%">37%</span><span class="l num" style="width:19.6%">20%</span></div>
+</div><div class="card">
+<div class="top"><span>M03 · K리그1</span><span class="num">07-11 19:30</span></div>
+<div class="teams serif">광주FC<span class="vs">vs</span>포항스틸</div>
+<div class="bar" title="대중 투표 분포 승/무/패"><span class="w num" style="width:10.1%">10%</span><span class="d num" style="width:18.5%">19%</span><span class="l num" style="width:71.4%">71%</span></div>
+</div><div class="card">
+<div class="top"><span>M04 · K리그2</span><span class="num">07-11 19:30</span></div>
+<div class="teams serif">안산그리<span class="vs">vs</span>수원삼성</div>
+<div class="bar" title="대중 투표 분포 승/무/패"><span class="w num" style="width:5.0%"></span><span class="d num" style="width:9.6%">10%</span><span class="l num" style="width:85.4%">85%</span></div>
+</div><div class="card">
+<div class="top"><span>M05 · K리그2</span><span class="num">07-11 19:30</span></div>
+<div class="teams serif">대구FC<span class="vs">vs</span>성남FC</div>
+<div class="bar" title="대중 투표 분포 승/무/패"><span class="w num" style="width:75.8%">76%</span><span class="d num" style="width:17.8%">18%</span><span class="l num" style="width:6.5%"></span></div>
+</div><div class="card">
+<div class="top"><span>M06 · K리그2</span><span class="num">07-11 19:30</span></div>
+<div class="teams serif">화성FC<span class="vs">vs</span>파주프런</div>
+<div class="bar" title="대중 투표 분포 승/무/패"><span class="w num" style="width:78.0%">78%</span><span class="d num" style="width:16.2%">16%</span><span class="l num" style="width:5.8%"></span></div>
+</div><div class="card">
+<div class="top"><span>M07 · K리그2</span><span class="num">07-11 19:30</span></div>
+<div class="teams serif">용인FC<span class="vs">vs</span>충북청주</div>
+<div class="bar" title="대중 투표 분포 승/무/패"><span class="w num" style="width:32.1%">32%</span><span class="d num" style="width:50.1%">50%</span><span class="l num" style="width:17.8%">18%</span></div>
+</div><div class="card">
+<div class="top"><span>M08 · 노르웨이 엘리테세리엔</span><span class="num">07-11 21:00</span></div>
+<div class="teams serif">프레드릭<span class="vs">vs</span>릴레스트</div>
+<div class="bar" title="대중 투표 분포 승/무/패"><span class="w num" style="width:34.3%">34%</span><span class="d num" style="width:28.0%">28%</span><span class="l num" style="width:37.7%">38%</span></div>
+</div><div class="card">
+<div class="top"><span>M09 · 노르웨이 엘리테세리엔</span><span class="num">07-12 01:00</span></div>
+<div class="teams serif">트롬쇠IL<span class="vs">vs</span>볼레렝아</div>
+<div class="bar" title="대중 투표 분포 승/무/패"><span class="w num" style="width:77.6%">78%</span><span class="d num" style="width:14.1%">14%</span><span class="l num" style="width:8.3%">8%</span></div>
+</div><div class="card">
+<div class="top"><span>M10 · K리그1</span><span class="num">07-12 19:30</span></div>
+<div class="teams serif">제주SKFC<span class="vs">vs</span>대전하나</div>
+<div class="bar" title="대중 투표 분포 승/무/패"><span class="w num" style="width:35.7%">36%</span><span class="d num" style="width:38.6%">39%</span><span class="l num" style="width:25.8%">26%</span></div>
+</div><div class="card">
+<div class="top"><span>M11 · K리그1</span><span class="num">07-12 19:30</span></div>
+<div class="teams serif">인천유나<span class="vs">vs</span>FC안양</div>
+<div class="bar" title="대중 투표 분포 승/무/패"><span class="w num" style="width:49.4%">49%</span><span class="d num" style="width:33.6%">34%</span><span class="l num" style="width:17.0%">17%</span></div>
+</div><div class="card">
+<div class="top"><span>M12 · K리그1</span><span class="num">07-12 19:30</span></div>
+<div class="teams serif">FC서울<span class="vs">vs</span>강원FC</div>
+<div class="bar" title="대중 투표 분포 승/무/패"><span class="w num" style="width:52.1%">52%</span><span class="d num" style="width:28.4%">28%</span><span class="l num" style="width:19.5%">19%</span></div>
+</div><div class="card">
+<div class="top"><span>M13 · K리그2</span><span class="num">07-12 19:30</span></div>
+<div class="teams serif">충남아산<span class="vs">vs</span>경남FC</div>
+<div class="bar" title="대중 투표 분포 승/무/패"><span class="w num" style="width:59.3%">59%</span><span class="d num" style="width:28.6%">29%</span><span class="l num" style="width:12.1%">12%</span></div>
+</div><div class="card">
+<div class="top"><span>M14 · K리그2</span><span class="num">07-12 19:30</span></div>
+<div class="teams serif">부산아이<span class="vs">vs</span>김포FC</div>
+<div class="bar" title="대중 투표 분포 승/무/패"><span class="w num" style="width:69.2%">69%</span><span class="d num" style="width:21.7%">22%</span><span class="l num" style="width:9.1%">9%</span></div>
+</div></div>
+<div class="legend">
+<span><i style="background:var(--accent)"></i>홈 승</span>
+<span><i style="background:var(--kraft)"></i>무승부</span>
+<span><i style="background:var(--olive)"></i>원정 승</span>
+</div>
+<footer>본 분석은 통계적 참고 자료이며 구매 결과를 보장하지 않습니다. 데이터 기준: 2026-07-09 14:06 (배트맨 투표 현황)</footer></div></body></html>

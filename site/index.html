@@ -1,0 +1,53 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>승무패 AI 분석</title><style>
+:root {
+  --bg:#FAF9F5; --surface:#F0EEE6; --surface-raised:#FFFFFF; --border:#E3DFD3;
+  --text:#1F1E1D; --text-muted:#6E6C64; --accent:#D97757; --accent-soft:#F5E5DE;
+  --kraft:#D4A27F; --olive:#6A6B5F; --positive:#5E7B5E; --negative:#B0554B;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  background:var(--bg); color:var(--text);
+  font-family:Pretendard,-apple-system,"Malgun Gothic",sans-serif;
+  font-size:15px; line-height:1.7;
+}
+.wrap { max-width:960px; margin:0 auto; padding:48px 16px; }
+.serif { font-family:"Noto Serif KR",Georgia,serif; font-weight:600; letter-spacing:-0.01em; }
+.hero h1 { font-size:32px; }
+.hero .meta { color:var(--text-muted); font-size:13px; margin-top:8px; }
+.cards { display:grid; grid-template-columns:repeat(auto-fill,minmax(420px,1fr)); gap:16px; margin-top:32px; }
+@media (max-width:900px){ .cards{ grid-template-columns:1fr; } }
+.card {
+  background:var(--surface); border:1px solid var(--border); border-radius:16px;
+  padding:16px 20px; box-shadow:0 1px 3px rgba(31,30,29,0.06);
+  transition:background 120ms ease; display:block; color:inherit; text-decoration:none;
+}
+.card:hover { background:var(--surface-raised); }
+.card .top { display:flex; justify-content:space-between; font-size:12px; color:var(--text-muted); }
+.card .teams { font-size:19px; margin:8px 0 12px; }
+.card .teams .vs { color:var(--text-muted); font-size:14px; margin:0 6px; }
+.num { font-variant-numeric:tabular-nums; }
+.bar { display:flex; height:22px; border-radius:6px; overflow:hidden; }
+.bar span { display:flex; align-items:center; justify-content:center;
+  color:#fff; font-size:11px; font-weight:600; min-width:0; }
+.bar .w { background:var(--accent); } .bar .d { background:var(--kraft); } .bar .l { background:var(--olive); }
+.legend { display:flex; gap:16px; font-size:12px; color:var(--text-muted); margin-top:24px; }
+.legend i { display:inline-block; width:10px; height:10px; border-radius:3px; margin-right:5px; }
+.pill { display:inline-block; border:1px solid var(--border); border-radius:999px;
+  padding:2px 12px; font-size:12px; color:var(--text-muted); }
+.pill.accent { background:var(--accent-soft); color:var(--accent); border-color:transparent; }
+.notice { background:var(--surface); border:1px solid var(--border); border-radius:16px;
+  padding:16px 20px; margin-top:32px; color:var(--text-muted); font-size:13px; }
+footer { margin-top:48px; padding-top:16px; border-top:1px solid var(--border);
+  font-size:12px; color:var(--text-muted); }
+.roundlist { margin-top:32px; display:flex; flex-direction:column; gap:12px; }
+@media (prefers-reduced-motion:reduce){ *{ transition:none!important; } }
+</style></head><body><div class="wrap"><div class="hero">
+<h1 class="serif">승무패 · AI 최종 분석</h1>
+<div class="meta">회차별 경기 정보와 마감 12시간 전 AI 분석 리포트</div>
+</div>
+<div class="roundlist"><a class="card" href="rounds/2026-38/index.html">
+<div class="top"><span>2026년</span><span class="num">마감 07-11 19:30</span></div>
+<div class="teams serif">승무패 38회차 <span class="pill">분석 예정</span></div>
+<div class="top"><span>축구 14경기</span></div>
+</a></div>
+<footer>본 분석은 통계적 참고 자료이며 구매 결과를 보장하지 않습니다.</footer></div></body></html>

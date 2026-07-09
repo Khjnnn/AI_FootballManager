@@ -1,0 +1,37 @@
+{
+  "round": "2026-38",
+  "match_no": 4,
+  "league": "K리그2",
+  "kickoff": "2026-07-11T19:30:00+09:00",
+  "home": {
+    "betman_name": "안산그리",
+    "id": "K32",
+    "canonical": null
+  },
+  "away": {
+    "betman_name": "수원삼성",
+    "id": "K02",
+    "canonical": null
+  },
+  "stadium": "안산와스",
+  "status": "scheduled",
+  "vote_dist": {
+    "win": 0.0497,
+    "draw": 0.096,
+    "lose": 0.8543,
+    "counts": {
+      "win": 2119,
+      "draw": 4096,
+      "lose": 36442
+    },
+    "collected_at": "2026-07-09T14:06:00+09:00"
+  },
+  "market_odds": null,
+  "research_needed": [
+    "최근 폼(최근 5경기)",
+    "상대 전적",
+    "리그 순위·승점",
+    "결장자(부상·징계)",
+    "일정 피로도·로테이션 가능성"
+  ]
+}
