@@ -1,0 +1,447 @@
+{
+  "round_id": "260039",
+  "year": 2026,
+  "round_no": 39,
+  "game_id": "G011",
+  "sale_open": "2026-07-16T08:00:00+09:00",
+  "sale_close": "2026-07-18T19:30:00+09:00",
+  "analysis_due": "2026-07-18T07:30:00+09:00",
+  "status": "on_sale",
+  "collected_at": "2026-07-16T11:12:00+09:00",
+  "matches": [
+    {
+      "match_no": 1,
+      "match_seq": 1,
+      "league": "K리그1",
+      "league_code": "SC001",
+      "domestic": true,
+      "kickoff": "2026-07-18T19:30:00+09:00",
+      "home": {
+        "betman_name": "대전하나",
+        "id": "K10",
+        "canonical": null
+      },
+      "away": {
+        "betman_name": "울산HDFC",
+        "id": "K01",
+        "canonical": null
+      },
+      "stadium": "대전월드",
+      "handicap": 0.0,
+      "status": "scheduled",
+      "vote_counts": {
+        "win": 9746,
+        "draw": 11634,
+        "lose": 15985
+      },
+      "vote_dist": {
+        "win": 0.2608,
+        "draw": 0.3114,
+        "lose": 0.4278
+      }
+    },
+    {
+      "match_no": 2,
+      "match_seq": 2,
+      "league": "K리그1",
+      "league_code": "SC001",
+      "domestic": true,
+      "kickoff": "2026-07-18T19:30:00+09:00",
+      "home": {
+        "betman_name": "강원FC",
+        "id": "K21",
+        "canonical": null
+      },
+      "away": {
+        "betman_name": "김천상무",
+        "id": "K35",
+        "canonical": null
+      },
+      "stadium": "강릉하이",
+      "handicap": 0.0,
+      "status": "scheduled",
+      "vote_counts": {
+        "win": 27486,
+        "draw": 6105,
+        "lose": 3774
+      },
+      "vote_dist": {
+        "win": 0.7356,
+        "draw": 0.1634,
+        "lose": 0.101
+      }
+    },
+    {
+      "match_no": 3,
+      "match_seq": 3,
+      "league": "K리그1",
+      "league_code": "SC001",
+      "domestic": true,
+      "kickoff": "2026-07-18T19:30:00+09:00",
+      "home": {
+        "betman_name": "인천유나",
+        "id": "K18",
+        "canonical": null
+      },
+      "away": {
+        "betman_name": "전북현대",
+        "id": "K05",
+        "canonical": null
+      },
+      "stadium": "인천전용",
+      "handicap": 0.0,
+      "status": "scheduled",
+      "vote_counts": {
+        "win": 4147,
+        "draw": 9047,
+        "lose": 24171
+      },
+      "vote_dist": {
+        "win": 0.111,
+        "draw": 0.2421,
+        "lose": 0.6469
+      }
+    },
+    {
+      "match_no": 4,
+      "match_seq": 4,
+      "league": "K리그1",
+      "league_code": "SC001",
+      "domestic": true,
+      "kickoff": "2026-07-18T19:30:00+09:00",
+      "home": {
+        "betman_name": "제주SKFC",
+        "id": "K04",
+        "canonical": null
+      },
+      "away": {
+        "betman_name": "포항스틸",
+        "id": "K03",
+        "canonical": null
+      },
+      "stadium": "제주월드",
+      "handicap": 0.0,
+      "status": "scheduled",
+      "vote_counts": {
+        "win": 8029,
+        "draw": 11223,
+        "lose": 18113
+      },
+      "vote_dist": {
+        "win": 0.2149,
+        "draw": 0.3004,
+        "lose": 0.4848
+      }
+    },
+    {
+      "match_no": 5,
+      "match_seq": 5,
+      "league": "K리그2",
+      "league_code": "SC003",
+      "domestic": true,
+      "kickoff": "2026-07-18T19:30:00+09:00",
+      "home": {
+        "betman_name": "전남드래",
+        "id": "K07",
+        "canonical": null
+      },
+      "away": {
+        "betman_name": "충남아산",
+        "id": "K34",
+        "canonical": null
+      },
+      "stadium": "광양전용",
+      "handicap": 0.0,
+      "status": "scheduled",
+      "vote_counts": {
+        "win": 7562,
+        "draw": 12648,
+        "lose": 17155
+      },
+      "vote_dist": {
+        "win": 0.2024,
+        "draw": 0.3385,
+        "lose": 0.4591
+      }
+    },
+    {
+      "match_no": 6,
+      "match_seq": 6,
+      "league": "K리그2",
+      "league_code": "SC003",
+      "domestic": true,
+      "kickoff": "2026-07-18T19:30:00+09:00",
+      "home": {
+        "betman_name": "김포FC",
+        "id": "K36",
+        "canonical": null
+      },
+      "away": {
+        "betman_name": "대구FC",
+        "id": "K17",
+        "canonical": null
+      },
+      "stadium": "김포솔터",
+      "handicap": 0.0,
+      "status": "scheduled",
+      "vote_counts": {
+        "win": 4670,
+        "draw": 8999,
+        "lose": 23696
+      },
+      "vote_dist": {
+        "win": 0.125,
+        "draw": 0.2408,
+        "lose": 0.6342
+      }
+    },
+    {
+      "match_no": 7,
+      "match_seq": 7,
+      "league": "K리그2",
+      "league_code": "SC003",
+      "domestic": true,
+      "kickoff": "2026-07-18T19:30:00+09:00",
+      "home": {
+        "betman_name": "수원FC",
+        "id": "K29",
+        "canonical": null
+      },
+      "away": {
+        "betman_name": "서울이랜",
+        "id": "K31",
+        "canonical": null
+      },
+      "stadium": "수원종합",
+      "handicap": 0.0,
+      "status": "scheduled",
+      "vote_counts": {
+        "win": 19612,
+        "draw": 10733,
+        "lose": 7020
+      },
+      "vote_dist": {
+        "win": 0.5249,
+        "draw": 0.2872,
+        "lose": 0.1879
+      }
+    },
+    {
+      "match_no": 8,
+      "match_seq": 8,
+      "league": "K리그2",
+      "league_code": "SC003",
+      "domestic": true,
+      "kickoff": "2026-07-18T19:30:00+09:00",
+      "home": {
+        "betman_name": "성남FC",
+        "id": "K08",
+        "canonical": null
+      },
+      "away": {
+        "betman_name": "부산아이",
+        "id": "K06",
+        "canonical": null
+      },
+      "stadium": "탄천종합",
+      "handicap": 0.0,
+      "status": "scheduled",
+      "vote_counts": {
+        "win": 5042,
+        "draw": 9813,
+        "lose": 22510
+      },
+      "vote_dist": {
+        "win": 0.1349,
+        "draw": 0.2626,
+        "lose": 0.6024
+      }
+    },
+    {
+      "match_no": 9,
+      "match_seq": 9,
+      "league": "K리그1",
+      "league_code": "SC001",
+      "domestic": true,
+      "kickoff": "2026-07-19T19:30:00+09:00",
+      "home": {
+        "betman_name": "FC안양",
+        "id": "K27",
+        "canonical": null
+      },
+      "away": {
+        "betman_name": "광주FC",
+        "id": "K22",
+        "canonical": null
+      },
+      "stadium": "안양종합",
+      "handicap": 0.0,
+      "status": "scheduled",
+      "vote_counts": {
+        "win": 27703,
+        "draw": 5778,
+        "lose": 3884
+      },
+      "vote_dist": {
+        "win": 0.7414,
+        "draw": 0.1546,
+        "lose": 0.1039
+      }
+    },
+    {
+      "match_no": 10,
+      "match_seq": 10,
+      "league": "K리그1",
+      "league_code": "SC001",
+      "domestic": true,
+      "kickoff": "2026-07-19T19:30:00+09:00",
+      "home": {
+        "betman_name": "부천FC",
+        "id": "K26",
+        "canonical": null
+      },
+      "away": {
+        "betman_name": "FC서울",
+        "id": "K09",
+        "canonical": null
+      },
+      "stadium": "부천종합",
+      "handicap": 0.0,
+      "status": "scheduled",
+      "vote_counts": {
+        "win": 2999,
+        "draw": 5115,
+        "lose": 29251
+      },
+      "vote_dist": {
+        "win": 0.0803,
+        "draw": 0.1369,
+        "lose": 0.7828
+      }
+    },
+    {
+      "match_no": 11,
+      "match_seq": 11,
+      "league": "K리그2",
+      "league_code": "SC003",
+      "domestic": true,
+      "kickoff": "2026-07-19T19:30:00+09:00",
+      "home": {
+        "betman_name": "경남FC",
+        "id": "K20",
+        "canonical": null
+      },
+      "away": {
+        "betman_name": "안산그리",
+        "id": "K32",
+        "canonical": null
+      },
+      "stadium": "창원센터",
+      "handicap": 0.0,
+      "status": "scheduled",
+      "vote_counts": {
+        "win": 21813,
+        "draw": 10946,
+        "lose": 4606
+      },
+      "vote_dist": {
+        "win": 0.5838,
+        "draw": 0.2929,
+        "lose": 0.1233
+      }
+    },
+    {
+      "match_no": 12,
+      "match_seq": 12,
+      "league": "K리그2",
+      "league_code": "SC003",
+      "domestic": true,
+      "kickoff": "2026-07-19T19:30:00+09:00",
+      "home": {
+        "betman_name": "수원삼성",
+        "id": "K02",
+        "canonical": null
+      },
+      "away": {
+        "betman_name": "파주프런",
+        "id": "K40",
+        "canonical": null
+      },
+      "stadium": "수원월드",
+      "handicap": 0.0,
+      "status": "scheduled",
+      "vote_counts": {
+        "win": 31248,
+        "draw": 3567,
+        "lose": 2550
+      },
+      "vote_dist": {
+        "win": 0.8363,
+        "draw": 0.0955,
+        "lose": 0.0682
+      }
+    },
+    {
+      "match_no": 13,
+      "match_seq": 13,
+      "league": "K리그2",
+      "league_code": "SC003",
+      "domestic": true,
+      "kickoff": "2026-07-19T19:30:00+09:00",
+      "home": {
+        "betman_name": "충북청주",
+        "id": "K37",
+        "canonical": null
+      },
+      "away": {
+        "betman_name": "천안시티",
+        "id": "K38",
+        "canonical": null
+      },
+      "stadium": "청주종합",
+      "handicap": 0.0,
+      "status": "scheduled",
+      "vote_counts": {
+        "win": 9998,
+        "draw": 18535,
+        "lose": 8832
+      },
+      "vote_dist": {
+        "win": 0.2676,
+        "draw": 0.4961,
+        "lose": 0.2364
+      }
+    },
+    {
+      "match_no": 14,
+      "match_seq": 14,
+      "league": "K리그2",
+      "league_code": "SC003",
+      "domestic": true,
+      "kickoff": "2026-07-19T19:30:00+09:00",
+      "home": {
+        "betman_name": "용인FC",
+        "id": "K42",
+        "canonical": null
+      },
+      "away": {
+        "betman_name": "화성FC",
+        "id": "K39",
+        "canonical": null
+      },
+      "stadium": "용인미르",
+      "handicap": 0.0,
+      "status": "scheduled",
+      "vote_counts": {
+        "win": 5429,
+        "draw": 14926,
+        "lose": 17010
+      },
+      "vote_dist": {
+        "win": 0.1453,
+        "draw": 0.3995,
+        "lose": 0.4552
+      }
+    }
+  ]
+}
