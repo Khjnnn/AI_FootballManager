@@ -1,0 +1,447 @@
+{
+  "round_id": "260040",
+  "year": 2026,
+  "round_no": 40,
+  "game_id": "G011",
+  "sale_open": "2026-07-20T08:00:00+09:00",
+  "sale_close": "2026-07-22T19:30:00+09:00",
+  "analysis_due": "2026-07-22T07:30:00+09:00",
+  "status": "on_sale",
+  "collected_at": "2026-07-20T10:12:00+09:00",
+  "matches": [
+    {
+      "match_no": 1,
+      "match_seq": 1,
+      "league": "K리그1",
+      "league_code": "SC001",
+      "domestic": true,
+      "kickoff": "2026-07-22T19:30:00+09:00",
+      "home": {
+        "betman_name": "부천FC",
+        "id": "K26",
+        "canonical": null
+      },
+      "away": {
+        "betman_name": "FC안양",
+        "id": "K27",
+        "canonical": null
+      },
+      "stadium": "부천종합",
+      "handicap": 0.0,
+      "status": "scheduled",
+      "vote_counts": {
+        "win": 4093,
+        "draw": 7383,
+        "lose": 7100
+      },
+      "vote_dist": {
+        "win": 0.2203,
+        "draw": 0.3974,
+        "lose": 0.3822
+      }
+    },
+    {
+      "match_no": 2,
+      "match_seq": 2,
+      "league": "K리그1",
+      "league_code": "SC001",
+      "domestic": true,
+      "kickoff": "2026-07-22T19:30:00+09:00",
+      "home": {
+        "betman_name": "광주FC",
+        "id": "K22",
+        "canonical": null
+      },
+      "away": {
+        "betman_name": "김천상무",
+        "id": "K35",
+        "canonical": null
+      },
+      "stadium": "광주월드",
+      "handicap": 0.0,
+      "status": "scheduled",
+      "vote_counts": {
+        "win": 4961,
+        "draw": 7900,
+        "lose": 5715
+      },
+      "vote_dist": {
+        "win": 0.2671,
+        "draw": 0.4253,
+        "lose": 0.3077
+      }
+    },
+    {
+      "match_no": 3,
+      "match_seq": 3,
+      "league": "K리그1",
+      "league_code": "SC001",
+      "domestic": true,
+      "kickoff": "2026-07-22T19:30:00+09:00",
+      "home": {
+        "betman_name": "FC서울",
+        "id": "K09",
+        "canonical": null
+      },
+      "away": {
+        "betman_name": "포항스틸",
+        "id": "K03",
+        "canonical": null
+      },
+      "stadium": "서울월드",
+      "handicap": 0.0,
+      "status": "scheduled",
+      "vote_counts": {
+        "win": 11012,
+        "draw": 5172,
+        "lose": 2392
+      },
+      "vote_dist": {
+        "win": 0.5928,
+        "draw": 0.2784,
+        "lose": 0.1288
+      }
+    },
+    {
+      "match_no": 4,
+      "match_seq": 4,
+      "league": "미국 메이저리그사커",
+      "league_code": "130",
+      "domestic": false,
+      "kickoff": "2026-07-23T08:30:00+09:00",
+      "home": {
+        "betman_name": "FC신시내",
+        "id": "722265",
+        "canonical": null
+      },
+      "away": {
+        "betman_name": "밴쿠화이",
+        "id": "307691",
+        "canonical": null
+      },
+      "stadium": "TQL스타",
+      "handicap": 0.0,
+      "status": "scheduled",
+      "vote_counts": {
+        "win": 3022,
+        "draw": 4396,
+        "lose": 11158
+      },
+      "vote_dist": {
+        "win": 0.1627,
+        "draw": 0.2366,
+        "lose": 0.6007
+      }
+    },
+    {
+      "match_no": 5,
+      "match_seq": 5,
+      "league": "미국 메이저리그사커",
+      "league_code": "130",
+      "domestic": false,
+      "kickoff": "2026-07-23T08:30:00+09:00",
+      "home": {
+        "betman_name": "콜럼크루",
+        "id": "6001",
+        "canonical": null
+      },
+      "away": {
+        "betman_name": "뉴욕시티",
+        "id": "546238",
+        "canonical": null
+      },
+      "stadium": "스코츠필",
+      "handicap": 0.0,
+      "status": "scheduled",
+      "vote_counts": {
+        "win": 10214,
+        "draw": 4289,
+        "lose": 4073
+      },
+      "vote_dist": {
+        "win": 0.5498,
+        "draw": 0.2309,
+        "lose": 0.2193
+      }
+    },
+    {
+      "match_no": 6,
+      "match_seq": 6,
+      "league": "미국 메이저리그사커",
+      "league_code": "130",
+      "domestic": false,
+      "kickoff": "2026-07-23T08:30:00+09:00",
+      "home": {
+        "betman_name": "인터마이",
+        "id": "960720",
+        "canonical": null
+      },
+      "away": {
+        "betman_name": "시카파이",
+        "id": "6397",
+        "canonical": null
+      },
+      "stadium": "Nu스타",
+      "handicap": 0.0,
+      "status": "scheduled",
+      "vote_counts": {
+        "win": 7931,
+        "draw": 5176,
+        "lose": 5469
+      },
+      "vote_dist": {
+        "win": 0.4269,
+        "draw": 0.2786,
+        "lose": 0.2944
+      }
+    },
+    {
+      "match_no": 7,
+      "match_seq": 7,
+      "league": "미국 메이저리그사커",
+      "league_code": "130",
+      "domestic": false,
+      "kickoff": "2026-07-23T08:30:00+09:00",
+      "home": {
+        "betman_name": "뉴잉레벌",
+        "id": "6580",
+        "canonical": null
+      },
+      "away": {
+        "betman_name": "토론토FC",
+        "id": "56453",
+        "canonical": null
+      },
+      "stadium": "질레트스",
+      "handicap": 0.0,
+      "status": "scheduled",
+      "vote_counts": {
+        "win": 14453,
+        "draw": 2550,
+        "lose": 1573
+      },
+      "vote_dist": {
+        "win": 0.778,
+        "draw": 0.1373,
+        "lose": 0.0847
+      }
+    },
+    {
+      "match_no": 8,
+      "match_seq": 8,
+      "league": "미국 메이저리그사커",
+      "league_code": "130",
+      "domestic": false,
+      "kickoff": "2026-07-23T09:15:00+09:00",
+      "home": {
+        "betman_name": "샬럿FC",
+        "id": "1323940",
+        "canonical": null
+      },
+      "away": {
+        "betman_name": "애틀유나",
+        "id": "773958",
+        "canonical": null
+      },
+      "stadium": "뱅크아메",
+      "handicap": 0.0,
+      "status": "scheduled",
+      "vote_counts": {
+        "win": 14317,
+        "draw": 2674,
+        "lose": 1585
+      },
+      "vote_dist": {
+        "win": 0.7707,
+        "draw": 0.1439,
+        "lose": 0.0853
+      }
+    },
+    {
+      "match_no": 9,
+      "match_seq": 9,
+      "league": "미국 메이저리그사커",
+      "league_code": "130",
+      "domestic": false,
+      "kickoff": "2026-07-23T09:30:00+09:00",
+      "home": {
+        "betman_name": "오스틴FC",
+        "id": "1218886",
+        "canonical": null
+      },
+      "away": {
+        "betman_name": "시애사운",
+        "id": "130394",
+        "canonical": null
+      },
+      "stadium": "Q2스타",
+      "handicap": 0.0,
+      "status": "scheduled",
+      "vote_counts": {
+        "win": 3398,
+        "draw": 6838,
+        "lose": 8340
+      },
+      "vote_dist": {
+        "win": 0.1829,
+        "draw": 0.3681,
+        "lose": 0.449
+      }
+    },
+    {
+      "match_no": 10,
+      "match_seq": 10,
+      "league": "미국 메이저리그사커",
+      "league_code": "130",
+      "domestic": false,
+      "kickoff": "2026-07-23T09:30:00+09:00",
+      "home": {
+        "betman_name": "휴스다이",
+        "id": "8259",
+        "canonical": null
+      },
+      "away": {
+        "betman_name": "DC유나이",
+        "id": "6602",
+        "canonical": null
+      },
+      "stadium": "셸에너지",
+      "handicap": 0.0,
+      "status": "scheduled",
+      "vote_counts": {
+        "win": 12882,
+        "draw": 3637,
+        "lose": 2057
+      },
+      "vote_dist": {
+        "win": 0.6935,
+        "draw": 0.1958,
+        "lose": 0.1107
+      }
+    },
+    {
+      "match_no": 11,
+      "match_seq": 11,
+      "league": "미국 메이저리그사커",
+      "league_code": "130",
+      "domestic": false,
+      "kickoff": "2026-07-23T09:30:00+09:00",
+      "home": {
+        "betman_name": "스포캔자",
+        "id": "6604",
+        "canonical": null
+      },
+      "away": {
+        "betman_name": "미네유나",
+        "id": "207242",
+        "canonical": null
+      },
+      "stadium": "스포팅파",
+      "handicap": 0.0,
+      "status": "scheduled",
+      "vote_counts": {
+        "win": 2355,
+        "draw": 4051,
+        "lose": 12170
+      },
+      "vote_dist": {
+        "win": 0.1268,
+        "draw": 0.2181,
+        "lose": 0.6551
+      }
+    },
+    {
+      "match_no": 12,
+      "match_seq": 12,
+      "league": "미국 메이저리그사커",
+      "league_code": "130",
+      "domestic": false,
+      "kickoff": "2026-07-23T10:30:00+09:00",
+      "home": {
+        "betman_name": "콜로래피",
+        "id": "8314",
+        "canonical": null
+      },
+      "away": {
+        "betman_name": "샌디에FC",
+        "id": "1701119",
+        "canonical": null
+      },
+      "stadium": "딕스스파",
+      "handicap": 0.0,
+      "status": "scheduled",
+      "vote_counts": {
+        "win": 9017,
+        "draw": 5113,
+        "lose": 4446
+      },
+      "vote_dist": {
+        "win": 0.4854,
+        "draw": 0.2752,
+        "lose": 0.2393
+      }
+    },
+    {
+      "match_no": 13,
+      "match_seq": 13,
+      "league": "미국 메이저리그사커",
+      "league_code": "130",
+      "domestic": false,
+      "kickoff": "2026-07-23T11:30:00+09:00",
+      "home": {
+        "betman_name": "LA갤럭시",
+        "id": "6637",
+        "canonical": null
+      },
+      "away": {
+        "betman_name": "세인시티",
+        "id": "1427963",
+        "canonical": null
+      },
+      "stadium": "디그니파",
+      "handicap": 0.0,
+      "status": "scheduled",
+      "vote_counts": {
+        "win": 5266,
+        "draw": 6906,
+        "lose": 6404
+      },
+      "vote_dist": {
+        "win": 0.2835,
+        "draw": 0.3718,
+        "lose": 0.3447
+      }
+    },
+    {
+      "match_no": 14,
+      "match_seq": 14,
+      "league": "미국 메이저리그사커",
+      "league_code": "130",
+      "domestic": false,
+      "kickoff": "2026-07-23T11:30:00+09:00",
+      "home": {
+        "betman_name": "LAFC",
+        "id": "867280",
+        "canonical": null
+      },
+      "away": {
+        "betman_name": "레알솔트",
+        "id": "6606",
+        "canonical": null
+      },
+      "stadium": "BMO스타",
+      "handicap": 0.0,
+      "status": "scheduled",
+      "vote_counts": {
+        "win": 14612,
+        "draw": 2388,
+        "lose": 1576
+      },
+      "vote_dist": {
+        "win": 0.7866,
+        "draw": 0.1286,
+        "lose": 0.0848
+      }
+    }
+  ]
+}

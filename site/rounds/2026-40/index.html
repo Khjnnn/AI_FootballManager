@@ -1,0 +1,167 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>승무패 40회차 · AI 분석</title><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet"><style>
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{background:#0A0D12;color:#E8ECF2;font-family:'Pretendard',system-ui,-apple-system,sans-serif;
+  -webkit-font-smoothing:antialiased;}
+::selection{background:#C7F94E;color:#0A0D12;}
+a{color:#C7F94E;text-decoration:none;}
+a:hover{color:#dcff86;}
+.mono{font-family:'Space Grotesk',sans-serif;}
+.num{font-family:'Space Grotesk',sans-serif;font-variant-numeric:tabular-nums;}
+::-webkit-scrollbar{width:9px;height:9px;}
+::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.11);border-radius:9px;}
+::-webkit-scrollbar-thumb:hover{background:rgba(255,255,255,0.2);}
+::-webkit-scrollbar-track{background:transparent;}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;}}
+@media (max-width:860px){.hd-legend{display:none!important;}.hd-title{font-size:15px!important;}.hd-meta{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:52vw;}header{padding:12px 16px!important;gap:10px!important;}}</style></head><body><div style="height:100vh;display:flex;flex-direction:column;">
+  <header style="display:flex;align-items:center;gap:16px;padding:15px 22px;border-bottom:1px solid rgba(255,255,255,0.07);flex-shrink:0;">
+    <div style="display:flex;align-items:center;gap:11px;min-width:0;">
+      <div class="mono" style="width:36px;height:36px;border-radius:10px;background:#C7F94E;display:flex;align-items:center;justify-content:center;color:#0A0D12;font-weight:800;font-size:14px;flex-shrink:0;">AI</div>
+      <div style="min-width:0;"><div class="hd-title" style="font-size:17px;font-weight:700;letter-spacing:-0.015em;">승무패 40회차 · AI 최종 분석</div>
+        <div class="hd-meta" style="font-size:12px;color:#7A8394;margin-top:2px;">발매 마감 07-22 19:30 · 데이터 07-20 10:12 기준 · <a href="../../index.html">전체 회차</a></div></div>
+    </div>
+    <div style="margin-left:auto;display:flex;align-items:center;gap:14px;flex-shrink:0;">
+      <div class="hd-legend" style="display:flex;align-items:center;gap:12px;font-size:11px;color:#7A8394;"><span style="display:inline-flex;align-items:center;gap:5px;"><span style="width:9px;height:9px;border-radius:3px;background:#2EE6A6;"></span>승</span><span style="display:inline-flex;align-items:center;gap:5px;"><span style="width:9px;height:9px;border-radius:3px;background:#F5C451;"></span>무</span><span style="display:inline-flex;align-items:center;gap:5px;"><span style="width:9px;height:9px;border-radius:3px;background:#FF5D6C;"></span>패</span></div>
+      <a href="round.html" class="mono" style="font-size:12px;font-weight:600;color:#C7F94E;background:rgba(199,249,78,0.10);border:1px solid rgba(199,249,78,0.22);padding:5px 12px;border-radius:999px;">종합 리포트</a>
+      <span class="mono" style="font-size:12px;font-weight:600;color:#C7F94E;background:rgba(199,249,78,0.10);border:1px solid rgba(199,249,78,0.22);padding:5px 12px;border-radius:999px;">AI 분석 14/14 완료</span>
+    </div>
+  </header>
+  <div style="flex:1;display:flex;min-height:0;">
+    <aside id="aside" style="display:flex;flex-direction:column;width:400px;flex-shrink:0;border-right:1px solid rgba(255,255,255,0.07);min-height:0;">
+      <div class="mono" style="padding:14px 18px 10px;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#5D6675;font-weight:600;flex-shrink:0;">경기 리스트 · 14</div>
+      <div id="list" style="flex:1;overflow-y:auto;"></div>
+    </aside>
+    <main style="display:flex;flex-direction:column;flex:1;overflow-y:auto;min-height:0;">
+      <div id="detail" style="padding:26px 32px 64px;max-width:780px;width:100%;"></div>
+    </main>
+  </div>
+</div>
+<script>const C={"win": "#2EE6A6", "draw": "#F5C451", "lose": "#FF5D6C", "accent": "#C7F94E", "bg": "#0A0D12", "surface": "#12161F", "muted": "#7A8394", "faint": "#5D6675", "dim": "#B4BCC8", "text": "#E8ECF2", "border": "rgba(255,255,255,0.07)", "borderSoft": "rgba(255,255,255,0.06)", "disclaimer": "본 분석은 통계적 참고 자료이며 구매 결과를 보장하지 않습니다. · 데이터 기준 2026-07-20 10:12"};const DATA=[{"no": "M01", "league": "K리그1", "date": "07-22", "time": "19:30", "home": "부천FC", "away": "FC안양", "venue": "부천종합", "status": "scheduled", "pubW": 22, "pubD": 40, "pubL": 38, "market": null, "reportHref": "m01.html", "analyzed": true, "w": 23, "d": 47, "l": 30, "pick": "무", "sub": "패", "conf": "중", "keyFactors": ["양 팀 합산 16무(안양 9무 리그 최다급+부천 7무) — 리그 최다급 무승부 조합", "부천 홈 평균 0.82득점 리그 최저권, 안양도 최하위 광주를 못 이긴 저화력", "승점 5차·전력 근접 수도권 주중 매치 — 접전·저득점 체질 정면 충돌", "투표 무 39.7% 최다는 실적 기반 분포로 독립 근거와 정합"], "dataGaps": ["해외 배당 미확보", "2026 시즌 H2H 1차전(11R) 스코어 미확인 — 역상성 판정 보류", "양팀 확정 라인업·부상·GK 폼 미확인", "19R 시점 이적시장 갱신 미확인"], "expectedScores": ["1-1", "0-0"]}, {"no": "M02", "league": "K리그1", "date": "07-22", "time": "19:30", "home": "광주FC", "away": "김천상무", "venue": "광주월드", "status": "scheduled", "pubW": 27, "pubD": 43, "pubL": 31, "market": null, "reportHref": "m02.html", "analyzed": true, "w": 21, "d": 46, "l": 33, "pick": "무", "sub": "패", "conf": "하", "keyFactors": ["김천 리그 최다 10무 vs 광주 16경기 무승 — 양팀 모두 '이기는 힘' 부족", "광주 8경기 6패 근접 Collapse 경고 — Draw Bias 가산 금지, 랜덤 3분기 병기", "강등 행정 확정 김천은 순위 무압박 자유 플레이형 — 활동량 유지·승리 완결력 최하(2승)", "광주 여름 대량 영입 조직 적응 2주차 — 안양전 1-1로 반보 회복 신호"], "dataGaps": ["해외 배당 미확보", "김천 이수빈 징계 결장 적용 여부 미확인", "2026 시즌 H2H 1차전 미확인 — 역상성 판정 보류", "양팀 확정 라인업·GK 폼 미확인"], "expectedScores": ["1-1", "0-0"]}, {"no": "M03", "league": "K리그1", "date": "07-22", "time": "19:30", "home": "FC서울", "away": "포항스틸", "venue": "서울월드", "status": "scheduled", "pubW": 59, "pubD": 28, "pubL": 13, "market": null, "reportHref": "m03.html", "analyzed": true, "w": 50, "d": 33, "l": 17, "pick": "승", "sub": "무", "conf": "중", "keyFactors": ["서울 재개 후 2경기 4득 1실 — 공수 실전 근거를 갖춘 선두의 홈경기", "2026 4R 포항 원정 1-0 승 — 시즌 H2H 우위(역상성 아님)", "포항 직전 제주전 1-2 역전패 — 리드 관리 실패의 부정적 신호", "서울 상위권 홈 화력(1.63득) — Over 폭발 분기 의무 병기"], "dataGaps": ["해외 배당 미확보", "양팀 확정 라인업·부상 명단 미확인(상한 50% 도달 사유)", "서울 GK 폼은 B급 소스 신호만 확보"], "expectedScores": ["2-0", "1-0"]}, {"no": "M04", "league": "미국 메이저리그사커", "date": "07-23", "time": "08:30", "home": "FC신시내", "away": "밴쿠화이", "venue": "TQL스타", "status": "scheduled", "pubW": 16, "pubD": 24, "pubL": 60, "market": null, "reportHref": "m04.html", "analyzed": true, "w": 24, "d": 37, "l": 39, "pick": "패", "sub": "무", "conf": "하", "keyFactors": ["밴쿠버 서부 1위·리그 최소 실점권(12실) — 승점 12차 전력 우위, 단 전부 중단 전 기록(반값)", "신시내티 홈 다득점형(36득 37실) — BTTS 구조", "뮐러 영입 임박 보도(B급) — 밴쿠버 스쿼드 재편 변동성", "재개 원정 favorite 절제 적용(-3%p, 홈 1-0 분기 12% 의무)"], "dataGaps": ["해외 배당 미확보", "양팀 2차 윈도 영입/데뷔 미확인(뮐러는 B급 보도만)", "밴쿠버 7/16 시카고전 결과 미확인", "WC 차출 선수 복귀 상태 미확인", "확정 라인업·부상 미확인"], "expectedScores": ["1-2", "1-1"]}, {"no": "M05", "league": "미국 메이저리그사커", "date": "07-23", "time": "08:30", "home": "콜럼크루", "away": "뉴욕시티", "venue": "스코츠필", "status": "scheduled", "pubW": 55, "pubD": 23, "pubL": 22, "market": null, "reportHref": "m05.html", "analyzed": true, "w": 35, "d": 41, "l": 24, "pick": "승", "sub": "무", "conf": "하", "keyFactors": ["양팀 모두 8주 공백 첫 실전 — 실전 근거 전무, 홈 이점+분산 구도", "순위·득실은 NYCFC 근소 우위인데 투표는 콜럼버스 55% — 이름값 과열", "콜럼버스 점유 지향 스타일은 재개 조율 미비에 취약 가능", "무승부 축 41%로 사실상 공동 메인"], "dataGaps": ["해외 배당 미확보", "양팀 2차 윈도 영입/데뷔 미확인", "WC 차출 선수 복귀 상태 미확인", "확정 라인업·부상·GK 미확인"], "expectedScores": ["2-1", "1-1"]}, {"no": "M06", "league": "미국 메이저리그사커", "date": "07-23", "time": "08:30", "home": "인터마이", "away": "시카파이", "venue": "Nu스타", "status": "scheduled", "pubW": 43, "pubD": 28, "pubL": 29, "market": null, "reportHref": "m06.html", "analyzed": true, "w": 27, "d": 37, "l": 36, "pick": "승", "sub": "무", "conf": "하", "keyFactors": ["메시 WC 결승 연장 120분 소화 D-3 — 출전 여부 미확인, 뛰든 안 뛰든 마이너스(감산+분산)", "마이애미 8주 공백 첫 실전 vs 시카고 재개 실전 소화 가능성 — 감각 비대칭이 원정 우위", "마이애미 리그 최다 화력(39득)+홈 vs 시카고 리그 최소급 실점(16)", "WC 준우승 직후 심리 낙차 — 회차 최대 변동성"], "dataGaps": ["해외 배당 미확보", "메시 및 WC 차출 선수 출전/복귀 상태 미확인", "시카고 7/16 밴쿠버전 결과 미확인", "양팀 2차 윈도 영입 미확인", "확정 라인업·부상 미확인"], "expectedScores": ["2-1", "1-1"]}, {"no": "M07", "league": "미국 메이저리그사커", "date": "07-23", "time": "08:30", "home": "뉴잉레벌", "away": "토론토FC", "venue": "질레트스", "status": "scheduled", "pubW": 78, "pubD": 14, "pubL": 8, "market": null, "reportHref": "m07.html", "analyzed": true, "w": 49, "d": 35, "l": 16, "pick": "승", "sub": "무", "conf": "중", "keyFactors": ["순위 8계단 차(4위 vs 12위) 전력 우위 — 단 중단 전 폼은 반값", "토론토 재개 1R 원정 0-0 소화 — 감각 비대칭이 언더독 우위인 드문 구도", "투표 77.8% 회차 2위 쏠림 — 실측 대비 과대(신뢰도에만 반영)", "토론토 6무 체질 — 실질 리스크는 업셋보다 무승부(35%)"], "dataGaps": ["해외 배당 미확보", "양팀 2차 윈도 영입/데뷔 미확인", "WC 차출 선수 복귀 상태 미확인", "확정 라인업·부상·GK 미확인"], "expectedScores": ["2-0", "1-0"]}, {"no": "M08", "league": "미국 메이저리그사커", "date": "07-23", "time": "09:15", "home": "샬럿FC", "away": "애틀유나", "venue": "뱅크아메", "status": "scheduled", "pubW": 77, "pubD": 14, "pubL": 9, "market": null, "reportHref": "m08.html", "analyzed": true, "w": 46, "d": 39, "l": 15, "pick": "승", "sub": "무", "conf": "중", "keyFactors": ["애틀랜타 리그 최저 공격(15경기 14득) — 재개 후 실전(0-1)에서도 무득점 재확인", "샬럿 홈+전력차 명확하나 8주 공백 첫 실전", "투표 77.1% 쏠림은 중위권 샬럿 대비 과대(신뢰도에만 반영)", "남부 더비 — 카드·난전 분기 병기"], "dataGaps": ["해외 배당 미확보", "애틀랜타 여름 영입 여부 미확인", "WC 차출 선수 복귀 상태 미확인", "확정 라인업·부상·GK 미확인"], "expectedScores": ["2-0", "1-0"]}, {"no": "M09", "league": "미국 메이저리그사커", "date": "07-23", "time": "09:30", "home": "오스틴FC", "away": "시애사운", "venue": "Q2스타", "status": "scheduled", "pubW": 18, "pubD": 37, "pubL": 45, "market": null, "reportHref": "m09.html", "analyzed": true, "w": 22, "d": 39, "l": 39, "pick": "패", "sub": "무", "conf": "하", "keyFactors": ["시애틀 재개 1R 홈 1-5 참패 — 1경기 소표본, 양방향 전이 금지(분산 신호로만 처리)", "시즌 수치는 시애틀 저실점 상위(16실) vs 오스틴 31실 하위 — 방향 지지", "재개 원정 favorite 절제 적용(-3%p, 홈 1-0 분기 13%)", "시애틀 저득점 팀(18득) — 0-1 잠행이 기본 스코어라인"], "dataGaps": ["해외 배당 미확보", "양팀 2차 윈도 영입 미확인", "WC 차출 선수 복귀 상태 미확인", "확정 라인업·부상·GK 미확인"], "expectedScores": ["0-1", "1-1"]}, {"no": "M10", "league": "미국 메이저리그사커", "date": "07-23", "time": "09:30", "home": "휴스다이", "away": "DC유나이", "venue": "셸에너지", "status": "scheduled", "pubW": 69, "pubD": 20, "pubL": 11, "market": null, "reportHref": "m10.html", "analyzed": true, "w": 47, "d": 35, "l": 18, "pick": "승", "sub": "무", "conf": "중", "keyFactors": ["DC 동부→텍사스 장거리 원정+7월 휴스턴 폭염 — 이동·기후 비대칭", "승점 4차 근접 대진에 투표 69.3% — 과대 쏠림(신뢰도에만 반영)", "DC 6무 체질 — 실질 리스크는 업셋보다 무승부", "휴스턴 무 1개 '결판형' — 홈승/홈패 양극 분기 병기"], "dataGaps": ["해외 배당 미확보", "양팀 2차 윈도 영입 미확인", "WC 차출 선수 복귀 상태 미확인", "확정 라인업·부상·GK 미확인"], "expectedScores": ["2-1", "1-0"]}, {"no": "M11", "league": "미국 메이저리그사커", "date": "07-23", "time": "09:30", "home": "스포캔자", "away": "미네유나", "venue": "스포팅파", "status": "scheduled", "pubW": 13, "pubD": 22, "pubL": 66, "market": null, "reportHref": "m11.html", "analyzed": true, "w": 22, "d": 41, "l": 37, "pick": "패", "sub": "무", "conf": "하", "keyFactors": ["미네소타 8위 vs SKC 최하위 — 단 미네소타 15경기 18득 저화력으로 낙승 그림 협소", "SKC 재개 1R 원정 2득점 — 공격 실증+실전 감각 우위", "재개 원정 favorite 절제 적용(-3%p, 홈 1-0 분기 12%)", "SKC 39실 리그 최다 실점 — BTTS 구조"], "dataGaps": ["해외 배당 미확보", "양팀 2차 윈도 영입 미확인", "WC 차출 선수 복귀 상태 미확인", "확정 라인업·부상·GK 미확인"], "expectedScores": ["1-2", "1-1"]}, {"no": "M12", "league": "미국 메이저리그사커", "date": "07-23", "time": "10:30", "home": "콜로래피", "away": "샌디에FC", "venue": "딕스스파", "status": "scheduled", "pubW": 49, "pubD": 28, "pubL": 24, "market": null, "reportHref": "m12.html", "analyzed": true, "w": 42, "d": 36, "l": 22, "pick": "승", "sub": "무", "conf": "하", "keyFactors": ["덴버 고지대(해발 1,600m) 홈 이점 — 재개 라운드 원정 컨디션 조율 미비에 증폭", "콜로라도 15경기 1무 '무승부 희소 팀' + 샌디에이고 공격형(30득) — 결판·Over 성향 조합", "승점 1차 접전 대진 — 고지대 외 실증 격차 없음", "합산 55득 51실 — BTTS 구조"], "dataGaps": ["해외 배당 미확보", "양팀 2차 윈도 영입 미확인", "WC 차출 선수 복귀 상태 미확인", "확정 라인업·부상·GK 미확인"], "expectedScores": ["2-1", "1-1"]}, {"no": "M13", "league": "미국 메이저리그사커", "date": "07-23", "time": "11:30", "home": "LA갤럭시", "away": "세인시티", "venue": "디그니파", "status": "scheduled", "pubW": 28, "pubD": 37, "pubL": 34, "market": null, "reportHref": "m13.html", "analyzed": true, "w": 25, "d": 44, "l": 31, "pick": "무", "sub": "패", "conf": "하", "keyFactors": ["승점 1차(20 vs 19) 중위권 밀집 — 시즌 수치 동전 던지기", "재개 1R 정반대 결과(갤럭시 0-3 vs STL 3-2)는 상대 보정(LAFC vs 최하위 SKC)으로 상쇄 — 소표본 전이 금지", "갤럭시 5무·STL 4무 접전형 조합 — 무 축 최다(44%)", "투표 무 37.2% 최다 — 독립 근거로 검증된 분포"], "dataGaps": ["해외 배당 미확보", "양팀 2차 윈도 영입 미확인", "WC 차출 선수 복귀 상태 미확인", "확정 라인업·부상·GK 미확인"], "expectedScores": ["1-1", "0-0"]}, {"no": "M14", "league": "미국 메이저리그사커", "date": "07-23", "time": "11:30", "home": "LAFC", "away": "레알솔트", "venue": "BMO스타", "status": "scheduled", "pubW": 79, "pubD": 13, "pubL": 8, "market": null, "reportHref": "m14.html", "analyzed": true, "w": 48, "d": 28, "l": 24, "pick": "승", "sub": "무", "conf": "중", "keyFactors": ["LAFC 재개 1R 엘 트라피코 원정 3-0 대승(손흥민 득점) — 회차 내 최강 실전 근거+홈 전환", "RSL은 승점 1점차 서부 4위 — 투표 78.7% 회차 최대 쏠림은 전력 무시 과열", "재개 1R 대승 전이는 소표본 주의(K리그 선례상 전이 실패)", "리그 최상위 수비(17실) vs RSL 26득 — 접전 결판형"], "dataGaps": ["해외 배당 미확보", "양팀 2차 윈도 영입 미확인", "WC 차출 선수 복귀 상태 미확인", "확정 라인업·부상·GK 미확인"], "expectedScores": ["2-1", "2-0"]}];
+const OC = {'승':C.win,'무':C.draw,'패':C.lose};
+function confColor(c){return c==='하'?C.muted:c==='중'?C.draw:C.win;}
+function confDesc(c){return c==='하'?'변수 큰 접전':c==='중'?'무게 실림':'안정적';}
+function dayLabel(d){const [mm,dd]=d.split('-').map(Number);
+  const wd=['일','월','화','수','목','금','토'][new Date(2026,mm-1,dd).getDay()];
+  return mm+'월 '+dd+'일 ('+wd+')';}
+function esc(s){return (s==null?'':String(s)).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));}
+
+let sel = 0, detailOpen = false;
+const isMobile = () => window.innerWidth < 860;
+
+function bar(w,d,l,h){return `<div style="display:flex;height:${h}px;border-radius:${h>10?6:3}px;overflow:hidden;background:rgba(255,255,255,0.05);">
+  <div style="width:${w}%;background:${C.win}"></div><div style="width:${d}%;background:${C.draw}"></div><div style="width:${l}%;background:${C.lose}"></div></div>`;}
+
+function renderList(){
+  const el=document.getElementById('list'); let html=''; let prevDate=null;
+  DATA.forEach((m,i)=>{
+    if(m.date!==prevDate){html+=`<div style="padding:14px 18px 8px;font-size:12px;font-weight:600;color:#8A93A3;position:sticky;top:0;background:${C.bg};z-index:2;">${dayLabel(m.date)}</div>`;prevDate=m.date;}
+    const active=i===sel;
+    const pickColor=m.pick?OC[m.pick]:C.faint;
+    const topPct=m.pick?(m.pick==='승'?m.w:m.pick==='무'?m.d:m.l):Math.max(m.pubW,m.pubD,m.pubL);
+    const pickBadge=m.pick?`<span style="font-size:11px;font-weight:700;color:${C.bg};background:${pickColor};padding:2px 8px;border-radius:6px;">픽 ${m.pick}</span>`
+      :`<span style="font-size:10px;font-weight:600;color:${C.muted};border:1px solid ${C.border};padding:2px 7px;border-radius:6px;">대기</span>`;
+    html+=`<div onclick="selectMatch(${i})" style="display:flex;align-items:center;gap:11px;padding:13px 16px 13px 15px;cursor:pointer;border-left:3px solid ${active?C.accent:'transparent'};background:${active?'rgba(199,249,78,0.06)':'transparent'};border-bottom:1px solid rgba(255,255,255,0.04);">
+      <span class="mono" style="font-size:11px;font-weight:600;color:${C.faint};width:26px;flex-shrink:0;">${m.no}</span>
+      <div style="min-width:0;flex:1;">
+        <div style="display:flex;align-items:center;gap:7px;font-size:14px;font-weight:600;">
+          <span style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:86px;">${esc(m.home)}</span>
+          <span style="font-size:11px;color:${C.faint};">vs</span>
+          <span style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:86px;">${esc(m.away)}</span>
+        </div>
+        <div style="margin-top:8px;width:118px;">${bar(m.w,m.d,m.l,4)}</div>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:flex-end;gap:5px;flex-shrink:0;">
+        ${pickBadge}<span class="num" style="font-size:12px;font-weight:600;color:${pickColor};">${topPct}%</span>
+      </div>
+    </div>`;
+  });
+  el.innerHTML=html;
+}
+
+function card(inner,extra){return `<div style="background:${C.surface};border:1px solid ${C.borderSoft};border-radius:14px;padding:20px 22px;margin-top:14px;${extra||''}">${inner}</div>`;}
+function label(t){return `<div class="mono" style="font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:${C.muted};font-weight:600;margin-bottom:15px;">${t}</div>`;}
+function miniCard(t,inner){return `<div style="flex:1;background:${C.surface};border:1px solid ${C.borderSoft};border-radius:14px;padding:17px 18px;">
+  <div class="mono" style="font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:${C.muted};font-weight:600;margin-bottom:11px;">${t}</div>${inner}</div>`;}
+function oddCell(lbl,odd,pct,c){return `<div style="flex:1;text-align:center;padding:10px 4px;background:rgba(255,255,255,0.03);border-radius:10px;">
+  <div style="font-size:11px;color:${c};font-weight:600;margin-bottom:4px;">${lbl}</div>
+  <div class="num" style="font-size:18px;font-weight:700;color:${C.text};">${odd?odd.toFixed(2):'-'}</div>
+  <div class="num" style="font-size:11px;color:${C.muted};margin-top:2px;">${pct}%</div></div>`;}
+function disclaimer(){return `<div style="margin-top:22px;font-size:11px;color:#4A5261;line-height:1.6;">${C.disclaimer}</div>`;}
+
+function renderDetail(){
+  const m=DATA[sel]; const el=document.getElementById('detail');
+  const pickColor=m.pick?OC[m.pick]:C.faint;
+  let html='';
+  if(isMobile()) html+=`<div onclick="goBack()" style="display:inline-flex;gap:6px;font-size:13px;color:#8A93A3;cursor:pointer;margin-bottom:16px;font-weight:500;">← 리스트로</div>`;
+  html+=`<div style="display:flex;align-items:center;gap:9px;flex-wrap:wrap;font-size:12px;color:#8A93A3;">
+    <span class="mono" style="font-weight:600;color:${C.accent};background:rgba(199,249,78,0.10);padding:3px 9px;border-radius:6px;">${m.no}</span>
+    <span style="padding:3px 9px;border-radius:6px;background:rgba(255,255,255,0.06);color:${C.dim};">${esc(m.league)}</span>
+    <span>${m.date} ${m.time}</span>${m.venue?`<span style="color:${C.faint};">·</span><span>${esc(m.venue)}</span>`:''}</div>`;
+  html+=`<div style="display:flex;align-items:center;gap:16px;margin:24px 0 6px;">
+    <div style="flex:1;text-align:right;min-width:0;"><div class="mono" style="font-size:11px;letter-spacing:0.14em;color:${C.faint};margin-bottom:5px;font-weight:600;">HOME</div>
+      <div style="font-size:27px;font-weight:700;letter-spacing:-0.025em;line-height:1.1;">${esc(m.home)}</div></div>
+    <div class="mono" style="font-size:15px;font-weight:600;color:#4A5261;flex-shrink:0;">VS</div>
+    <div style="flex:1;min-width:0;"><div class="mono" style="font-size:11px;letter-spacing:0.14em;color:${C.faint};margin-bottom:5px;font-weight:600;">AWAY</div>
+      <div style="font-size:27px;font-weight:700;letter-spacing:-0.025em;line-height:1.1;">${esc(m.away)}</div></div></div>`;
+
+  if(!m.analyzed){
+    html+=card(label('대중 투표 분포')+bar(m.pubW,m.pubD,m.pubL,12)+
+      `<div style="margin-top:12px;font-size:13px;color:${C.dim};">아직 AI 분석이 생성되지 않았습니다. 마감 12시간 전에 자동 생성됩니다. 위 막대는 배트맨 이용자 투표(승 ${m.pubW}% / 무 ${m.pubD}% / 패 ${m.pubL}%)입니다.</div>`);
+    html+=disclaimer(); el.innerHTML=html; return;
+  }
+
+  const bigCell=(c,lbl,v)=>`<div style="flex:1;text-align:center;padding:14px 4px;background:${c}12;border:1px solid ${c}2e;border-radius:11px;">
+    <div style="font-size:12px;color:${c};font-weight:600;margin-bottom:5px;">${lbl}</div>
+    <div class="num" style="font-size:29px;font-weight:700;color:${c};letter-spacing:-0.02em;">${v}%</div></div>`;
+  html+=card(label('AI 예측 확률')+bar(m.w,m.d,m.l,12)+
+    `<div style="display:flex;gap:10px;margin-top:16px;">${bigCell(C.win,'승 · 홈',m.w)}${bigCell(C.draw,'무',m.d)}${bigCell(C.lose,'패 · 원정',m.l)}</div>`);
+  html+=`<div style="display:flex;gap:10px;margin-top:14px;">
+    ${miniCard('AI 픽',`<div style="display:inline-flex;align-items:center;justify-content:center;font-size:20px;font-weight:700;color:${C.bg};background:${pickColor};min-width:44px;height:38px;padding:0 12px;border-radius:9px;">${m.pick}</div>`)}
+    ${miniCard('보조 픽',`<div style="display:inline-flex;align-items:center;justify-content:center;font-size:20px;font-weight:700;color:${C.text};background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);min-width:44px;height:38px;padding:0 12px;border-radius:9px;">${m.sub}</div>`)}
+    ${miniCard('신뢰도',`<div style="display:inline-flex;align-items:center;gap:8px;"><span style="font-size:22px;font-weight:700;color:${confColor(m.conf)};">${m.conf}</span><span style="font-size:12px;color:${C.muted};">${confDesc(m.conf)}</span></div>`)}</div>`;
+  const pubMax=Math.max(m.pubW,m.pubD,m.pubL);
+  const pubPick=m.pubW===pubMax?'승':m.pubD===pubMax?'무':'패';
+  const pubCell=(w,c,lbl)=>`<div style="width:${w}%;background:${c}d9;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:${C.bg};">${w>=12?lbl:''}</div>`;
+  let cmp=label('대중 투표 vs AI')+
+    `<div style="display:flex;align-items:center;gap:12px;margin-bottom:11px;"><span style="width:44px;font-size:12px;color:#8A93A3;flex-shrink:0;">대중</span>
+      <div style="flex:1;display:flex;height:26px;border-radius:7px;overflow:hidden;background:rgba(255,255,255,0.05);">${pubCell(m.pubW,C.win,'승 '+m.pubW+'%')}${pubCell(m.pubD,C.draw,'무 '+m.pubD+'%')}${pubCell(m.pubL,C.lose,'패 '+m.pubL+'%')}</div></div>
+    <div style="display:flex;align-items:center;gap:12px;"><span style="width:44px;font-size:12px;color:#8A93A3;flex-shrink:0;">AI</span><div style="flex:1;">${bar(m.w,m.d,m.l,8)}</div></div>`;
+  if(pubPick!==m.pick) cmp+=`<div style="display:flex;gap:9px;margin-top:15px;padding:11px 13px;background:rgba(255,93,108,0.08);border:1px solid rgba(255,93,108,0.2);border-radius:10px;"><span style="color:${C.lose};font-weight:700;">!</span><span style="font-size:13px;color:#D6A9AE;line-height:1.5;">대중은 '${pubPick}'(${pubMax}%)에 몰렸지만 AI 픽은 '${m.pick}'입니다. 여론과 엇갈리는 경기이니 신중히 판단하세요.</span></div>`;
+  html+=card(cmp);
+  if(m.market){
+    const mk=m.market;
+    html+=card(label('해외 시장 배당 (북메이커 '+mk.books+'곳 중앙값)')+bar(mk.w,mk.d,mk.l,8)+
+      `<div style="display:flex;gap:10px;margin-top:14px;">${oddCell('승',mk.ow,mk.w,C.win)}${oddCell('무',mk.od,mk.d,C.draw)}${oddCell('패',mk.ol,mk.l,C.lose)}</div>`);
+  } else {
+    html+=card(label('해외 시장 배당')+`<div style="font-size:13px;color:${C.dim};">이 리그(K리그2 등)는 해외 배당 미커버로, 예측은 대중 투표 분포를 기준선으로 삼았습니다.</div>`);
+  }
+  if(m.keyFactors.length){
+    html+=card(label('핵심 근거')+`<ul style="margin:0;padding-left:18px;font-size:14px;line-height:1.7;color:${C.dim};">`+
+      m.keyFactors.map(f=>`<li style="margin-bottom:6px;">${esc(f)}</li>`).join('')+'</ul>');
+  }
+  if(m.expectedScores.length){
+    html+=card(label('예상 스코어')+'<div style="display:flex;gap:8px;">'+
+      m.expectedScores.map(s=>`<span class="num" style="font-size:16px;font-weight:600;color:${C.text};background:rgba(255,255,255,0.05);padding:6px 14px;border-radius:8px;">${esc(s)}</span>`).join('')+'</div>');
+  }
+  if(m.dataGaps.length){
+    html+=card(label('데이터 결측')+`<ul style="margin:0;padding-left:18px;font-size:12px;line-height:1.6;color:${C.muted};">`+
+      m.dataGaps.map(g=>`<li style="margin-bottom:4px;">${esc(g)}</li>`).join('')+'</ul>');
+  }
+  if(m.reportHref){
+    html+=`<div style="margin-top:18px;"><a href="${m.reportHref}" style="display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:600;color:${C.accent};background:rgba(199,249,78,0.10);border:1px solid rgba(199,249,78,0.22);padding:10px 16px;border-radius:10px;">전체 분석 리포트 보기 →</a></div>`;
+  }
+  html+=disclaimer(); el.innerHTML=html;
+}
+
+function selectMatch(i){sel=i;detailOpen=true;render();const mn=document.querySelector('main');if(mn)mn.scrollTop=0;}
+function goBack(){detailOpen=false;render();}
+function render(){
+  const mob=isMobile();
+  document.getElementById('aside').style.display=(mob&&detailOpen)?'none':'flex';
+  document.querySelector('main').style.display=(mob&&!detailOpen)?'none':'flex';
+  document.getElementById('aside').style.width=mob?'100%':'400px';
+  renderList();renderDetail();
+}
+window.addEventListener('resize',render);
+render();
+</script></body></html>
