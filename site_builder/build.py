@@ -21,6 +21,7 @@ ROOT = Path(__file__).parent.parent
 ROUNDS_DIR = ROOT / "data" / "rounds"
 REPORTS_DIR = ROOT / "data" / "reports"
 MATCHES_DIR = ROOT / "data" / "matches"
+MIX_DIR = ROOT / "data" / "mix"
 SITE_DIR = ROOT / "site"
 
 PICK_KO = {"win": "승", "draw": "무", "lose": "패"}
@@ -32,6 +33,17 @@ def load_summaries(key: str) -> tuple[dict, bool]:
     sp = REPORTS_DIR / key / "summary.json"
     summaries = json.loads(sp.read_text(encoding="utf-8")) if sp.exists() else {}
     return summaries, (REPORTS_DIR / key / "round.md").exists()
+
+
+def load_mix(key: str) -> dict | None:
+    """추천 조합(MIX) 리포트 데이터. data/mix/{key}.json 있으면 반환, 없으면 None."""
+    mp = MIX_DIR / f"{key}.json"
+    if not mp.exists():
+        return None
+    try:
+        return json.loads(mp.read_text(encoding="utf-8"))
+    except Exception:
+        return None
 
 
 def match_payload(r: Round, key: str, summaries: dict) -> list[dict]:
@@ -224,6 +236,56 @@ render();
 """
 
 
+# ── 추천 조합(MIX) 패널 ─────────────────────────────────────────
+MIX_JS = r"""
+const PICKC = {'홈':C.win,'무':C.draw,'원정':C.lose};
+function short(s){s=s==null?'':String(s); return s.length>4?s.slice(0,4):s;}
+function pickChip(p){const c=PICKC[p]||C.muted;
+  return `<span style="font-size:11px;font-weight:700;color:${C.bg};background:${c};padding:2px 6px;border-radius:5px;line-height:1.4;">${p}</span>`;}
+function comboCard(cb){
+  const cells = cb.picks.map((ps,i)=>{
+    const m = (typeof DATA!=='undefined' && DATA[i]) ? DATA[i] : null;
+    const no = m?m.no:('M'+String(i+1).padStart(2,'0'));
+    const matchup = m?`${esc(short(m.home))}<span style="color:${C.faint};margin:0 1px;">·</span>${esc(short(m.away))}`:'';
+    const multi = ps.length>1;
+    return `<div style="background:rgba(255,255,255,0.03);border:1px solid ${multi?'rgba(199,249,78,0.22)':C.borderSoft};border-radius:9px;padding:7px 6px;text-align:center;">
+      <div class="mono" style="font-size:10px;font-weight:600;color:${C.faint};">${no}</div>
+      <div style="font-size:10px;color:${C.muted};margin:2px 0 5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${matchup}</div>
+      <div style="display:flex;gap:3px;justify-content:center;flex-wrap:wrap;">${ps.map(pickChip).join('')}</div>
+    </div>`;
+  }).join('');
+  return `<div style="flex:1;min-width:300px;background:${C.surface};border:1px solid ${C.borderSoft};border-radius:14px;padding:16px 18px;">
+    <div style="display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin-bottom:5px;">
+      <span class="mono" style="font-size:14px;font-weight:800;color:${C.bg};background:${C.accent};padding:2px 9px;border-radius:7px;">${esc(cb.id)}</span>
+      <span style="font-size:15px;font-weight:700;color:${C.text};">${esc(cb.method)}</span>
+      <span class="num" style="margin-left:auto;font-size:12px;font-weight:700;color:${C.accent};background:rgba(199,249,78,0.10);border:1px solid rgba(199,249,78,0.22);padding:3px 10px;border-radius:999px;">기대 ${cb.expectedHits} / 14</span>
+    </div>
+    <div style="font-size:12px;color:${C.muted};line-height:1.5;margin-bottom:13px;">${esc(cb.subtitle)} · ${cb.cases}경우의 수</div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(72px,1fr));gap:7px;">${cells}</div>
+  </div>`;
+}
+function renderMixPanel(){
+  const p = document.getElementById('mixpanel'); if(!p||typeof MIX==='undefined'||!MIX) return;
+  const lg = `<span style="display:inline-flex;align-items:center;gap:5px;">${pickChip('홈')}<span style="color:${C.muted};">홈(승)</span></span>
+    <span style="display:inline-flex;align-items:center;gap:5px;">${pickChip('무')}<span style="color:${C.muted};">무</span></span>
+    <span style="display:inline-flex;align-items:center;gap:5px;">${pickChip('원정')}<span style="color:${C.muted};">원정(패)</span></span>
+    <span style="color:${C.faint};">· 여러 칩 = 복수선택(더블·트리플)</span>`;
+  p.innerHTML = `<div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;font-size:11px;margin-bottom:13px;">${lg}</div>
+    <div style="display:flex;gap:14px;flex-wrap:wrap;">${MIX.combos.map(comboCard).join('')}</div>
+    <div style="margin-top:13px;font-size:11px;color:${C.faint};line-height:1.6;">${esc(MIX.note||'')}</div>`;
+}
+let mixOpen = false;
+function toggleMix(){
+  mixOpen = !mixOpen;
+  const p=document.getElementById('mixpanel'), c=document.getElementById('mixcaret');
+  if(!p) return;
+  p.style.display = mixOpen?'block':'none';
+  if(c) c.textContent = mixOpen?'접기 ▴':'펼치기 ▾';
+  if(mixOpen) renderMixPanel();
+}
+"""
+
+
 def build_round_page(r: Round, out_dir: Path):
     key = f"{r.year}-{r.round_no}"
     summaries, has_round = load_summaries(key)
@@ -251,6 +313,26 @@ def build_round_page(r: Round, out_dir: Path):
     c_json = json.dumps(C, ensure_ascii=False)
     data_json = json.dumps(data, ensure_ascii=False).replace("</", "<\\/")
 
+    mix = load_mix(key)
+    mix_json = json.dumps(mix, ensure_ascii=False).replace("</", "<\\/") if mix else "null"
+    if mix:
+        chips = " · ".join(
+            f'{cb["id"]} {cb["method"]} '
+            f'<span class="num" style="color:{T.ACCENT};">{cb["expectedHits"]}/14</span>'
+            for cb in mix["combos"])
+        mix_bar = f"""  <div style="flex-shrink:0;border-bottom:1px solid {T.BORDER};background:{T.SURFACE_RAISED};">
+    <div onclick="toggleMix()" style="display:flex;align-items:center;gap:11px;padding:11px 22px;cursor:pointer;">
+      <span style="font-size:14px;">🎯</span>
+      <span class="mono" style="font-size:12px;font-weight:700;letter-spacing:0.04em;color:{T.ACCENT};">추천 조합 · MIX</span>
+      <span style="font-size:12px;color:{T.TEXT_MUTED};white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">{chips}</span>
+      <span id="mixcaret" class="mono" style="margin-left:auto;font-size:11px;font-weight:600;color:{T.TEXT_MUTED};flex-shrink:0;white-space:nowrap;">펼치기 ▾</span>
+    </div>
+    <div id="mixpanel" style="display:none;padding:2px 22px 20px;max-height:52vh;overflow-y:auto;"></div>
+  </div>
+"""
+    else:
+        mix_bar = ""
+
     round_css = (
         "@media (max-width:860px){"
         ".hd-legend{display:none!important;}"
@@ -272,7 +354,7 @@ def build_round_page(r: Round, out_dir: Path):
       <span class="mono" style="font-size:12px;font-weight:600;color:{T.ACCENT};background:rgba(199,249,78,0.10);border:1px solid rgba(199,249,78,0.22);padding:5px 12px;border-radius:999px;">{status_pill}</span>
     </div>
   </header>
-  <div style="flex:1;display:flex;min-height:0;">
+{mix_bar}  <div style="flex:1;display:flex;min-height:0;">
     <aside id="aside" style="display:flex;flex-direction:column;width:400px;flex-shrink:0;border-right:1px solid {T.BORDER};min-height:0;">
       <div class="mono" style="padding:14px 18px 10px;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:{T.TEXT_FAINT};font-weight:600;flex-shrink:0;">경기 리스트 · 14</div>
       <div id="list" style="flex:1;overflow-y:auto;"></div>
@@ -282,7 +364,7 @@ def build_round_page(r: Round, out_dir: Path):
     </main>
   </div>
 </div>
-<script>const C={c_json};const DATA={data_json};{ROUND_JS}</script>"""
+<script>const C={c_json};const DATA={data_json};const MIX={mix_json};{ROUND_JS}{MIX_JS}</script>"""
 
     out_dir.mkdir(parents=True, exist_ok=True)
     (out_dir / "index.html").write_text(
