@@ -1,0 +1,447 @@
+{
+  "round_id": "260043",
+  "year": 2026,
+  "round_no": 43,
+  "game_id": "G011",
+  "sale_open": "2026-08-06T08:00:00+09:00",
+  "sale_close": "2026-08-08T19:00:00+09:00",
+  "analysis_due": "2026-08-08T07:00:00+09:00",
+  "status": "on_sale",
+  "collected_at": "2026-08-06T15:39:00+09:00",
+  "matches": [
+    {
+      "match_no": 1,
+      "match_seq": 1,
+      "league": "일본 J1리그",
+      "league_code": "SC007",
+      "domestic": false,
+      "kickoff": "2026-08-08T19:00:00+09:00",
+      "home": {
+        "betman_name": "FC도쿄",
+        "id": "270",
+        "canonical": null
+      },
+      "away": {
+        "betman_name": "마치다Z",
+        "id": "30532",
+        "canonical": null
+      },
+      "stadium": "아지노모",
+      "handicap": 0.0,
+      "status": "scheduled",
+      "vote_counts": {
+        "win": 135000,
+        "draw": 157770,
+        "lose": 141758
+      },
+      "vote_dist": {
+        "win": 0.3107,
+        "draw": 0.3631,
+        "lose": 0.3262
+      }
+    },
+    {
+      "match_no": 2,
+      "match_seq": 2,
+      "league": "일본 J1리그",
+      "league_code": "SC007",
+      "domestic": false,
+      "kickoff": "2026-08-08T19:00:00+09:00",
+      "home": {
+        "betman_name": "나고야G",
+        "id": "127",
+        "canonical": null
+      },
+      "away": {
+        "betman_name": "시미즈S",
+        "id": "126",
+        "canonical": null
+      },
+      "stadium": "도요타스",
+      "handicap": 0.0,
+      "status": "scheduled",
+      "vote_counts": {
+        "win": 272255,
+        "draw": 98003,
+        "lose": 64270
+      },
+      "vote_dist": {
+        "win": 0.6266,
+        "draw": 0.2255,
+        "lose": 0.1479
+      }
+    },
+    {
+      "match_no": 3,
+      "match_seq": 3,
+      "league": "일본 J1리그",
+      "league_code": "SC007",
+      "domestic": false,
+      "kickoff": "2026-08-08T19:00:00+09:00",
+      "home": {
+        "betman_name": "C오사카",
+        "id": "133",
+        "canonical": null
+      },
+      "away": {
+        "betman_name": "오카야마",
+        "id": "30314",
+        "canonical": null
+      },
+      "stadium": "얀마하나",
+      "handicap": 0.0,
+      "status": "scheduled",
+      "vote_counts": {
+        "win": 289629,
+        "draw": 83858,
+        "lose": 61041
+      },
+      "vote_dist": {
+        "win": 0.6665,
+        "draw": 0.193,
+        "lose": 0.1405
+      }
+    },
+    {
+      "match_no": 4,
+      "match_seq": 4,
+      "league": "일본 J1리그",
+      "league_code": "SC007",
+      "domestic": false,
+      "kickoff": "2026-08-08T19:00:00+09:00",
+      "home": {
+        "betman_name": "후쿠오카",
+        "id": "135",
+        "canonical": null
+      },
+      "away": {
+        "betman_name": "비셀고베",
+        "id": "136",
+        "canonical": null
+      },
+      "stadium": "베스덴키",
+      "handicap": 0.0,
+      "status": "scheduled",
+      "vote_counts": {
+        "win": 75589,
+        "draw": 123664,
+        "lose": 235275
+      },
+      "vote_dist": {
+        "win": 0.174,
+        "draw": 0.2846,
+        "lose": 0.5414
+      }
+    },
+    {
+      "match_no": 5,
+      "match_seq": 5,
+      "league": "일본 J1리그",
+      "league_code": "SC007",
+      "domestic": false,
+      "kickoff": "2026-08-08T19:15:00+09:00",
+      "home": {
+        "betman_name": "산프히로",
+        "id": "129",
+        "canonical": null
+      },
+      "away": {
+        "betman_name": "제프유나",
+        "id": "121",
+        "canonical": null
+      },
+      "stadium": "에디피스",
+      "handicap": 0.0,
+      "status": "scheduled",
+      "vote_counts": {
+        "win": 329894,
+        "draw": 57393,
+        "lose": 47241
+      },
+      "vote_dist": {
+        "win": 0.7592,
+        "draw": 0.1321,
+        "lose": 0.1087
+      }
+    },
+    {
+      "match_no": 6,
+      "match_seq": 6,
+      "league": "K리그1",
+      "league_code": "SC001",
+      "domestic": true,
+      "kickoff": "2026-08-08T20:00:00+09:00",
+      "home": {
+        "betman_name": "FC안양",
+        "id": "K27",
+        "canonical": null
+      },
+      "away": {
+        "betman_name": "대전하나",
+        "id": "K10",
+        "canonical": null
+      },
+      "stadium": "안양종합",
+      "handicap": 0.0,
+      "status": "scheduled",
+      "vote_counts": {
+        "win": 158491,
+        "draw": 165915,
+        "lose": 110122
+      },
+      "vote_dist": {
+        "win": 0.3647,
+        "draw": 0.3818,
+        "lose": 0.2534
+      }
+    },
+    {
+      "match_no": 7,
+      "match_seq": 7,
+      "league": "K리그1",
+      "league_code": "SC001",
+      "domestic": true,
+      "kickoff": "2026-08-08T20:00:00+09:00",
+      "home": {
+        "betman_name": "부천FC",
+        "id": "K26",
+        "canonical": null
+      },
+      "away": {
+        "betman_name": "광주FC",
+        "id": "K22",
+        "canonical": null
+      },
+      "stadium": "부천종합",
+      "handicap": 0.0,
+      "status": "scheduled",
+      "vote_counts": {
+        "win": 252733,
+        "draw": 101897,
+        "lose": 79898
+      },
+      "vote_dist": {
+        "win": 0.5816,
+        "draw": 0.2345,
+        "lose": 0.1839
+      }
+    },
+    {
+      "match_no": 8,
+      "match_seq": 8,
+      "league": "K리그1",
+      "league_code": "SC001",
+      "domestic": true,
+      "kickoff": "2026-08-08T20:00:00+09:00",
+      "home": {
+        "betman_name": "김천상무",
+        "id": "K35",
+        "canonical": null
+      },
+      "away": {
+        "betman_name": "FC서울",
+        "id": "K09",
+        "canonical": null
+      },
+      "stadium": "김천종합",
+      "handicap": 0.0,
+      "status": "scheduled",
+      "vote_counts": {
+        "win": 97873,
+        "draw": 108288,
+        "lose": 228367
+      },
+      "vote_dist": {
+        "win": 0.2252,
+        "draw": 0.2492,
+        "lose": 0.5256
+      }
+    },
+    {
+      "match_no": 9,
+      "match_seq": 9,
+      "league": "K리그1",
+      "league_code": "SC001",
+      "domestic": true,
+      "kickoff": "2026-08-08T20:00:00+09:00",
+      "home": {
+        "betman_name": "전북현대",
+        "id": "K05",
+        "canonical": null
+      },
+      "away": {
+        "betman_name": "제주SKFC",
+        "id": "K04",
+        "canonical": null
+      },
+      "stadium": "전주월드",
+      "handicap": 0.0,
+      "status": "scheduled",
+      "vote_counts": {
+        "win": 287501,
+        "draw": 91578,
+        "lose": 55449
+      },
+      "vote_dist": {
+        "win": 0.6616,
+        "draw": 0.2108,
+        "lose": 0.1276
+      }
+    },
+    {
+      "match_no": 10,
+      "match_seq": 10,
+      "league": "K리그1",
+      "league_code": "SC001",
+      "domestic": true,
+      "kickoff": "2026-08-08T20:00:00+09:00",
+      "home": {
+        "betman_name": "포항스틸",
+        "id": "K03",
+        "canonical": null
+      },
+      "away": {
+        "betman_name": "울산HDFC",
+        "id": "K01",
+        "canonical": null
+      },
+      "stadium": "포항스틸",
+      "handicap": 0.0,
+      "status": "scheduled",
+      "vote_counts": {
+        "win": 97066,
+        "draw": 141511,
+        "lose": 195951
+      },
+      "vote_dist": {
+        "win": 0.2234,
+        "draw": 0.3257,
+        "lose": 0.451
+      }
+    },
+    {
+      "match_no": 11,
+      "match_seq": 11,
+      "league": "K리그2",
+      "league_code": "SC003",
+      "domestic": true,
+      "kickoff": "2026-08-08T20:00:00+09:00",
+      "home": {
+        "betman_name": "파주프런",
+        "id": "K40",
+        "canonical": null
+      },
+      "away": {
+        "betman_name": "수원FC",
+        "id": "K29",
+        "canonical": null
+      },
+      "stadium": "파주스타",
+      "handicap": 0.0,
+      "status": "scheduled",
+      "vote_counts": {
+        "win": 61764,
+        "draw": 80984,
+        "lose": 291780
+      },
+      "vote_dist": {
+        "win": 0.1421,
+        "draw": 0.1864,
+        "lose": 0.6715
+      }
+    },
+    {
+      "match_no": 12,
+      "match_seq": 12,
+      "league": "K리그2",
+      "league_code": "SC003",
+      "domestic": true,
+      "kickoff": "2026-08-08T20:00:00+09:00",
+      "home": {
+        "betman_name": "성남FC",
+        "id": "K08",
+        "canonical": null
+      },
+      "away": {
+        "betman_name": "천안시티",
+        "id": "K38",
+        "canonical": null
+      },
+      "stadium": "탄천종합",
+      "handicap": 0.0,
+      "status": "scheduled",
+      "vote_counts": {
+        "win": 172263,
+        "draw": 181885,
+        "lose": 80380
+      },
+      "vote_dist": {
+        "win": 0.3964,
+        "draw": 0.4186,
+        "lose": 0.185
+      }
+    },
+    {
+      "match_no": 13,
+      "match_seq": 13,
+      "league": "일본 J1리그",
+      "league_code": "SC007",
+      "domestic": false,
+      "kickoff": "2026-08-09T18:00:00+09:00",
+      "home": {
+        "betman_name": "도쿄베르",
+        "id": "123",
+        "canonical": null
+      },
+      "away": {
+        "betman_name": "가와사키",
+        "id": "86",
+        "canonical": null
+      },
+      "stadium": "아지노모",
+      "handicap": 0.0,
+      "status": "scheduled",
+      "vote_counts": {
+        "win": 84547,
+        "draw": 110852,
+        "lose": 239129
+      },
+      "vote_dist": {
+        "win": 0.1946,
+        "draw": 0.2551,
+        "lose": 0.5503
+      }
+    },
+    {
+      "match_no": 14,
+      "match_seq": 14,
+      "league": "일본 J1리그",
+      "league_code": "SC007",
+      "domestic": false,
+      "kickoff": "2026-08-09T19:00:00+09:00",
+      "home": {
+        "betman_name": "V바렌나",
+        "id": "30531",
+        "canonical": null
+      },
+      "away": {
+        "betman_name": "교토상가",
+        "id": "134",
+        "canonical": null
+      },
+      "stadium": "피스소프",
+      "handicap": 0.0,
+      "status": "scheduled",
+      "vote_counts": {
+        "win": 162310,
+        "draw": 132365,
+        "lose": 139853
+      },
+      "vote_dist": {
+        "win": 0.3735,
+        "draw": 0.3046,
+        "lose": 0.3219
+      }
+    }
+  ]
+}
