@@ -1,0 +1,447 @@
+{
+  "round_id": "260047",
+  "year": 2026,
+  "round_no": 47,
+  "game_id": "G011",
+  "sale_open": "2026-08-24T08:00:00+09:00",
+  "sale_close": "2026-08-26T23:00:00+09:00",
+  "analysis_due": "2026-08-26T11:00:00+09:00",
+  "status": "on_sale",
+  "collected_at": "2026-08-24T11:00:00+09:00",
+  "matches": [
+    {
+      "match_no": 1,
+      "match_seq": 1,
+      "league": "UEFA 챔피언스리그",
+      "league_code": "SC021",
+      "domestic": false,
+      "kickoff": "2026-08-27T04:00:00+09:00",
+      "home": {
+        "betman_name": "AEK아테",
+        "id": "900020",
+        "canonical": null
+      },
+      "away": {
+        "betman_name": "L소피아",
+        "id": "900005",
+        "canonical": null
+      },
+      "stadium": "AEK아테",
+      "handicap": 0.0,
+      "status": "scheduled",
+      "vote_counts": {
+        "win": 6369,
+        "draw": 2221,
+        "lose": 1049
+      },
+      "vote_dist": {
+        "win": 0.6608,
+        "draw": 0.2304,
+        "lose": 0.1088
+      }
+    },
+    {
+      "match_no": 2,
+      "match_seq": 2,
+      "league": "UEFA 챔피언스리그",
+      "league_code": "SC021",
+      "domestic": false,
+      "kickoff": "2026-08-27T04:00:00+09:00",
+      "home": {
+        "betman_name": "비킹FK",
+        "id": "9b5d8",
+        "canonical": null
+      },
+      "away": {
+        "betman_name": "D자그레",
+        "id": "900057",
+        "canonical": null
+      },
+      "stadium": "뤼세아레",
+      "handicap": 0.0,
+      "status": "scheduled",
+      "vote_counts": {
+        "win": 1766,
+        "draw": 2411,
+        "lose": 5462
+      },
+      "vote_dist": {
+        "win": 0.1832,
+        "draw": 0.2501,
+        "lose": 0.5667
+      }
+    },
+    {
+      "match_no": 3,
+      "match_seq": 3,
+      "league": "UEFA 챔피언스리그",
+      "league_code": "SC021",
+      "domestic": false,
+      "kickoff": "2026-08-27T04:00:00+09:00",
+      "home": {
+        "betman_name": "NK첼레",
+        "id": "9e2a7",
+        "canonical": null
+      },
+      "away": {
+        "betman_name": "슬로반브",
+        "id": "900118",
+        "canonical": null
+      },
+      "stadium": "첼레스타",
+      "handicap": 0.0,
+      "status": "scheduled",
+      "vote_counts": {
+        "win": 3288,
+        "draw": 3577,
+        "lose": 2774
+      },
+      "vote_dist": {
+        "win": 0.3411,
+        "draw": 0.3711,
+        "lose": 0.2878
+      }
+    },
+    {
+      "match_no": 4,
+      "match_seq": 4,
+      "league": "UEFA 챔피언스리그",
+      "league_code": "SC021",
+      "domestic": false,
+      "kickoff": "2026-08-27T04:00:00+09:00",
+      "home": {
+        "betman_name": "리옹",
+        "id": "4772",
+        "canonical": null
+      },
+      "away": {
+        "betman_name": "페네르SK",
+        "id": "cd2e",
+        "canonical": null
+      },
+      "stadium": "그루스타",
+      "handicap": 0.0,
+      "status": "scheduled",
+      "vote_counts": {
+        "win": 6282,
+        "draw": 2078,
+        "lose": 1279
+      },
+      "vote_dist": {
+        "win": 0.6517,
+        "draw": 0.2156,
+        "lose": 0.1327
+      }
+    },
+    {
+      "match_no": 5,
+      "match_seq": 5,
+      "league": "UEFA 유로파리그",
+      "league_code": "SC047",
+      "domestic": false,
+      "kickoff": "2026-08-28T01:00:00+09:00",
+      "home": {
+        "betman_name": "이베리아",
+        "id": "a875e",
+        "canonical": null
+      },
+      "away": {
+        "betman_name": "야기엘로",
+        "id": "9cd5e",
+        "canonical": null
+      },
+      "stadium": "미헤일메",
+      "handicap": 0.0,
+      "status": "scheduled",
+      "vote_counts": {
+        "win": 976,
+        "draw": 1376,
+        "lose": 7287
+      },
+      "vote_dist": {
+        "win": 0.1013,
+        "draw": 0.1428,
+        "lose": 0.756
+      }
+    },
+    {
+      "match_no": 6,
+      "match_seq": 6,
+      "league": "UEFA 유로파리그",
+      "league_code": "SC047",
+      "domestic": false,
+      "kickoff": "2026-08-28T02:00:00+09:00",
+      "home": {
+        "betman_name": "오모니아",
+        "id": "SC021_001",
+        "canonical": null
+      },
+      "away": {
+        "betman_name": "신트트라",
+        "id": "a845e",
+        "canonical": null
+      },
+      "stadium": "GSP스타",
+      "handicap": 0.0,
+      "status": "scheduled",
+      "vote_counts": {
+        "win": 4104,
+        "draw": 3565,
+        "lose": 1970
+      },
+      "vote_dist": {
+        "win": 0.4258,
+        "draw": 0.3699,
+        "lose": 0.2044
+      }
+    },
+    {
+      "match_no": 7,
+      "match_seq": 7,
+      "league": "UEFA 유로파리그",
+      "league_code": "SC047",
+      "domestic": false,
+      "kickoff": "2026-08-28T02:00:00+09:00",
+      "home": {
+        "betman_name": "플젠",
+        "id": "900108",
+        "canonical": null
+      },
+      "away": {
+        "betman_name": "츠르베나",
+        "id": "ER033",
+        "canonical": null
+      },
+      "stadium": "메스타플",
+      "handicap": 0.0,
+      "status": "scheduled",
+      "vote_counts": {
+        "win": 2659,
+        "draw": 2934,
+        "lose": 4046
+      },
+      "vote_dist": {
+        "win": 0.2759,
+        "draw": 0.3044,
+        "lose": 0.4198
+      }
+    },
+    {
+      "match_no": 8,
+      "match_seq": 8,
+      "league": "UEFA 유로파리그",
+      "league_code": "SC047",
+      "domestic": false,
+      "kickoff": "2026-08-28T02:00:00+09:00",
+      "home": {
+        "betman_name": "릴레스트",
+        "id": "9b1d8",
+        "canonical": null
+      },
+      "away": {
+        "betman_name": "에그나티",
+        "id": "a865e",
+        "canonical": null
+      },
+      "stadium": "오로센스",
+      "handicap": 0.0,
+      "status": "scheduled",
+      "vote_counts": {
+        "win": 4484,
+        "draw": 3458,
+        "lose": 1697
+      },
+      "vote_dist": {
+        "win": 0.4652,
+        "draw": 0.3588,
+        "lose": 0.1761
+      }
+    },
+    {
+      "match_no": 9,
+      "match_seq": 9,
+      "league": "UEFA 유로파리그",
+      "league_code": "SC047",
+      "domestic": false,
+      "kickoff": "2026-08-28T02:00:00+09:00",
+      "home": {
+        "betman_name": "잘츠부르",
+        "id": "ER028",
+        "canonical": null
+      },
+      "away": {
+        "betman_name": "미엘뷔",
+        "id": "a7f5e",
+        "canonical": null
+      },
+      "stadium": "잘츠스타",
+      "handicap": 0.0,
+      "status": "scheduled",
+      "vote_counts": {
+        "win": 8498,
+        "draw": 788,
+        "lose": 353
+      },
+      "vote_dist": {
+        "win": 0.8816,
+        "draw": 0.0818,
+        "lose": 0.0366
+      }
+    },
+    {
+      "match_no": 10,
+      "match_seq": 10,
+      "league": "UEFA 유로파리그",
+      "league_code": "SC047",
+      "domestic": false,
+      "kickoff": "2026-08-28T02:00:00+09:00",
+      "home": {
+        "betman_name": "카우노잘",
+        "id": "a825e",
+        "canonical": null
+      },
+      "away": {
+        "betman_name": "베식타시",
+        "id": "SC_202",
+        "canonical": null
+      },
+      "stadium": "다리우스",
+      "handicap": 0.0,
+      "status": "scheduled",
+      "vote_counts": {
+        "win": 799,
+        "draw": 907,
+        "lose": 7933
+      },
+      "vote_dist": {
+        "win": 0.0829,
+        "draw": 0.0941,
+        "lose": 0.823
+      }
+    },
+    {
+      "match_no": 11,
+      "match_seq": 11,
+      "league": "UEFA 유로파리그",
+      "league_code": "SC047",
+      "domestic": false,
+      "kickoff": "2026-08-28T03:00:00+09:00",
+      "home": {
+        "betman_name": "FC툰",
+        "id": "900146",
+        "canonical": null
+      },
+      "away": {
+        "betman_name": "L포즈난",
+        "id": "900080",
+        "canonical": null
+      },
+      "stadium": "아레나툰",
+      "handicap": 0.0,
+      "status": "scheduled",
+      "vote_counts": {
+        "win": 1287,
+        "draw": 1230,
+        "lose": 7122
+      },
+      "vote_dist": {
+        "win": 0.1335,
+        "draw": 0.1276,
+        "lose": 0.7389
+      }
+    },
+    {
+      "match_no": 12,
+      "match_seq": 12,
+      "league": "UEFA 유로파리그",
+      "league_code": "SC047",
+      "domestic": false,
+      "kickoff": "2026-08-28T03:00:00+09:00",
+      "home": {
+        "betman_name": "C소피아",
+        "id": "ER026",
+        "canonical": null
+      },
+      "away": {
+        "betman_name": "OFI크레",
+        "id": "a855e",
+        "canonical": null
+      },
+      "stadium": "바실레프",
+      "handicap": 0.0,
+      "status": "scheduled",
+      "vote_counts": {
+        "win": 4592,
+        "draw": 2466,
+        "lose": 2581
+      },
+      "vote_dist": {
+        "win": 0.4764,
+        "draw": 0.2558,
+        "lose": 0.2678
+      }
+    },
+    {
+      "match_no": 13,
+      "match_seq": 13,
+      "league": "UEFA 유로파리그",
+      "league_code": "SC047",
+      "domestic": false,
+      "kickoff": "2026-08-28T03:30:00+09:00",
+      "home": {
+        "betman_name": "페렌츠바",
+        "id": "UCL_1921",
+        "canonical": null
+      },
+      "away": {
+        "betman_name": "트라브존",
+        "id": "900111",
+        "canonical": null
+      },
+      "stadium": "페렌스타",
+      "handicap": 0.0,
+      "status": "scheduled",
+      "vote_counts": {
+        "win": 6368,
+        "draw": 1864,
+        "lose": 1407
+      },
+      "vote_dist": {
+        "win": 0.6606,
+        "draw": 0.1934,
+        "lose": 0.146
+      }
+    },
+    {
+      "match_no": 14,
+      "match_seq": 14,
+      "league": "UEFA 유로파리그",
+      "league_code": "SC047",
+      "domestic": false,
+      "kickoff": "2026-08-28T03:30:00+09:00",
+      "home": {
+        "betman_name": "안더레흐",
+        "id": "900026",
+        "canonical": null
+      },
+      "away": {
+        "betman_name": "카이라트",
+        "id": "SC_2104",
+        "canonical": null
+      },
+      "stadium": "안더스타",
+      "handicap": 0.0,
+      "status": "scheduled",
+      "vote_counts": {
+        "win": 8475,
+        "draw": 638,
+        "lose": 526
+      },
+      "vote_dist": {
+        "win": 0.8792,
+        "draw": 0.0662,
+        "lose": 0.0546
+      }
+    }
+  ]
+}
