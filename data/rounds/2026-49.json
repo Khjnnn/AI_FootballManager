@@ -1,0 +1,447 @@
+{
+  "round_id": "260049",
+  "year": 2026,
+  "round_no": 49,
+  "game_id": "G011",
+  "sale_open": "2026-08-31T08:00:00+09:00",
+  "sale_close": "2026-09-01T23:00:00+09:00",
+  "analysis_due": "2026-09-01T11:00:00+09:00",
+  "status": "on_sale",
+  "collected_at": "2026-09-01T14:12:00+09:00",
+  "matches": [
+    {
+      "match_no": 1,
+      "match_seq": 1,
+      "league": "잉글랜드 챔피언십",
+      "league_code": "48",
+      "domestic": false,
+      "kickoff": "2026-09-02T03:45:00+09:00",
+      "home": {
+        "betman_name": "포츠머스",
+        "id": "100012",
+        "canonical": null
+      },
+      "away": {
+        "betman_name": "더비카운",
+        "id": "4041",
+        "canonical": null
+      },
+      "stadium": "프래턴파",
+      "handicap": 0.0,
+      "status": "scheduled",
+      "vote_counts": {
+        "win": 131916,
+        "draw": 89970,
+        "lose": 39778
+      },
+      "vote_dist": {
+        "win": 0.5041,
+        "draw": 0.3438,
+        "lose": 0.152
+      }
+    },
+    {
+      "match_no": 2,
+      "match_seq": 2,
+      "league": "잉글랜드 챔피언십",
+      "league_code": "48",
+      "domestic": false,
+      "kickoff": "2026-09-02T03:45:00+09:00",
+      "home": {
+        "betman_name": "프레스턴",
+        "id": "998411",
+        "canonical": null
+      },
+      "away": {
+        "betman_name": "브리스C",
+        "id": "998427",
+        "canonical": null
+      },
+      "stadium": "딥데일스",
+      "handicap": 0.0,
+      "status": "scheduled",
+      "vote_counts": {
+        "win": 45728,
+        "draw": 85760,
+        "lose": 130176
+      },
+      "vote_dist": {
+        "win": 0.1748,
+        "draw": 0.3277,
+        "lose": 0.4975
+      }
+    },
+    {
+      "match_no": 3,
+      "match_seq": 3,
+      "league": "잉글랜드 챔피언십",
+      "league_code": "48",
+      "domestic": false,
+      "kickoff": "2026-09-02T03:45:00+09:00",
+      "home": {
+        "betman_name": "셰필드U",
+        "id": "100046",
+        "canonical": null
+      },
+      "away": {
+        "betman_name": "볼턴W",
+        "id": "4023",
+        "canonical": null
+      },
+      "stadium": "브라몰레",
+      "handicap": 0.0,
+      "status": "scheduled",
+      "vote_counts": {
+        "win": 188171,
+        "draw": 47218,
+        "lose": 26275
+      },
+      "vote_dist": {
+        "win": 0.7191,
+        "draw": 0.1805,
+        "lose": 0.1004
+      }
+    },
+    {
+      "match_no": 4,
+      "match_seq": 4,
+      "league": "잉글랜드 챔피언십",
+      "league_code": "48",
+      "domestic": false,
+      "kickoff": "2026-09-02T03:45:00+09:00",
+      "home": {
+        "betman_name": "스완지C",
+        "id": "4908",
+        "canonical": null
+      },
+      "away": {
+        "betman_name": "왓포드",
+        "id": "4970",
+        "canonical": null
+      },
+      "stadium": "스완스타",
+      "handicap": 0.0,
+      "status": "scheduled",
+      "vote_counts": {
+        "win": 177758,
+        "draw": 54214,
+        "lose": 29692
+      },
+      "vote_dist": {
+        "win": 0.6793,
+        "draw": 0.2072,
+        "lose": 0.1135
+      }
+    },
+    {
+      "match_no": 5,
+      "match_seq": 5,
+      "league": "잉글랜드 챔피언십",
+      "league_code": "48",
+      "domestic": false,
+      "kickoff": "2026-09-02T03:45:00+09:00",
+      "home": {
+        "betman_name": "웨스트햄",
+        "id": "4144",
+        "canonical": null
+      },
+      "away": {
+        "betman_name": "울버햄튼",
+        "id": "4211",
+        "canonical": null
+      },
+      "stadium": "런던스타",
+      "handicap": 0.0,
+      "status": "scheduled",
+      "vote_counts": {
+        "win": 86777,
+        "draw": 61568,
+        "lose": 113319
+      },
+      "vote_dist": {
+        "win": 0.3316,
+        "draw": 0.2353,
+        "lose": 0.4331
+      }
+    },
+    {
+      "match_no": 6,
+      "match_seq": 6,
+      "league": "잉글랜드 챔피언십",
+      "league_code": "48",
+      "domestic": false,
+      "kickoff": "2026-09-02T04:00:00+09:00",
+      "home": {
+        "betman_name": "버밍엄C",
+        "id": "4205",
+        "canonical": null
+      },
+      "away": {
+        "betman_name": "사우샘프",
+        "id": "4874",
+        "canonical": null
+      },
+      "stadium": "세인트앤",
+      "handicap": 0.0,
+      "status": "scheduled",
+      "vote_counts": {
+        "win": 58738,
+        "draw": 87866,
+        "lose": 115060
+      },
+      "vote_dist": {
+        "win": 0.2245,
+        "draw": 0.3358,
+        "lose": 0.4397
+      }
+    },
+    {
+      "match_no": 7,
+      "match_seq": 7,
+      "league": "잉글랜드 챔피언십",
+      "league_code": "48",
+      "domestic": false,
+      "kickoff": "2026-09-02T04:00:00+09:00",
+      "home": {
+        "betman_name": "스토크C",
+        "id": "4286",
+        "canonical": null
+      },
+      "away": {
+        "betman_name": "노리치C",
+        "id": "4760",
+        "canonical": null
+      },
+      "stadium": "bet365",
+      "handicap": 0.0,
+      "status": "scheduled",
+      "vote_counts": {
+        "win": 44977,
+        "draw": 66336,
+        "lose": 150351
+      },
+      "vote_dist": {
+        "win": 0.1719,
+        "draw": 0.2535,
+        "lose": 0.5746
+      }
+    },
+    {
+      "match_no": 8,
+      "match_seq": 8,
+      "league": "일본 J1리그",
+      "league_code": "SC007",
+      "domestic": false,
+      "kickoff": "2026-09-02T19:00:00+09:00",
+      "home": {
+        "betman_name": "도쿄베르",
+        "id": "123",
+        "canonical": null
+      },
+      "away": {
+        "betman_name": "비셀고베",
+        "id": "136",
+        "canonical": null
+      },
+      "stadium": "아지노모",
+      "handicap": 0.0,
+      "status": "scheduled",
+      "vote_counts": {
+        "win": 22595,
+        "draw": 48475,
+        "lose": 190594
+      },
+      "vote_dist": {
+        "win": 0.0864,
+        "draw": 0.1853,
+        "lose": 0.7284
+      }
+    },
+    {
+      "match_no": 9,
+      "match_seq": 9,
+      "league": "일본 J1리그",
+      "league_code": "SC007",
+      "domestic": false,
+      "kickoff": "2026-09-02T19:00:00+09:00",
+      "home": {
+        "betman_name": "마치다Z",
+        "id": "30532",
+        "canonical": null
+      },
+      "away": {
+        "betman_name": "가와사키",
+        "id": "86",
+        "canonical": null
+      },
+      "stadium": "마치다기",
+      "handicap": 0.0,
+      "status": "scheduled",
+      "vote_counts": {
+        "win": 141534,
+        "draw": 81868,
+        "lose": 38262
+      },
+      "vote_dist": {
+        "win": 0.5409,
+        "draw": 0.3129,
+        "lose": 0.1462
+      }
+    },
+    {
+      "match_no": 10,
+      "match_seq": 10,
+      "league": "일본 J1리그",
+      "league_code": "SC007",
+      "domestic": false,
+      "kickoff": "2026-09-02T19:00:00+09:00",
+      "home": {
+        "betman_name": "시미즈S",
+        "id": "126",
+        "canonical": null
+      },
+      "away": {
+        "betman_name": "FC도쿄",
+        "id": "270",
+        "canonical": null
+      },
+      "stadium": "IAI스타",
+      "handicap": 0.0,
+      "status": "scheduled",
+      "vote_counts": {
+        "win": 32398,
+        "draw": 47264,
+        "lose": 182002
+      },
+      "vote_dist": {
+        "win": 0.1238,
+        "draw": 0.1806,
+        "lose": 0.6956
+      }
+    },
+    {
+      "match_no": 11,
+      "match_seq": 11,
+      "league": "일본 J1리그",
+      "league_code": "SC007",
+      "domestic": false,
+      "kickoff": "2026-09-02T19:00:00+09:00",
+      "home": {
+        "betman_name": "C오사카",
+        "id": "133",
+        "canonical": null
+      },
+      "away": {
+        "betman_name": "가시와R",
+        "id": "132",
+        "canonical": null
+      },
+      "stadium": "얀마하나",
+      "handicap": 0.0,
+      "status": "scheduled",
+      "vote_counts": {
+        "win": 46505,
+        "draw": 92269,
+        "lose": 122890
+      },
+      "vote_dist": {
+        "win": 0.1777,
+        "draw": 0.3526,
+        "lose": 0.4696
+      }
+    },
+    {
+      "match_no": 12,
+      "match_seq": 12,
+      "league": "일본 J1리그",
+      "league_code": "SC007",
+      "domestic": false,
+      "kickoff": "2026-09-02T19:00:00+09:00",
+      "home": {
+        "betman_name": "산프히로",
+        "id": "129",
+        "canonical": null
+      },
+      "away": {
+        "betman_name": "나고야G",
+        "id": "127",
+        "canonical": null
+      },
+      "stadium": "에디피스",
+      "handicap": 0.0,
+      "status": "scheduled",
+      "vote_counts": {
+        "win": 204180,
+        "draw": 32554,
+        "lose": 24930
+      },
+      "vote_dist": {
+        "win": 0.7803,
+        "draw": 0.1244,
+        "lose": 0.0953
+      }
+    },
+    {
+      "match_no": 13,
+      "match_seq": 13,
+      "league": "일본 J1리그",
+      "league_code": "SC007",
+      "domestic": false,
+      "kickoff": "2026-09-02T19:00:00+09:00",
+      "home": {
+        "betman_name": "후쿠오카",
+        "id": "135",
+        "canonical": null
+      },
+      "away": {
+        "betman_name": "우라와R",
+        "id": "122",
+        "canonical": null
+      },
+      "stadium": "베스덴키",
+      "handicap": 0.0,
+      "status": "scheduled",
+      "vote_counts": {
+        "win": 113465,
+        "draw": 94256,
+        "lose": 53943
+      },
+      "vote_dist": {
+        "win": 0.4336,
+        "draw": 0.3602,
+        "lose": 0.2062
+      }
+    },
+    {
+      "match_no": 14,
+      "match_seq": 14,
+      "league": "일본 J1리그",
+      "league_code": "SC007",
+      "domestic": false,
+      "kickoff": "2026-09-02T19:00:00+09:00",
+      "home": {
+        "betman_name": "V바렌나",
+        "id": "30531",
+        "canonical": null
+      },
+      "away": {
+        "betman_name": "G오사카",
+        "id": "128",
+        "canonical": null
+      },
+      "stadium": "피스소프",
+      "handicap": 0.0,
+      "status": "scheduled",
+      "vote_counts": {
+        "win": 38329,
+        "draw": 71971,
+        "lose": 151364
+      },
+      "vote_dist": {
+        "win": 0.1465,
+        "draw": 0.2751,
+        "lose": 0.5785
+      }
+    }
+  ]
+}
