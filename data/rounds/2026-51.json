@@ -1,0 +1,447 @@
+{
+  "round_id": "260051",
+  "year": 2026,
+  "round_no": 51,
+  "game_id": "G011",
+  "sale_open": "2026-09-07T08:00:00+09:00",
+  "sale_close": "2026-09-08T23:00:00+09:00",
+  "analysis_due": "2026-09-08T11:00:00+09:00",
+  "status": "on_sale",
+  "collected_at": "2026-09-07T13:06:00+09:00",
+  "matches": [
+    {
+      "match_no": 1,
+      "match_seq": 1,
+      "league": "UEFA 챔피언스리그",
+      "league_code": "SC021",
+      "domestic": false,
+      "kickoff": "2026-09-09T01:45:00+09:00",
+      "home": {
+        "betman_name": "클뤼브뤼",
+        "id": "900046",
+        "canonical": null
+      },
+      "away": {
+        "betman_name": "A빌라",
+        "id": "4010",
+        "canonical": null
+      },
+      "stadium": "얀브레이",
+      "handicap": 0.0,
+      "status": "scheduled",
+      "vote_counts": {
+        "win": 10256,
+        "draw": 7516,
+        "lose": 9157
+      },
+      "vote_dist": {
+        "win": 0.3809,
+        "draw": 0.2791,
+        "lose": 0.34
+      }
+    },
+    {
+      "match_no": 2,
+      "match_seq": 2,
+      "league": "UEFA 챔피언스리그",
+      "league_code": "SC021",
+      "domestic": false,
+      "kickoff": "2026-09-09T01:45:00+09:00",
+      "home": {
+        "betman_name": "AEK아테",
+        "id": "900020",
+        "canonical": null
+      },
+      "away": {
+        "betman_name": "LASK",
+        "id": "UCL_1922",
+        "canonical": null
+      },
+      "stadium": "AEK아테",
+      "handicap": 0.0,
+      "status": "scheduled",
+      "vote_counts": {
+        "win": 18376,
+        "draw": 5298,
+        "lose": 3255
+      },
+      "vote_dist": {
+        "win": 0.6824,
+        "draw": 0.1967,
+        "lose": 0.1209
+      }
+    },
+    {
+      "match_no": 3,
+      "match_seq": 3,
+      "league": "UEFA 챔피언스리그",
+      "league_code": "SC021",
+      "domestic": false,
+      "kickoff": "2026-09-09T04:00:00+09:00",
+      "home": {
+        "betman_name": "레알마드",
+        "id": "4103",
+        "canonical": null
+      },
+      "away": {
+        "betman_name": "인테르",
+        "id": "4215",
+        "canonical": null
+      },
+      "stadium": "베르나베",
+      "handicap": 0.0,
+      "status": "scheduled",
+      "vote_counts": {
+        "win": 18994,
+        "draw": 5142,
+        "lose": 2793
+      },
+      "vote_dist": {
+        "win": 0.7053,
+        "draw": 0.1909,
+        "lose": 0.1037
+      }
+    },
+    {
+      "match_no": 4,
+      "match_seq": 4,
+      "league": "UEFA 챔피언스리그",
+      "league_code": "SC021",
+      "domestic": false,
+      "kickoff": "2026-09-09T04:00:00+09:00",
+      "home": {
+        "betman_name": "도르트문",
+        "id": "4025",
+        "canonical": null
+      },
+      "away": {
+        "betman_name": "비야레알",
+        "id": "4139",
+        "canonical": null
+      },
+      "stadium": "지그날이",
+      "handicap": 0.0,
+      "status": "scheduled",
+      "vote_counts": {
+        "win": 22512,
+        "draw": 2781,
+        "lose": 1636
+      },
+      "vote_dist": {
+        "win": 0.836,
+        "draw": 0.1033,
+        "lose": 0.0608
+      }
+    },
+    {
+      "match_no": 5,
+      "match_seq": 5,
+      "league": "UEFA 챔피언스리그",
+      "league_code": "SC021",
+      "domestic": false,
+      "kickoff": "2026-09-09T04:00:00+09:00",
+      "home": {
+        "betman_name": "포르투",
+        "id": "900031",
+        "canonical": null
+      },
+      "away": {
+        "betman_name": "맨체스C",
+        "id": "4222",
+        "canonical": null
+      },
+      "stadium": "드라강스",
+      "handicap": 0.0,
+      "status": "scheduled",
+      "vote_counts": {
+        "win": 2513,
+        "draw": 4727,
+        "lose": 19689
+      },
+      "vote_dist": {
+        "win": 0.0933,
+        "draw": 0.1755,
+        "lose": 0.7311
+      }
+    },
+    {
+      "match_no": 6,
+      "match_seq": 6,
+      "league": "UEFA 챔피언스리그",
+      "league_code": "SC021",
+      "domestic": false,
+      "kickoff": "2026-09-09T04:00:00+09:00",
+      "home": {
+        "betman_name": "릴OSC",
+        "id": "4699",
+        "canonical": null
+      },
+      "away": {
+        "betman_name": "베티스",
+        "id": "4102",
+        "canonical": null
+      },
+      "stadium": "피에르모",
+      "handicap": 0.0,
+      "status": "scheduled",
+      "vote_counts": {
+        "win": 10710,
+        "draw": 10287,
+        "lose": 5932
+      },
+      "vote_dist": {
+        "win": 0.3977,
+        "draw": 0.382,
+        "lose": 0.2203
+      }
+    },
+    {
+      "match_no": 7,
+      "match_seq": 7,
+      "league": "K리그1",
+      "league_code": "SC001",
+      "domestic": true,
+      "kickoff": "2026-09-09T19:30:00+09:00",
+      "home": {
+        "betman_name": "대전하나",
+        "id": "K10",
+        "canonical": null
+      },
+      "away": {
+        "betman_name": "FC안양",
+        "id": "K27",
+        "canonical": null
+      },
+      "stadium": "대전월드",
+      "handicap": 0.0,
+      "status": "scheduled",
+      "vote_counts": {
+        "win": 19634,
+        "draw": 4762,
+        "lose": 2533
+      },
+      "vote_dist": {
+        "win": 0.7291,
+        "draw": 0.1768,
+        "lose": 0.0941
+      }
+    },
+    {
+      "match_no": 8,
+      "match_seq": 8,
+      "league": "K리그1",
+      "league_code": "SC001",
+      "domestic": true,
+      "kickoff": "2026-09-09T19:30:00+09:00",
+      "home": {
+        "betman_name": "강원FC",
+        "id": "K21",
+        "canonical": null
+      },
+      "away": {
+        "betman_name": "전북현대",
+        "id": "K05",
+        "canonical": null
+      },
+      "stadium": "강릉하이",
+      "handicap": 0.0,
+      "status": "scheduled",
+      "vote_counts": {
+        "win": 5775,
+        "draw": 11035,
+        "lose": 10119
+      },
+      "vote_dist": {
+        "win": 0.2145,
+        "draw": 0.4098,
+        "lose": 0.3758
+      }
+    },
+    {
+      "match_no": 9,
+      "match_seq": 9,
+      "league": "K리그1",
+      "league_code": "SC001",
+      "domestic": true,
+      "kickoff": "2026-09-09T19:30:00+09:00",
+      "home": {
+        "betman_name": "광주FC",
+        "id": "K22",
+        "canonical": null
+      },
+      "away": {
+        "betman_name": "제주SKFC",
+        "id": "K04",
+        "canonical": null
+      },
+      "stadium": "광주월드",
+      "handicap": 0.0,
+      "status": "scheduled",
+      "vote_counts": {
+        "win": 3713,
+        "draw": 5828,
+        "lose": 17388
+      },
+      "vote_dist": {
+        "win": 0.1379,
+        "draw": 0.2164,
+        "lose": 0.6457
+      }
+    },
+    {
+      "match_no": 10,
+      "match_seq": 10,
+      "league": "K리그1",
+      "league_code": "SC001",
+      "domestic": true,
+      "kickoff": "2026-09-09T19:30:00+09:00",
+      "home": {
+        "betman_name": "포항스틸",
+        "id": "K03",
+        "canonical": null
+      },
+      "away": {
+        "betman_name": "김천상무",
+        "id": "K35",
+        "canonical": null
+      },
+      "stadium": "상주시민",
+      "handicap": 0.0,
+      "status": "scheduled",
+      "vote_counts": {
+        "win": 11423,
+        "draw": 10321,
+        "lose": 5185
+      },
+      "vote_dist": {
+        "win": 0.4242,
+        "draw": 0.3833,
+        "lose": 0.1925
+      }
+    },
+    {
+      "match_no": 11,
+      "match_seq": 11,
+      "league": "UEFA 챔피언스리그",
+      "league_code": "SC021",
+      "domestic": false,
+      "kickoff": "2026-09-10T01:45:00+09:00",
+      "home": {
+        "betman_name": "슈투트가",
+        "id": "4137",
+        "canonical": null
+      },
+      "away": {
+        "betman_name": "비킹FK",
+        "id": "9b5d8",
+        "canonical": null
+      },
+      "stadium": "MHP아",
+      "handicap": 0.0,
+      "status": "scheduled",
+      "vote_counts": {
+        "win": 23421,
+        "draw": 2167,
+        "lose": 1341
+      },
+      "vote_dist": {
+        "win": 0.8697,
+        "draw": 0.0805,
+        "lose": 0.0498
+      }
+    },
+    {
+      "match_no": 12,
+      "match_seq": 12,
+      "league": "UEFA 챔피언스리그",
+      "league_code": "SC021",
+      "domestic": false,
+      "kickoff": "2026-09-10T04:00:00+09:00",
+      "home": {
+        "betman_name": "리버풀",
+        "id": "4075",
+        "canonical": null
+      },
+      "away": {
+        "betman_name": "AT마드",
+        "id": "4012",
+        "canonical": null
+      },
+      "stadium": "안필드",
+      "handicap": 0.0,
+      "status": "scheduled",
+      "vote_counts": {
+        "win": 15248,
+        "draw": 7136,
+        "lose": 4545
+      },
+      "vote_dist": {
+        "win": 0.5662,
+        "draw": 0.265,
+        "lose": 0.1688
+      }
+    },
+    {
+      "match_no": 13,
+      "match_seq": 13,
+      "league": "UEFA 챔피언스리그",
+      "league_code": "SC021",
+      "domestic": false,
+      "kickoff": "2026-09-10T04:00:00+09:00",
+      "home": {
+        "betman_name": "스포르CP",
+        "id": "900025",
+        "canonical": null
+      },
+      "away": {
+        "betman_name": "갈라타사",
+        "id": "900024",
+        "canonical": null
+      },
+      "stadium": "조제알바",
+      "handicap": 0.0,
+      "status": "scheduled",
+      "vote_counts": {
+        "win": 19545,
+        "draw": 4142,
+        "lose": 3242
+      },
+      "vote_dist": {
+        "win": 0.7258,
+        "draw": 0.1538,
+        "lose": 0.1204
+      }
+    },
+    {
+      "match_no": 14,
+      "match_seq": 14,
+      "league": "UEFA 챔피언스리그",
+      "league_code": "SC021",
+      "domestic": false,
+      "kickoff": "2026-09-10T04:00:00+09:00",
+      "home": {
+        "betman_name": "나폴리",
+        "id": "4239",
+        "canonical": null
+      },
+      "away": {
+        "betman_name": "아스널",
+        "id": "4007",
+        "canonical": null
+      },
+      "stadium": "마라스타",
+      "handicap": 0.0,
+      "status": "scheduled",
+      "vote_counts": {
+        "win": 1997,
+        "draw": 4634,
+        "lose": 20298
+      },
+      "vote_dist": {
+        "win": 0.0742,
+        "draw": 0.1721,
+        "lose": 0.7538
+      }
+    }
+  ]
+}
