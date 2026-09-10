@@ -1,0 +1,447 @@
+{
+  "round_id": "260052",
+  "year": 2026,
+  "round_no": 52,
+  "game_id": "G011",
+  "sale_open": "2026-09-10T08:00:00+09:00",
+  "sale_close": "2026-09-12T23:00:00+09:00",
+  "analysis_due": "2026-09-12T11:00:00+09:00",
+  "status": "on_sale",
+  "collected_at": "2026-09-10T09:06:00+09:00",
+  "matches": [
+    {
+      "match_no": 1,
+      "match_seq": 1,
+      "league": "잉글랜드 프리미어리그",
+      "league_code": "52",
+      "domestic": false,
+      "kickoff": "2026-09-12T23:00:00+09:00",
+      "home": {
+        "betman_name": "A빌라",
+        "id": "4010",
+        "canonical": null
+      },
+      "away": {
+        "betman_name": "노팅엄F",
+        "id": "4088",
+        "canonical": null
+      },
+      "stadium": "빌라파크",
+      "handicap": 0.0,
+      "status": "scheduled",
+      "vote_counts": {
+        "win": 4049,
+        "draw": 1467,
+        "lose": 791
+      },
+      "vote_dist": {
+        "win": 0.642,
+        "draw": 0.2326,
+        "lose": 0.1254
+      }
+    },
+    {
+      "match_no": 2,
+      "match_seq": 2,
+      "league": "잉글랜드 프리미어리그",
+      "league_code": "52",
+      "domestic": false,
+      "kickoff": "2026-09-12T23:00:00+09:00",
+      "home": {
+        "betman_name": "본머스",
+        "id": "102706",
+        "canonical": null
+      },
+      "away": {
+        "betman_name": "브렌트퍼",
+        "id": "100082",
+        "canonical": null
+      },
+      "stadium": "바이탈리",
+      "handicap": 0.0,
+      "status": "scheduled",
+      "vote_counts": {
+        "win": 1099,
+        "draw": 2707,
+        "lose": 2501
+      },
+      "vote_dist": {
+        "win": 0.1743,
+        "draw": 0.4292,
+        "lose": 0.3965
+      }
+    },
+    {
+      "match_no": 3,
+      "match_seq": 3,
+      "league": "잉글랜드 프리미어리그",
+      "league_code": "52",
+      "domestic": false,
+      "kickoff": "2026-09-12T23:00:00+09:00",
+      "home": {
+        "betman_name": "크리스털",
+        "id": "100094",
+        "canonical": null
+      },
+      "away": {
+        "betman_name": "입스위치",
+        "id": "999902",
+        "canonical": null
+      },
+      "stadium": "셀허스트",
+      "handicap": 0.0,
+      "status": "scheduled",
+      "vote_counts": {
+        "win": 4765,
+        "draw": 1070,
+        "lose": 472
+      },
+      "vote_dist": {
+        "win": 0.7555,
+        "draw": 0.1697,
+        "lose": 0.0748
+      }
+    },
+    {
+      "match_no": 4,
+      "match_seq": 4,
+      "league": "잉글랜드 프리미어리그",
+      "league_code": "52",
+      "domestic": false,
+      "kickoff": "2026-09-12T23:00:00+09:00",
+      "home": {
+        "betman_name": "리버풀",
+        "id": "4075",
+        "canonical": null
+      },
+      "away": {
+        "betman_name": "풀럼",
+        "id": "102785",
+        "canonical": null
+      },
+      "stadium": "안필드",
+      "handicap": 0.0,
+      "status": "scheduled",
+      "vote_counts": {
+        "win": 5379,
+        "draw": 667,
+        "lose": 261
+      },
+      "vote_dist": {
+        "win": 0.8529,
+        "draw": 0.1058,
+        "lose": 0.0414
+      }
+    },
+    {
+      "match_no": 5,
+      "match_seq": 5,
+      "league": "스페인 라리가",
+      "league_code": "67",
+      "domestic": false,
+      "kickoff": "2026-09-12T23:15:00+09:00",
+      "home": {
+        "betman_name": "오사수나",
+        "id": "4300",
+        "canonical": null
+      },
+      "away": {
+        "betman_name": "에스파뇰",
+        "id": "4238",
+        "canonical": null
+      },
+      "stadium": "엘사다르",
+      "handicap": 0.0,
+      "status": "scheduled",
+      "vote_counts": {
+        "win": 2805,
+        "draw": 2246,
+        "lose": 1256
+      },
+      "vote_dist": {
+        "win": 0.4447,
+        "draw": 0.3561,
+        "lose": 0.1991
+      }
+    },
+    {
+      "match_no": 6,
+      "match_seq": 6,
+      "league": "잉글랜드 프리미어리그",
+      "league_code": "52",
+      "domestic": false,
+      "kickoff": "2026-09-13T01:30:00+09:00",
+      "home": {
+        "betman_name": "토트넘",
+        "id": "4129",
+        "canonical": null
+      },
+      "away": {
+        "betman_name": "에버턴",
+        "id": "4047",
+        "canonical": null
+      },
+      "stadium": "토트스타",
+      "handicap": 0.0,
+      "status": "scheduled",
+      "vote_counts": {
+        "win": 1922,
+        "draw": 2178,
+        "lose": 2207
+      },
+      "vote_dist": {
+        "win": 0.3047,
+        "draw": 0.3453,
+        "lose": 0.3499
+      }
+    },
+    {
+      "match_no": 7,
+      "match_seq": 7,
+      "league": "스페인 라리가",
+      "league_code": "67",
+      "domestic": false,
+      "kickoff": "2026-09-13T01:30:00+09:00",
+      "home": {
+        "betman_name": "A빌바오",
+        "id": "4011",
+        "canonical": null
+      },
+      "away": {
+        "betman_name": "엘체",
+        "id": "103153",
+        "canonical": null
+      },
+      "stadium": "산마메스",
+      "handicap": 0.0,
+      "status": "scheduled",
+      "vote_counts": {
+        "win": 5628,
+        "draw": 443,
+        "lose": 236
+      },
+      "vote_dist": {
+        "win": 0.8923,
+        "draw": 0.0702,
+        "lose": 0.0374
+      }
+    },
+    {
+      "match_no": 8,
+      "match_seq": 8,
+      "league": "잉글랜드 프리미어리그",
+      "league_code": "52",
+      "domestic": false,
+      "kickoff": "2026-09-13T04:00:00+09:00",
+      "home": {
+        "betman_name": "선덜랜드",
+        "id": "4906",
+        "canonical": null
+      },
+      "away": {
+        "betman_name": "아스널",
+        "id": "4007",
+        "canonical": null
+      },
+      "stadium": "오브라이",
+      "handicap": 0.0,
+      "status": "scheduled",
+      "vote_counts": {
+        "win": 277,
+        "draw": 680,
+        "lose": 5350
+      },
+      "vote_dist": {
+        "win": 0.0439,
+        "draw": 0.1078,
+        "lose": 0.8483
+      }
+    },
+    {
+      "match_no": 9,
+      "match_seq": 9,
+      "league": "스페인 라리가",
+      "league_code": "67",
+      "domestic": false,
+      "kickoff": "2026-09-13T21:00:00+09:00",
+      "home": {
+        "betman_name": "셀타비고",
+        "id": "4496",
+        "canonical": null
+      },
+      "away": {
+        "betman_name": "말라가",
+        "id": "103158",
+        "canonical": null
+      },
+      "stadium": "아방발라",
+      "handicap": 0.0,
+      "status": "scheduled",
+      "vote_counts": {
+        "win": 4697,
+        "draw": 1184,
+        "lose": 426
+      },
+      "vote_dist": {
+        "win": 0.7447,
+        "draw": 0.1877,
+        "lose": 0.0675
+      }
+    },
+    {
+      "match_no": 10,
+      "match_seq": 10,
+      "league": "잉글랜드 프리미어리그",
+      "league_code": "52",
+      "domestic": false,
+      "kickoff": "2026-09-13T22:00:00+09:00",
+      "home": {
+        "betman_name": "코번트리",
+        "id": "998669",
+        "canonical": null
+      },
+      "away": {
+        "betman_name": "브라이턴",
+        "id": "100050",
+        "canonical": null
+      },
+      "stadium": "코번아레",
+      "handicap": 0.0,
+      "status": "scheduled",
+      "vote_counts": {
+        "win": 586,
+        "draw": 988,
+        "lose": 4733
+      },
+      "vote_dist": {
+        "win": 0.0929,
+        "draw": 0.1567,
+        "lose": 0.7504
+      }
+    },
+    {
+      "match_no": 11,
+      "match_seq": 11,
+      "league": "스페인 라리가",
+      "league_code": "67",
+      "domestic": false,
+      "kickoff": "2026-09-13T23:15:00+09:00",
+      "home": {
+        "betman_name": "레반테",
+        "id": "102225",
+        "canonical": null
+      },
+      "away": {
+        "betman_name": "바르셀로",
+        "id": "4014",
+        "canonical": null
+      },
+      "stadium": "발렌시아",
+      "handicap": 0.0,
+      "status": "scheduled",
+      "vote_counts": {
+        "win": 276,
+        "draw": 395,
+        "lose": 5636
+      },
+      "vote_dist": {
+        "win": 0.0438,
+        "draw": 0.0626,
+        "lose": 0.8936
+      }
+    },
+    {
+      "match_no": 12,
+      "match_seq": 12,
+      "league": "잉글랜드 프리미어리그",
+      "league_code": "52",
+      "domestic": false,
+      "kickoff": "2026-09-14T00:30:00+09:00",
+      "home": {
+        "betman_name": "맨체스U",
+        "id": "4080",
+        "canonical": null
+      },
+      "away": {
+        "betman_name": "맨체스C",
+        "id": "4222",
+        "canonical": null
+      },
+      "stadium": "올드트래",
+      "handicap": 0.0,
+      "status": "scheduled",
+      "vote_counts": {
+        "win": 915,
+        "draw": 1762,
+        "lose": 3630
+      },
+      "vote_dist": {
+        "win": 0.1451,
+        "draw": 0.2794,
+        "lose": 0.5756
+      }
+    },
+    {
+      "match_no": 13,
+      "match_seq": 13,
+      "league": "스페인 라리가",
+      "league_code": "67",
+      "domestic": false,
+      "kickoff": "2026-09-14T01:30:00+09:00",
+      "home": {
+        "betman_name": "헤타페",
+        "id": "104154",
+        "canonical": null
+      },
+      "away": {
+        "betman_name": "데포아코",
+        "id": "4040",
+        "canonical": null
+      },
+      "stadium": "콜리세움",
+      "handicap": 0.0,
+      "status": "scheduled",
+      "vote_counts": {
+        "win": 2021,
+        "draw": 2320,
+        "lose": 1966
+      },
+      "vote_dist": {
+        "win": 0.3204,
+        "draw": 0.3678,
+        "lose": 0.3117
+      }
+    },
+    {
+      "match_no": 14,
+      "match_seq": 14,
+      "league": "스페인 라리가",
+      "league_code": "67",
+      "domestic": false,
+      "kickoff": "2026-09-14T04:00:00+09:00",
+      "home": {
+        "betman_name": "소시에다",
+        "id": "4104",
+        "canonical": null
+      },
+      "away": {
+        "betman_name": "AT마드",
+        "id": "4012",
+        "canonical": null
+      },
+      "stadium": "아노에타",
+      "handicap": 0.0,
+      "status": "scheduled",
+      "vote_counts": {
+        "win": 917,
+        "draw": 1923,
+        "lose": 3467
+      },
+      "vote_dist": {
+        "win": 0.1454,
+        "draw": 0.3049,
+        "lose": 0.5497
+      }
+    }
+  ]
+}
