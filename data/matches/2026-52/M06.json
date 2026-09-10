@@ -1,0 +1,15 @@
+{
+ "match_no": 6,
+ "market_odds": {
+  "win": 2.05,
+  "draw": 3.55,
+  "lose": 3.6,
+  "bookmakers": 1,
+  "implied_prob": {
+   "win": 0.4658,
+   "draw": 0.269,
+   "lose": 0.2652
+  },
+  "source": "sportsgambler 표시 1X2 (Astra 재분석, 2026-09-10)"
+ }
+}

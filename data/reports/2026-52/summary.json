@@ -1,0 +1,352 @@
+{
+  "M01": {
+    "match_no": 1,
+    "probs": {
+      "win": 0.34,
+      "draw": 0.36,
+      "lose": 0.3
+    },
+    "pick": "draw",
+    "backup_pick": "win",
+    "confidence": "하",
+    "expected_scores": [
+      "0-0",
+      "1-1"
+    ],
+    "key_factors": [
+      "A빌라 17위 · 3경기 0승1무2패 · 1점 · 0득/5실 / 노팅엄F 16위 · 3경기 0승2무1패 · 2점 · 2득/3실.",
+      "빌라의 이름값으로 홈을 올리기보다 3경기 무득점과 중원 이슈를 우선한다. 노팅엄도 3경기 2골에 최근 2무여서 어느 쪽도 상대를 압도할 공격 근거가 약하다. 0-0·1-1 경로를 가장 높게 잡되 홈승과 2%p 차이뿐이다.",
+      "A빌라 가용 이슈: Joao Gomes(Red card (direct), 복귀예상 2026-09-19); Leon Goretzka(Knee, 복귀예상 2026-10-10); Brian Madjo(Ankle, 복귀예상 2026-09-12); Johan Manzambi(Knee, 복귀예상 2026-09-12); Amadou Onana(Knee, 복귀예상 2027-06-01).",
+      "투표 64.2%(홈 승) vs 시장 42.8% — 괴리 +21.4%p"
+    ],
+    "data_gaps": [
+      "빌라 중원 대체 조합과 Madjo/Manzambi, 노팅엄 Sangare/Murillo의 실제 가용 여부. 선제골이 나는 시점과 창출력(xG) 미확인.",
+      "확정 선발/GK·xG·PPDA·비리그 일정·공식 징계 판정 미확인"
+    ]
+  },
+  "M02": {
+    "match_no": 2,
+    "probs": {
+      "win": 0.35,
+      "draw": 0.32,
+      "lose": 0.33
+    },
+    "pick": "win",
+    "backup_pick": "draw",
+    "confidence": "하",
+    "expected_scores": [
+      "1-0",
+      "2-1"
+    ],
+    "key_factors": [
+      "본머스 15위 · 3경기 0승2무1패 · 2점 · 4득/5실 / 브렌트퍼 5위 · 3경기 1승2무0패 · 5점 · 5득/2실.",
+      "양팀 모두 최근2무지만 0-0형이 아니라 매 경기 득점한 접전이다. 브렌트퍼드의 무패만으로 원정 고정하기 어렵고, Collins·van den Berg·Jensen 이슈가 추가 확인돼 원정 안정성을 낮게 본다. 홈 이점을 소폭 남긴 3분할이다.",
+      "본머스 가용 이슈: Amine Adli(Calf, 복귀예상 2026-09-20); Veljko Milosavljevic(Knee, 복귀예상 미공개); Julian Araujo(Thigh, 복귀예상 2026-11-21); Eli Junior Kroupi(Foot, 복귀예상 2026-11-07).",
+      "투표 42.9%(무승부) vs 시장 26.5% — 괴리 +16.5%p"
+    ],
+    "data_gaps": [
+      "Collins의 Other 표기와 복귀일 공란은 확정 결장 판정이 아니다. 수비 조합과 본머스 최전방 가용 확인 전 단일 홈·원정 모두 취약.",
+      "확정 선발/GK·xG·PPDA·비리그 일정·공식 징계 판정 미확인"
+    ]
+  },
+  "M03": {
+    "match_no": 3,
+    "probs": {
+      "win": 0.44,
+      "draw": 0.29,
+      "lose": 0.27
+    },
+    "pick": "win",
+    "backup_pick": "draw",
+    "confidence": "하",
+    "expected_scores": [
+      "1-0",
+      "2-1"
+    ],
+    "key_factors": [
+      "크리스털 13위 · 3경기 1승0무2패 · 3점 · 4득/8실 / 입스위치 14위 · 3경기 1승0무2패 · 3점 · 4득/8실.",
+      "누적 승점·득실은 동일하지만 팰리스는 직전 풀럼 원정에서3골로 승리했다. 입스위치는 맨유·리버풀 상대2연패라 상대 강도도 함께 읽는다. 홈 우세를 유지하되 공격진 이슈로 확신을 줄인다.",
+      "크리스털 가용 이슈: Edward Nketiah(Other, 복귀예상 미공개); Ismaila Sarr(Groin, 복귀예상 2026-09-12); Jean-Philippe Mateta(Thigh, 복귀예상 2026-10-11); Chadi Riad(Knee, 복귀예상 2027-06-07).",
+      "투표 75.5%(홈 승) vs 시장 49.9% — 괴리 +25.7%p"
+    ],
+    "data_gaps": [
+      "Mateta 대체 선발과 Sarr 복귀, Ipswich Matusiwa·Philogene 가용 여부. 골 창출과 마무리 문제를 나눌 xG 없음.",
+      "확정 선발/GK·xG·PPDA·비리그 일정·공식 징계 판정 미확인"
+    ]
+  },
+  "M04": {
+    "match_no": 4,
+    "probs": {
+      "win": 0.5,
+      "draw": 0.3189,
+      "lose": 0.1811
+    },
+    "pick": "win",
+    "backup_pick": "win",
+    "confidence": "중",
+    "expected_scores": [
+      "1-0",
+      "2-1"
+    ],
+    "key_factors": [
+      "리버풀 6위 · 3경기 1승2무0패 · 5점 · 6득/4실 / 풀럼 19위 · 3경기 0승0무3패 · 0점 · 4득/7실.",
+      "리버풀은1승2무로 무패, 풀럼은3패지만 두 경기에서2골을 넣었다. 원정팀을 무득점 약체로 단정하지 않는다. 홈 우세는 명확하나 Gakpo·Ekitike·Bradley 등 추가 이슈 때문에 기존보다 여지를 남긴다.",
+      "리버풀 가용 이슈: Cody Gakpo(Muscle, 복귀예상 미공개); Joseph Gomez(Other, 복귀예상 2026-09-12); Federico Chiesa(Low back, 복귀예상 2026-10-11); Giovanni Leoni(Cruciate ligame, 복귀예상 2026-11-01); Hugo Ekitike(Calf, 복귀예상 2026-11-21); Conor Bradley(Knee, 복귀예상 2026-11-21); Vitezslav Jaros(Other, 복귀예상 미공개).",
+      "투표 85.3%(홈 승) vs 시장 66.7% — 괴리 +18.6%p"
+    ],
+    "data_gaps": [
+      "Gakpo Other가 아닌 Muscle/복귀 공란, Ekitike 등 실제 출전 여부와 대체 공격진. 컵·유럽 일정에 따른 로테이션은 미확인.",
+      "확정 선발/GK·xG·PPDA·비리그 일정·공식 징계 판정 미확인"
+    ]
+  },
+  "M05": {
+    "match_no": 5,
+    "probs": {
+      "win": 0.44,
+      "draw": 0.31,
+      "lose": 0.25
+    },
+    "pick": "win",
+    "backup_pick": "draw",
+    "confidence": "하",
+    "expected_scores": [
+      "1-0",
+      "2-1"
+    ],
+    "key_factors": [
+      "오사수나 8위 · 4경기 2승1무1패 · 7점 · 5득/6실 / 에스파뇰 12위 · 4경기 1승1무2패 · 4점 · 6득/5실.",
+      "오사수나 직전2-5는 원정 결과이며, 확인된 홈은0-0·1-0으로2경기 무실점이다. 에스파뇰도 Puado·Kike Garcia·Lozano 이슈가 있어 홈의 수비적 이점과 무 경로를 함께 본다.",
+      "오사수나 가용 이슈: Iker Munoz(Yellow cards, 복귀예상 미공개); Aimar Oroz(Hamstring, 복귀예상 2026-09-26); Valentin Rosier(Hamstring, 복귀예상 미공개).",
+      "투표 44.5%(홈 승) vs 시장 44.0% — 괴리 +0.5%p"
+    ],
+    "data_gaps": [
+      "Munoz의 실제 징계 적용, Oroz·Rosier 대체와 에스파뇰 공격진. 선수 공백을 독립 신호 여러 개로 중복 가산하지 않음.",
+      "확정 선발/GK·xG·PPDA·비리그 일정·공식 징계 판정 미확인"
+    ]
+  },
+  "M06": {
+    "match_no": 6,
+    "probs": {
+      "win": 0.3,
+      "draw": 0.34,
+      "lose": 0.36
+    },
+    "pick": "lose",
+    "backup_pick": "win",
+    "confidence": "하",
+    "expected_scores": [
+      "0-1",
+      "1-2"
+    ],
+    "key_factors": [
+      "토트넘 18위 · 3경기 0승1무2패 · 1점 · 0득/5실 / 에버턴 8위 · 3경기 1승2무0패 · 5점 · 5득/3실.",
+      "토트넘3경기0골과 Maddison·Kulusevski·Xavi Simons·Odobert 가용 이슈를 홈 명성으로 덮지 않는다. 에버턴은3경기5득점·무패이며 최근2무다. 원정 승리를 아주 근소하게 앞세우되 무34%와 홈30%를 모두 열어 둔다.",
+      "토트넘 가용 이슈: James Maddison(Shoulder, 복귀예상 2026-09-12); Pape Sarr(Thigh, 복귀예상 미공개); Dejan Kulusevski(Knee, 복귀예상 미공개); Xavi Simons(Cruciate ligame, 복귀예상 2027-02-20); Wilson Odobert(Knee, 복귀예상 2026-11-28).",
+      "투표 35.0%(원정 승) vs 시장 26.5% — 괴리 +8.5%p"
+    ],
+    "data_gaps": [
+      "Maddison 복귀 표기9/12의 실제 출전, Sarr·Kulusevski 상태, Everton Garner/Noergaard 상태. 이 경기의 방향을 어느 안에서도 안전축이라 부르지 않음.",
+      "확정 선발/GK·xG·PPDA·비리그 일정·공식 징계 판정 미확인"
+    ]
+  },
+  "M07": {
+    "match_no": 7,
+    "probs": {
+      "win": 0.5,
+      "draw": 0.3189,
+      "lose": 0.1811
+    },
+    "pick": "win",
+    "backup_pick": "win",
+    "confidence": "중",
+    "expected_scores": [
+      "1-0",
+      "2-1"
+    ],
+    "key_factors": [
+      "A빌바오 10위 · 4경기 2승0무2패 · 6점 · 6득/5실 / 엘체 19위 · 4경기 0승1무3패 · 1점 · 5득/12실.",
+      "빌바오 직전3-0과 엘체4경기12실점은 홈 우세를 지지한다. 다만 빌바오도 홈1승1패, 수비진 가용 이슈가 있어 투표89.2% 수준의 확신은 부적절하다.",
+      "A빌바오 가용 이슈: Yuri Berchiche(Yellow cards, 복귀예상 미공개); Andoni Gorosabel(Groin, 복귀예상 미공개); Yeray Alvarez(Other, 복귀예상 미공개); Peio Canales(Calf, 복귀예상 2026-09-26); Unai Eguiluz(Knee, 복귀예상 2027-01-16); Daniel Vivian(Hamstring, 복귀예상 2026-09-12).",
+      "투표 89.2%(홈 승) vs 시장 67.4% — 괴리 +21.8%p"
+    ],
+    "data_gaps": [
+      "Berchiche 징계 적용, Yeray·Vivian·Gorosabel 가용과 실제 수비4명. 예상 복귀 날짜를 출전 확정으로 읽지 않음.",
+      "확정 선발/GK·xG·PPDA·비리그 일정·공식 징계 판정 미확인"
+    ]
+  },
+  "M08": {
+    "match_no": 8,
+    "probs": {
+      "win": 0.1787,
+      "draw": 0.3213,
+      "lose": 0.5
+    },
+    "pick": "lose",
+    "backup_pick": "lose",
+    "confidence": "중",
+    "expected_scores": [
+      "0-1",
+      "1-2"
+    ],
+    "key_factors": [
+      "선덜랜드 12위 · 3경기 1승1무1패 · 4점 · 3득/3실 / 아스널 2위 · 3경기 3승0무0패 · 9점 · 6득/1실.",
+      "아스널3전전승·1실점은 원정 우세를 지지한다. 선덜랜드의 홈1-0 승리는 단 한 경기이며 불패 성향을 입증하지 않는다. Saliba 이슈와 Timber/Mosquera 복귀 불확실성 때문에 무를 함께 관찰한다.",
+      "선덜랜드 가용 이슈: Romaine Mundle(Other, 복귀예상 미공개); Habib Diarra(Thigh, 복귀예상 2026-10-31); Simon Adingra(Ankle, 복귀예상 2026-09-12).",
+      "투표 84.8%(원정 승) vs 시장 65.6% — 괴리 +19.3%p"
+    ],
+    "data_gaps": [
+      "아스널 최종 CB/GK와 선덜랜드 공격진. 공식 아스널 뉴스 접근403으로 집계 출처의 결장 목록만 확보.",
+      "확정 선발/GK·xG·PPDA·비리그 일정·공식 징계 판정 미확인"
+    ]
+  },
+  "M09": {
+    "match_no": 9,
+    "probs": {
+      "win": 0.44,
+      "draw": 0.36,
+      "lose": 0.2
+    },
+    "pick": "win",
+    "backup_pick": "draw",
+    "confidence": "하",
+    "expected_scores": [
+      "1-0",
+      "2-1"
+    ],
+    "key_factors": [
+      "셀타비고 16위 · 5경기 0승3무2패 · 3점 · 2득/5실 / 말라가 18위 · 4경기 0승2무2패 · 2점 · 1득/7실.",
+      "셀타는5경기2득점·3무, 말라가는4경기1득점·2무다. 셀타 홈2패는 사실이지만 상대 오사수나·빌바오와 말라가의 최근 상대 AT·레알을 함께 고려한다. 셀타 승리가 최대이되 이번 회차 무 커버를 가장 먼저 살필 경기다.",
+      "셀타비고 가용 이슈: Aleix Febas(Rib, 복귀예상 2026-09-13).",
+      "투표 74.5%(홈 승) vs 시장 55.1% — 괴리 +19.4%p"
+    ],
+    "data_gaps": [
+      "셀타 창출력/xG, Febas 복귀, 말라가6개 가용 이슈. 단기 무율3/5·2/4는 분모가 작고 독립 반복 실험이 아님.",
+      "확정 선발/GK·xG·PPDA·비리그 일정·공식 징계 판정 미확인"
+    ]
+  },
+  "M10": {
+    "match_no": 10,
+    "probs": {
+      "win": 0.27,
+      "draw": 0.29,
+      "lose": 0.44
+    },
+    "pick": "lose",
+    "backup_pick": "draw",
+    "confidence": "하",
+    "expected_scores": [
+      "0-1",
+      "1-2"
+    ],
+    "key_factors": [
+      "코번트리 20위 · 3경기 0승0무3패 · 0점 · 0득/5실 / 브라이턴 10위 · 3경기 1승1무1패 · 4점 · 8득/5실.",
+      "코번트리0득점3패는 아스널·헐·맨시티라는 상대 편중 속 결과다. 브라이턴은8득점이나 공격진 이슈가 많아 투표75% 원정 고정은 과하다. 원정 우세를 유지하되44%로 낮추고 무·홈 이변 여지를 넓힌다.",
+      "코번트리 가용 이슈: Sidiki Cherif(Other, 복귀예상 미공개); Kaine Kesler-Hayden(Thigh, 복귀예상 2026-10-12); Luke Woolfenden(Knee, 복귀예상 2026-10-12); Haji Wright(Thigh, 복귀예상 2026-11-21).",
+      "투표 75.0%(원정 승) vs 시장 51.7% — 괴리 +23.3%p"
+    ],
+    "data_gaps": [
+      "Rutter·Azeez·Svoboda의9/13 복귀 표기, Brighton Mitoma/Minteh/Tzimas/Ferguson 및 Coventry Wright. 경기 직전 공격 명단 확인에 가장 민감.",
+      "확정 선발/GK·xG·PPDA·비리그 일정·공식 징계 판정 미확인"
+    ]
+  },
+  "M11": {
+    "match_no": 11,
+    "probs": {
+      "win": 0.1194,
+      "draw": 0.3806,
+      "lose": 0.5
+    },
+    "pick": "lose",
+    "backup_pick": "lose",
+    "confidence": "중",
+    "expected_scores": [
+      "0-1",
+      "1-2"
+    ],
+    "key_factors": [
+      "레반테 11위 · 4경기 1승2무1패 · 5점 · 5득/5실 / 바르셀로 1위 · 4경기 4승0무0패 · 12점 · 17득/2실.",
+      "바르셀로나4승17득점2실점, 원정2경기10-0은 이번 회차 가장 일관된 우세 근거다. 레반테의 홈5-2는 한 경기여서 전체 공격력을 대표한다고 보기 어렵다.",
+      "레반테 가용 이슈: Etta Eyong(Thigh, 복귀예상 미공개).",
+      "투표 89.4%(원정 승) vs 시장 79.1% — 괴리 +10.3%p"
+    ],
+    "data_gaps": [
+      "바르셀로나 로테이션·최종 GK/CB, 레반테 Etta Eyong 가용. 전반전 별도 득점 자료 없이 전반 마켓으로 확장하지 않음.",
+      "확정 선발/GK·xG·PPDA·비리그 일정·공식 징계 판정 미확인"
+    ]
+  },
+  "M12": {
+    "match_no": 12,
+    "probs": {
+      "win": 0.2762,
+      "draw": 0.28,
+      "lose": 0.4438
+    },
+    "pick": "lose",
+    "backup_pick": "draw",
+    "confidence": "하",
+    "expected_scores": [
+      "0-1",
+      "1-2"
+    ],
+    "key_factors": [
+      "맨체스U 11위 · 3경기 1승1무1패 · 4점 · 7득/6실 / 맨체스C 1위 · 3경기 3승0무0패 · 9점 · 7득/2실.",
+      "맨시티3승과 맨유의7득점6실점은 원정 우세와 더비의 변동성을 동시에 지지한다. 맨유의 홈5-2는 입스위치전 한 경기로 제한해 읽는다.",
+      "맨체스U 가용 이슈: Marcus Rashford(Other, 복귀예상 미공개); Matthijs de Ligt(Low back, 복귀예상 2026-09-20); Carlos Baleba(Ankle, 복귀예상 2026-09-20); Amad Diallo(Ankle, 복귀예상 2026-10-10); Tom Heaton(Knock, 복귀예상 미공개); Manuel Ugarte(Cruciate ligame, 복귀예상 미공개).",
+      "투표 57.6%(원정 승) vs 시장 44.5% — 괴리 +13.1%p"
+    ],
+    "data_gaps": [
+      "맨유 De Ligt·Baleba·Ugarte·Amad와 맨시티 Kovacic의 실제 명단/징계 적용. Rashford의Other 공란은 확인된 부상으로 단정하지 않음.",
+      "확정 선발/GK·xG·PPDA·비리그 일정·공식 징계 판정 미확인"
+    ]
+  },
+  "M13": {
+    "match_no": 13,
+    "probs": {
+      "win": 0.3,
+      "draw": 0.34,
+      "lose": 0.36
+    },
+    "pick": "lose",
+    "backup_pick": "draw",
+    "confidence": "하",
+    "expected_scores": [
+      "0-1",
+      "1-2"
+    ],
+    "key_factors": [
+      "헤타페 15위 · 4경기 1승1무2패 · 4점 · 2득/5실 / 데포아코 5위 · 4경기 2승2무0패 · 8점 · 8득/5실.",
+      "헤타페 홈1승1무와 데포르티보 원정1승1무가 맞선다. 헤타페 수비/공격 가용 이슈와 데포르티보의최근2경기3득점씩을 함께 반영해 원정을 근소하게 앞세운다. 무는 여전히34%로 주요 커버다.",
+      "헤타페 가용 이슈: Zaid Abner Romero(2nd yellow (Red), 복귀예상 2026-09-17); Djene(Red card (direct), 복귀예상 미공개); Martin Satriano(Yellow cards / Other, 복귀예상 미공개); Kiko(Hamstring, 복귀예상 미공개); Abdelkabir Abqar(Muscle, 복귀예상 2026-09-13); Christantus Uche(Knee, 복귀예상 2027-06-12); Juanmi(Muscle, 복귀예상 2026-09-12).",
+      "투표 36.8%(무승부) vs 시장 32.9% — 괴리 +3.9%p"
+    ],
+    "data_gaps": [
+      "Djene·Romero·Kiko·Abqar 실제 수비 조합, Satriano 중복 표기는1명으로 처리, Deportivo Altimira 가용. 홈 수비 복귀 시 가장 먼저 재검토.",
+      "확정 선발/GK·xG·PPDA·비리그 일정·공식 징계 판정 미확인"
+    ]
+  },
+  "M14": {
+    "match_no": 14,
+    "probs": {
+      "win": 0.35,
+      "draw": 0.29,
+      "lose": 0.36
+    },
+    "pick": "lose",
+    "backup_pick": "win",
+    "confidence": "하",
+    "expected_scores": [
+      "0-1",
+      "1-2"
+    ],
+    "key_factors": [
+      "소시에다 9위 · 5경기 2승1무2패 · 7점 · 6득/8실 / AT마드 6위 · 4경기 2승1무1패 · 7점 · 7득/6실.",
+      "소시에다드 홈1승1무와 AT 원정1승1패가 맞선다. AT의직전0-3은 단일 경기 붕괴이며, 소시에다드도5경기8실점이라 홈 수비 우위를 확신할 수 없다. 세 방향이 열려 있고 원정을1%p만 앞세운다.",
+      "소시에다 가용 이슈: Pablo Marin(Muscle, 복귀예상 2026-09-13); Alvaro Odriozola(Cruciate ligame, 복귀예상 2026-10-24).",
+      "투표 55.0%(원정 승) vs 시장 39.8% — 괴리 +15.1%p"
+    ],
+    "data_gaps": [
+      "양팀 선발/GK·AT CB 조합과 Soerloth. 단일0-3을 보편 Collapse 감산으로 쓰지 않음.",
+      "확정 선발/GK·xG·PPDA·비리그 일정·공식 징계 판정 미확인"
+    ]
+  }
+}
