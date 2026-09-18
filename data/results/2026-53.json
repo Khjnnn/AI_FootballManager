@@ -1,0 +1,295 @@
+{
+  "round_id": "260053",
+  "settled_at": "2026-09-18T08:59:39+09:00",
+  "matches": [
+    {
+      "match_no": 1,
+      "result": "win",
+      "score": "1-0",
+      "predicted": {
+        "win": 0.26,
+        "draw": 0.3,
+        "lose": 0.44
+      },
+      "pick": "lose",
+      "backup_pick": "draw",
+      "pick_correct": false,
+      "backup_correct": false,
+      "coverage": [
+        "lose",
+        "draw"
+      ],
+      "coverage_correct": false,
+      "brier": 0.8312
+    },
+    {
+      "match_no": 2,
+      "result": "lose",
+      "score": "1-4",
+      "predicted": {
+        "win": 0.217,
+        "draw": 0.28,
+        "lose": 0.503
+      },
+      "pick": "lose",
+      "backup_pick": "draw",
+      "pick_correct": true,
+      "backup_correct": false,
+      "coverage": [
+        "lose",
+        "draw"
+      ],
+      "coverage_correct": true,
+      "brier": 0.3725
+    },
+    {
+      "match_no": 3,
+      "result": "lose",
+      "score": "0-2",
+      "predicted": {
+        "win": 0.42,
+        "draw": 0.29,
+        "lose": 0.29
+      },
+      "pick": "win",
+      "backup_pick": "draw",
+      "pick_correct": false,
+      "backup_correct": false,
+      "coverage": [
+        "win",
+        "draw",
+        "lose"
+      ],
+      "coverage_correct": true,
+      "brier": 0.7646
+    },
+    {
+      "match_no": 4,
+      "result": "lose",
+      "score": "1-2",
+      "predicted": {
+        "win": 0.2959,
+        "draw": 0.28,
+        "lose": 0.4241
+      },
+      "pick": "lose",
+      "backup_pick": "win",
+      "pick_correct": true,
+      "backup_correct": false,
+      "coverage": [
+        "lose",
+        "win"
+      ],
+      "coverage_correct": true,
+      "brier": 0.4976
+    },
+    {
+      "match_no": 5,
+      "result": "draw",
+      "score": "0-0",
+      "predicted": {
+        "win": 0.2304,
+        "draw": 0.28,
+        "lose": 0.4896
+      },
+      "pick": "lose",
+      "backup_pick": "draw",
+      "pick_correct": false,
+      "backup_correct": true,
+      "coverage": [
+        "lose",
+        "draw"
+      ],
+      "coverage_correct": true,
+      "brier": 0.8112
+    },
+    {
+      "match_no": 6,
+      "result": "win",
+      "score": "1-0",
+      "predicted": {
+        "win": 0.4734,
+        "draw": 0.28,
+        "lose": 0.2466
+      },
+      "pick": "win",
+      "backup_pick": "draw",
+      "pick_correct": true,
+      "backup_correct": false,
+      "coverage": [
+        "win",
+        "draw"
+      ],
+      "coverage_correct": true,
+      "brier": 0.4165
+    },
+    {
+      "match_no": 7,
+      "result": "draw",
+      "score": "0-0",
+      "predicted": {
+        "win": 0.2141,
+        "draw": 0.28,
+        "lose": 0.5059
+      },
+      "pick": "lose",
+      "backup_pick": "draw",
+      "pick_correct": false,
+      "backup_correct": true,
+      "coverage": [
+        "lose",
+        "draw"
+      ],
+      "coverage_correct": true,
+      "brier": 0.8202
+    },
+    {
+      "match_no": 8,
+      "result": "win",
+      "score": "2-0",
+      "predicted": {
+        "win": 0.1516,
+        "draw": 0.28,
+        "lose": 0.5684
+      },
+      "pick": "lose",
+      "backup_pick": null,
+      "pick_correct": false,
+      "backup_correct": false,
+      "coverage": [
+        "lose"
+      ],
+      "coverage_correct": false,
+      "brier": 1.1213
+    },
+    {
+      "match_no": 9,
+      "result": "lose",
+      "score": "0-1",
+      "predicted": {
+        "win": 0.33,
+        "draw": 0.28,
+        "lose": 0.39
+      },
+      "pick": "lose",
+      "backup_pick": "win",
+      "pick_correct": true,
+      "backup_correct": false,
+      "coverage": [
+        "lose",
+        "win",
+        "draw"
+      ],
+      "coverage_correct": true,
+      "brier": 0.5594
+    },
+    {
+      "match_no": 10,
+      "result": "lose",
+      "score": "1-2",
+      "predicted": {
+        "win": 0.34,
+        "draw": 0.29,
+        "lose": 0.37
+      },
+      "pick": "lose",
+      "backup_pick": "win",
+      "pick_correct": true,
+      "backup_correct": false,
+      "coverage": [
+        "lose",
+        "win",
+        "draw"
+      ],
+      "coverage_correct": true,
+      "brier": 0.5966
+    },
+    {
+      "match_no": 11,
+      "result": "lose",
+      "score": "0-3",
+      "predicted": {
+        "win": 0.33,
+        "draw": 0.29,
+        "lose": 0.38
+      },
+      "pick": "lose",
+      "backup_pick": "win",
+      "pick_correct": true,
+      "backup_correct": false,
+      "coverage": [
+        "lose",
+        "win",
+        "draw"
+      ],
+      "coverage_correct": true,
+      "brier": 0.5774
+    },
+    {
+      "match_no": 12,
+      "result": "lose",
+      "score": "1-3",
+      "predicted": {
+        "win": 0.4932,
+        "draw": 0.28,
+        "lose": 0.2268
+      },
+      "pick": "win",
+      "backup_pick": "draw",
+      "pick_correct": false,
+      "backup_correct": false,
+      "coverage": [
+        "win",
+        "draw"
+      ],
+      "coverage_correct": false,
+      "brier": 0.9194
+    },
+    {
+      "match_no": 13,
+      "result": "win",
+      "score": "4-1",
+      "predicted": {
+        "win": 0.5184,
+        "draw": 0.28,
+        "lose": 0.2016
+      },
+      "pick": "win",
+      "backup_pick": null,
+      "pick_correct": true,
+      "backup_correct": false,
+      "coverage": [
+        "win"
+      ],
+      "coverage_correct": true,
+      "brier": 0.351
+    },
+    {
+      "match_no": 14,
+      "result": "lose",
+      "score": "1-2",
+      "predicted": {
+        "win": 0.4865,
+        "draw": 0.28,
+        "lose": 0.2335
+      },
+      "pick": "win",
+      "backup_pick": "draw",
+      "pick_correct": false,
+      "backup_correct": false,
+      "coverage": [
+        "win",
+        "draw"
+      ],
+      "coverage_correct": false,
+      "brier": 0.9026
+    }
+  ],
+  "round_metrics": {
+    "hit_rate": 0.5,
+    "coverage_hit_rate": 0.714,
+    "mean_brier": 0.6815,
+    "mean_brier_evidence": 0.6845,
+    "log_loss": 1.1292
+  }
+}
